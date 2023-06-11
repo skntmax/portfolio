@@ -24,6 +24,8 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
+ 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -43,7 +45,7 @@
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <!-- ======= Header ======= -->
-  <header id="header">
+  <header id="header" >
     <div class="d-flex flex-column">
 
       <div class="profile">
@@ -74,12 +76,12 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1> shashi kant <a href="./assets//shashi-11june2023.pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </h1>
+      <h1> shashi kant   <a href="./assets//shashi-11june2023.pdf" title=" download resume" ><i class="bi bi-download"></i> </a></h1>
       <p>I'm <span class="typed" data-typed-items="Full stack developer "></span></p>
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
+  <main id="main" >
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -827,9 +829,31 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="script.js">  </script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/tsparticles-preset-bubbles@2/tsparticles.preset.bubbles.bundle.min.js"></script>
+</script>
+
+ <script>
+
+
+(async () => {
+            await loadBubblesPreset(tsParticles); // this is required only if you are not using the bundle script
+
+            await tsParticles.load("hero", {
+                autoPlay: true, //works
+                FullScreen: false, //nothing changes
+                // FullScreen: { enable: false, zIndex: 99 , height:'80%' }, ////nothing changes
+                background: {
+               ['z-index']: -10,
+               height:'80%'
+                 },
+                preset: "bubbles",
+            });
+        })();
+
+ </script>
 
 </body>
 
