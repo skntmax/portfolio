@@ -11,7 +11,10 @@
 --------------------------------------------------------------*/
 body {
   font-family: 'Montserrat', sans-serif;
-  color: rgba(213, 213, 213, 0.9); 
+font-family: 'Poppins', sans-serif;
+font-family: 'Source Code Pro', monospace;
+font-size: 20px;
+  color: rgba(213, 213, 213, 1); 
   /* text-decoration-thickness: 1px; */
   background: rgb(2,0,36);
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(1,26,38,1) 0%, rgba(4,14,19,1) 100%);  
