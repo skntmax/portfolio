@@ -360,11 +360,13 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
   color: #173b6c;
 }
+
 
 .about .content ul {
   list-style: none;
@@ -391,6 +393,64 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# certificates
+--------------------------------------------------------------*/
+
+
+
+
+.certificates .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #173b6c;
+}
+
+
+.certificates .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.certificates .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.certificates .content ul strong {
+  margin-right: 10px;
+}
+
+.certificates .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #149ddd;
+  line-height: 0;
+}
+
+.certificates .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# certificates
+--------------------------------------------------------------*/
+
+
+
 
 /*--------------------------------------------------------------
 # Facts
@@ -1117,4 +1177,16 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+.link_style{
+   display: block;
+}
+
+tbody .tr{
+   margin: 10px;
+}
+
+.pading_row{
+  margin: 10px;
 }
