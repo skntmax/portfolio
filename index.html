@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+   
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>shashi's resume </title>
+   
+  <title> shashi's resume </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,6 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+   
   <!-- =======================================================
   * Template Name: iPortfolio
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -43,11 +46,14 @@
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
+
+ 
+
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column" id="tsparticles" >
 
       <div class="profile">
         <img src="assets/img/Hompage.jpg" alt=" " style="border-radius: 50%; border-width: 2px; " height="20px" width="50px" class="img-fluid rounded-circle">
@@ -87,6 +93,7 @@
 
     <main id="main">
 
+   
        <!-- ======= About Section ======= -->
      <section id="about" class="about">
       <div class="container">
@@ -1471,9 +1478,87 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="script.js">  </script>
-
+  <!-- <script src="./assets/js/tsparticles.engine.min.js"></script> -->
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-move-base@2/tsparticles.move.base.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-plugin-emitters@2/tsparticles.plugin.emitters.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-circle@2/tsparticles.shape.circle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-square@2/tsparticles.shape.square.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-color@2/tsparticles.updater.color.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-life@2/tsparticles.updater.life.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-opacity@2/tsparticles.updater.opacity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-out-modes@2/tsparticles.updater.out-modes.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-roll@2/tsparticles.updater.roll.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-rotate@2/tsparticles.updater.angle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-size@2/tsparticles.updater.size.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-tilt@2/tsparticles.updater.tilt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-wobble@2/tsparticles.updater.wobble.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.bundle.min.js"></script>
+  <script>
+
+ 
+(async () => {
+  await loadConfettiPreset(tsParticles); // this is required only if you are not using the bundle script
+
+  
+   setInterval(async ()=>{
+
+    await tsParticles.load("tsparticles", {
+  color: {
+      value: ["#0000ff", "#00ff00"],
+    },
+    
+  emitters: [
+    {
+      
+      life: {
+        duration: 5,
+        count: 1,
+      },
+      position: {
+        x: 0,
+        y: 30,
+      },
+      particles: {
+             },
+    },
+    {
+      life: {
+        duration: 5,
+        count: 1,
+      },
+      position: {
+        x: 100,
+        y: 30,
+      },
+      particles: {
+        move: {
+          direction: "top-left",
+        },
+      },
+    },
+    
+  ],
+    
+  preset: "confetti",
+});
+
+   } , 6000 ) 
+
+
+})();
+
+
+
+  </script>
 
 </body>
 
