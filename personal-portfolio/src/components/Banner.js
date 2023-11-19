@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
+  const toRotate = [  ", a Full Stack Developer", ",a devops" ];
   const period = 2000;
 
   useEffect(() => {
@@ -55,10 +55,22 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Judy`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                <span className="tagline">Welcome to my Portfolio 
+                 <a href="./assets//shashi-11june2023.pdf" title=" download resume" ><i className="bi bi-download"></i> </a>  </span>
+                <h1>{`Hi! I'm shashi kant`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ " \, a  Full Stack Developer", "a devops"  ]'><span className="wrap">{text}</span></span></h1>
+                  <p> Hello, my name is Shashi Kant, and I specialize in full-stack development using the MEAN and MERN technology stacks. Currently, I am employed at Value Innovation Labs, where I hold the position of a full-stack developer. In this role, I am responsible for designing and implementing the complete architecture of various projects or modules, encompassing frontend development, backend functionality, database structure, and deploying them to cloud servers.
+
+                   </p>
+
+                   <p>
+                   During my tenure at Value Innovation Labs, I have successfully delivered numerous modules for the EPIL project and CCIL, and I have also contributed to the integration of Zoom into rozgar.com. Additionally, I have resolved multiple bugs across various projects, including FICSI (Sector Skill Council for Food Processing Industries), CCIL (Cement Corporation of India), EPIL (Engineering Enterprise Level Project), and ROZGAR (Naukri Portal).
+                   </p>
+
+                   <p>Throughout my professional journey, I have honed my skills in React.js, Next.js, Node.js, SQL and NoSQL databases, Linux (Ubuntu), and cloud server management (AWS). I strive to consistently deliver exceptional results within specified timelines, continually pushing myself to achieve the highest standards of excellence.
+                   </p>
+
+
+                  <button onClick={() => window.location.href = "https://cv.skntmax.co.in/" } title="https://cv.skntmax.co.in/">Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>

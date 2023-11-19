@@ -46,7 +46,11 @@ export const NavBar = () => {
             <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
               <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
+              <Nav.Link href="#certificates" className={activeLink === 'certificates' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('certificates')}>Certificates</Nav.Link>
+              <Nav.Link href="#qualification" className={activeLink === 'qualification' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('qualification')}> Qualification</Nav.Link>
+              {/* <Nav.Link href="#mini_projects" className={activeLink === 'mini_projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('mini_projects')}>Mini Projects</Nav.Link> */}
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              <Nav.Link href="#services" className={activeLink === 'services' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('services')}>Services</Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
