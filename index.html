@@ -34,6 +34,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -56,9 +58,9 @@
 
       <div class="profile">
         
-        <img src="assets/img/Hompage.jpg" alt=" " style="border-radius: 50%; border-width: 2px; " height="20px" width="50px" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Shashi kant </a> <a href="./assets/shashi kant 27 october 2024 .pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </i>  </h1>
-        <div class="social-links mt-3 text-center">
+          <img src="assets/img/Hompage_old.jpg" alt=" " style="border-radius: 50%; border-width: 2px; " height="20px" width="50px" class="img-fluid rounded-circle">
+          <h1 class="text-light"><a href="index.html">Shashi kant </a> <a href="./assets/shashi kant aug 2025.pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </i>  </h1>
+          <div class="social-links mt-3 text-center">
            <a href="https://www.youtube.com/@skntmax" class="twitter"><i class="bx bxl-youtube"></i></a>
            <a href="https://twitter.com/Shashik84927339" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="https://www.facebook.com/shashikantkumar.skntmax" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -86,8 +88,17 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1> shashi kant <a href="./assets/shashi kant 27 october 2024 .pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </h1>
-      <p>I'm <span class="typed" data-typed-items= "a Full stack developer (MERN)" ></span> </p>
+      <h1> shashi kant <a href="./assets/shashi kant aug 2025.pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </h1>
+      <p>
+    <span id="typed"></span>
+    <span id="loader" style="display:none; margin-left:10px;">
+       <img 
+        src="./assets/img/paytm.png" 
+        alt="Paytm" 
+        style="height:20px; vertical-align:middle; margin-left:5px;">
+    </span>
+  </p>
+
     </div>
   </section><!-- End Hero -->
 
@@ -108,71 +119,49 @@
             Throughout my professional journey, I have honed my skills in React.js, Next.js, Node.js, SQL and NoSQL databases, Linux (Ubuntu), and cloud server management (AWS). I strive to consistently deliver exceptional results within specified timelines, continually pushing myself to achieve the highest standards of excellence.  </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/Homepage2.jpg" height="800px" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3 style="color: white;"> Full stack developer (MERN) </h3>
-            <p class="fst-italic">
-         
-      Experienced full-stack developer skilled in MEAN and MERN technologies, delivering robust architectures, bug fixes, and seamless integrations for prominent projects with a focus on quality and timeliness.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;" >Birthday:</strong> <span>14 Jul 1998</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;" >Website:</strong> <a href="http://bytecode.live">http://bytecode.live  </a> </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Phone:</strong> <span>+917860735070   </span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;" >City:</strong> <span>Noida ,Uttar Pradesh </span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;" >Age:</strong> <span>25</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Degree:</strong> <span>B.Tech</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Emailone:</strong> <span>skntjee@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Full Time role / Part time : </strong> <span>Contact me </span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              
-             Dedicated and efficient, I am a full-stack web developer with expertise in the MERN stack. Currently, I am employed at Value Innovation Labs, located in Noida, as a MERN stack developer. During my tenure, I have actively contributed to various government projects such as CCIL (Cement Corporation of India), EPIL (Engineering Enterprise Project), and HRMS (Employee Management System of our own company). These projects were exclusively developed using the MERN stack. I possess a strong desire to continually expand my knowledge and contribute to the growth of both my skills and the company. Furthermore, I hold certifications from Internshala and LinkedIn, further validating my proficiency. Moving forward, I aim to enhance my JavaScript and Node.js skills, aspiring to become a future-oriented full-stack developer at Atmospheric Solutions.
+    <div class="row align-items-stretch">
+  <!-- Image Column -->
+  <div class="col-lg-6 d-flex" data-aos="fade-right">
+    <img src="assets/img/wall2.jpg" class="img-fluid w-100 h-100 img-thumbnail" alt="">
+  </div>
 
-            </p>
-          </div>
-        </div>
+  <!-- Text Column -->
+  <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column" data-aos="fade-left">
+    <h3 style="color: white; "> Full stack developer (MERN) </h3>
+    <p class="fst-italic" style="font-size: 16px;">
+      Experienced full-stack developer skilled in MEAN and MERN technologies, delivering robust architectures, bug fixes, and seamless integrations for prominent projects with a focus on quality and timeliness.
+    </p>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Birthday:</strong> <span>14 Jul 1998</span></li>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Website:</strong>
+            <a href="http://codexcave.com">http://codexcave.com</a>
+          </li>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Phone:</strong> <span>+917860735070</span></li>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">City:</strong> <span>Noida, Uttar Pradesh</span></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Age:</strong> <span>27</span></li>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Degree:</strong> <span>B.Tech</span></li>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Email:</strong> <span>skntjee@gmail.com</span></li>
+          <li><i class="bi bi-chevron-right"></i> <strong style="color: white;">Full Time / Part Time:</strong> <span>Contact me</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size: 16px;">
+      Dedicated and efficient, I am a full-stack web developer with expertise in the MERN stack. Currently, I am employed at Value Innovation Labs, located in Noida, as a MERN stack developer. During my tenure, I have actively contributed to various government projects such as CCIL (Cement Corporation of India), EPIL (Engineering Enterprise Project), and HRMS (Employee Management System of our own company). These projects were exclusively developed using the MERN stack. I possess a strong desire to continually expand my knowledge and contribute to the growth of both my skills and the company. Furthermore, I hold certifications from Internshala and LinkedIn, further validating my proficiency. Moving forward, I aim to enhance my JavaScript and Node.js skills, aspiring to become a future-oriented full-stack developer at Atmospheric Solutions.
+    </p>
+  </div>
+</div>
+
 
       </div>
     </section><!-- End About Section -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <section id="certificates" class="certificates">
@@ -180,9 +169,7 @@
          
         <div class="section-title">
           <h2  style="color: white;" >certificates</h2>
-         
         </div>
-         
           <table >
             <tbody>
               
@@ -353,154 +340,136 @@
 
         <div class="row skills-content">
 
-          <div class="col-lg-6" data-aos="fade-up">
+         <div class="col-lg-6" data-aos="fade-up">
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-html5-plain colored"></i> HTML <i class="val">80%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
-            <div class="progress">
-              <span class="skill normalText">HTML <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-css3-plain colored"></i> CSS <i class="val">50%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60"></div>
+    </div>
+  </div>
 
-            <div class="progress">
-              <span class="skill normalText">CSS <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-javascript-plain colored"></i> JavaScript <i class="val">95%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
-            <div class="progress">
-              <span class="skill normalText"> JavaScript  <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-nextjs-original"></i> Next js <i class="val">95%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
-            <div class="progress">
-              <span class="skill normalText">Next js  <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-mysql-plain colored"></i> SQL <i class="val">95%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-linux-plain"></i> Linux <i class="val">90%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
-            
-            <div class="progress">
-              <span class="skill normalText">SQL <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-docker-plain colored"></i> Docker <i class="val">95%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
-            <div class="progress">
-              <span class="skill normalText"> linux  <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="fa-solid fa-users"></i> Team Management <i class="val">90%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
 
-            
-            <div class="progress">
-              <span class="skill normalText"> docker   <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-typescript-plain colored"></i> TypeScript <i class="val">80%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+        </div>
 
-
-               
-            <div class="progress">
-              <span class="skill normalText"> Team management   <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText">
-                Type script   <i class="val"> 80% </i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText">
-                  Team-management  <i class="val"> 90% </i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill normalText">PHP <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText">WordPress/CMS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText">Node js  <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText"> Mongo <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-
-            <div class="progress">
-              <span class="skill normalText"> DSA <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-
-            <div class="progress">
-              <span class="skill normalText"> React js / Next js  <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText"> React-Native (mobile app)  <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-
-            <div class="progress">
-              <span class="skill normalText"> AWS ( nginx , ec2 instances , linux servers , docker ) <i class="val"> 80% </i> </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill normalText"> react-query  <i class="val"> 80% </i> </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-php-plain colored"></i> PHP <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-wordpress-plain colored"></i> WordPress/CMS <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-nodejs-plain colored"></i> Node js <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-mongodb-plain colored"></i> Mongo <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="fa-solid fa-database"></i> DSA <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-react-original colored"></i> React js / Next js <i class="val">95%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-react-original colored"></i> React-Native (mobile app) <i class="val">95%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-amazonwebservices-plain colored"></i> AWS (nginx, EC2, Linux, Docker) <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="fa-solid fa-diagram-project"></i> React Query <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
         </div>
       </div>
     </section><!-- End Skills Section -->
@@ -655,77 +624,136 @@
 
         <div class="row">
            
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title normalText">CCIL ( cement corporation of India )  </h3>
-            <div class="resume-item pb-0">
-              <h5 class="abnormalText"> TECH STACK : React js , Node js , postgres ,  (Nov2021 - present ) </h5> 
-              <p>
-                The mentioned project is an official initiative of the government called the Cement Corporation of India. It serves as an employee file and leave management system for the company. The system facilitates the forwarding of files to multiple departments at different levels, requiring approval from the designated authority. Additionally, it allows employees to apply for leaves, monitor their leave status, and provides access to several other modules within the application. My primary responsibilities in this project involved resolving bugs in the file management and leave modules. Furthermore, I developed a Committee Module, which ensures that files are forwarded only when all committee members have reviewed the file and provided their individual descriptions. I have been actively involved in this project for several months."
-                </em>
+        <div class="col-lg-6" data-aos="fade-up">
 
-            </div>
+      <h3 class="resume-title normalText">Zamtel ( Payment services - Zambia )</h3>
+<div class="resume-item pb-0">
+  <h5 class="abnormalText"> 
+    TECH STACK : 
+  </h5>
+  <ul style="list-style: none; padding-left: 0; margin: 5px 0;">
+    <li>
+      <i class="devicon-typescript-plain colored"></i> TypeScript - frontend( React js) 
+    </li>
+    <li>
+      <i class="devicon-java-plain colored"></i> Java (backend microservices)
+    </li>
+    <li>
+      <i class="devicon-nodejs-plain colored"></i> Node JS for BFF 
+      <small>(encryption/decryption & request-response cycle handling using symmetric + asymmetric methods)</small>
+    </li>
+    <li>
+      <i class="devicon-docker-plain colored"></i> Microservices (kubernetes)
+    </li>
+    <li>
+      <strong>(Jan 2025 - Present)</strong>
+    </li>
+  </ul>
+  <p>
+    It's a fintech product of the Zambian government, providing payment and fintech services to customers, similar to Paytm or PhonePe. Regulated by the Zambian government.
+  </p>
+</div>
+        <h3 class="resume-title normalText">CCIL ( cement corporation of India )</h3>
+        <div class="resume-item pb-0">
+          <h5 class="abnormalText"> 
+            TECH STACK : 
+            <i class="devicon-react-original colored"></i> React js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js , 
+            <i class="devicon-postgresql-plain colored"></i> Postgres ,  
+            (Nov2021 - present ) 
+          </h5> 
+          <p>
+            The mentioned project is an official initiative of the government called the Cement Corporation of India. It serves as an employee file and leave management system for the company. The system facilitates the forwarding of files to multiple departments at different levels, requiring approval from the designated authority. Additionally, it allows employees to apply for leaves, monitor their leave status, and provides access to several other modules within the application. My primary responsibilities in this project involved resolving bugs in the file management and leave modules. Furthermore, I developed a Committee Module, which ensures that files are forwarded only when all committee members have reviewed the file and provided their individual descriptions. I have been actively involved in this project for several months."
+          </p>
+        </div>
 
-            <h3 class="resume-title normalText">EPIL (Engineering enterprise project )</h3>
-            <div class="resume-item">
-              <h5 class="abnormalText">TECH STACK : React js , Node js , postgres , (Nov2021 - present )  </h5>
-              <p>It bears a striking resemblance to the before mentioned project; however, it is an enhanced iteration of CCIL referred to as the Engineering Enterprise project. This updated version encompasses additional modules alongside the existing ones. These include the E-filing module, Knowledge Management module, DAK Management, E-tour, and Medical Reimbursement, all of which were initiated entirely by myself. Within this project, I have personally developed the E-tour module and Medical Reimbursement module, as well as the Knowledge Management module. In addition to my module contributions, I have also been involved in troubleshooting and enhancing other modules such as E-filing, Leave, and DAK. Presently, all these modules are in operational status and are actively employed by government personnel of EPIL. I have been dedicated to this project for a period of 1.5 years."</p>
-            </div>
+        <h3 class="resume-title normalText">EPIL (Engineering enterprise project)</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK : 
+            <i class="devicon-react-original colored"></i> React js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js , 
+            <i class="devicon-postgresql-plain colored"></i> Postgres ,  
+            (Nov2021 - present )  
+          </h5>
+          <p>It bears a striking resemblance to the before mentioned project; however, it is an enhanced iteration of CCIL referred to as the Engineering Enterprise project. This updated version encompasses additional modules alongside the existing ones. These include the E-filing module, Knowledge Management module, DAK Management, E-tour, and Medical Reimbursement, all of which were initiated entirely by myself. Within this project, I have personally developed the E-tour module and Medical Reimbursement module, as well as the Knowledge Management module. In addition to my module contributions, I have also been involved in troubleshooting and enhancing other modules such as E-filing, Leave, and DAK. Presently, all these modules are in operational status and are actively employed by government personnel of EPIL. I have been dedicated to this project for a period of 1.5 years."</p>
+        </div>
 
+        <div class="resume-item">
+          <h3 class="resume-title normalText">ROZGAR.COM</h3>
+          <h5 class="abnormalText"> 
+            TECH STACK : 
+            <i class="devicon-nextjs-original"></i> Next js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js , 
+            <i class="devicon-mysql-plain colored"></i> Mysql ,  
+            (Nov2021 - present )  
+          </h5>
+          <p>This particular project belongs to our company where i am employed and bears resemblance to naukari.com, albeit with several distinct features. The latest version of the project is currently under development and has not yet been launched. Within this project, I have undertaken the task of migrating 70,000 jobs from the previous version of rozgar.com. This involved meticulously mapping each job with its respective category, role, industry, employer ID, location, and job title. The previous version of rozgar.com operated on a MongoDB database, whereas the new version runs on a MySQL database. Subsequently, we migrated the entire web application to Next.js to enhance its search engine optimization (SEO) capabilities, thereby ensuring improved visibility on various search engines. Additionally, we developed supplementary modules, including an AI-powered resume builder, summary generator, and cover letter generator. We also integrated Grammarly for enhanced grammatical accuracy.</p>
+        </div>
+      </div>
 
-            <div class="resume-item">
-              <h3 class="resume-title normalText" > ROZGAR.COM </h3>
-              <h5 class="abnormalText" > TECH STACK : Next js , Node js , Mysql , (Nov2021 - present )  </h5>
-              <p>This particular project belongs to our company where i am employed and bears resemblance to naukari.com, albeit with several distinct features. The latest version of the project is currently under development and has not yet been launched. Within this project, I have undertaken the task of migrating 70,000 jobs from the previous version of rozgar.com. This involved meticulously mapping each job with its respective category, role, industry, employer ID, location, and job title. The previous version of rozgar.com operated on a MongoDB database, whereas the new version runs on a MySQL database. Subsequently, we migrated the entire web application to Next.js to enhance its search engine optimization (SEO) capabilities, thereby ensuring improved visibility on various search engines. Additionally, we developed supplementary modules, including an AI-powered resume builder, summary generator, and cover letter generator. We also integrated Grammarly for enhanced grammatical accuracy.</p>
-            </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="resume-title normalText">HRMS (Human Resource Management System)</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-react-original colored"></i> React js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js , 
+            <i class="devicon-postgresql-plain colored"></i> Postgres ,  
+            (Nov2021 - present ) 
+          </h5>
+          <p>it's also our own company's
+            project bascailly a employee management system . where i have worked with payroll
+            module .</p>
+        </div>
 
+        <div class="resume-item">
+          <h4 class="normalText">recruiter.rozgar.com and rozgar.com</h4>
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-react-original colored"></i> React js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js , 
+            <i class="devicon-postgresql-plain colored"></i> Postgres ,  
+            (Nov2021 - present )  
+          </h5>
+          <p>Have integreated Zoom API in rozgar recruiter section and in candidate portal where
+            interveiwer can take their candidate interview on their own plateform without any third party
+            apps such as zoom or google meet .
+            Have also integrated Google Map tracking system for candidated registered on rozgar.com locality wise . Where admin can look over on all these candidate beloging to several area throught the world and in just one click they can get all the information about the candidate including resume.  
+          </p>
+        </div>
 
+         <h3 class="resume-title normalText">Phoenix  ( Saled driven product of policybazaar )</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-nextjs-original"></i> Next js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js  
+            <i class="devicon-typescript-plain colored"></i> Typescript  
+            <i class="devicon-php-plain colored"></i> Php  
+            <i class="devicon-postgresql-plain colored"></i> Postgres  
+            <i class="devicon-mongodb-plain colored"></i> Mongo db  
+          </h5>
+          <p>
+            It was a sales driven project made for specailly policybazaar partners to track the status
+ and mentails all the activities related to renewal , new leads , region area coverage of
+ partners , from leads to every operation units is being covered in this project . 
+          </p>
+        </div>
 
-
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-           
-            <h3 class="resume-title normalText ">HRMS (Human Resource Management System)</h3>
-            <div class="resume-item">
-              <h5 class="abnormalText"> TECH STACK: React js , Node js , Postgres   , (Nov2021 - present ) </h5>
-              <p>it's also our own company's
-                project bascailly a employee management system . where i have worked with payroll
-                module .</p>
-               
-            </div>
-
-            <div class="resume-item">
-              <h4 class="normalText">recruiter.rozgar.com and rozgar.com</h4>
-              <h5 class="abnormalText"> TECH STACK: React js , Node js , Postgres , (Nov2021 - present )  </h5>
-              <p>Have integreated Zoom API in rozgar recruiter section and in candidate portal where
-                interveiwer can take their candidate interview on their own plateform without any third party
-                apps such as zoom or google meet .
-              Have also integrated Google Map tracking system for candidated registered on rozgar.com locality wise . Where admin can look over on all these candidate beloging to several area throught the world and in just one click they can get all the information about the candidate including resume.  
-              </p>
-            </div>
-
-
-
-
-
-
-            <h3 class="resume-title normalText ">Luxorpen  ( India's No. 1 manufacturer & exporter of writing instruments) </h3>
-            <div class="resume-item">
-              <h5 class="abnormalText"> TECH STACK: Next js  , Node js , Mongo db     </h5>
-              <p>
-                 Developed a comprehensive Content Management System (CMS) website utilizing Next.js for the frontend and Node.js for the backend. Incorporated the GSAP library to enhance user experience through dynamic animations. Implemented a diverse product catalog, categorizing various products. Additionally, actively contributed to the administration portal, overseeing both frontend (React) and backend (Node.js) management aspects.      
-                  
-              </p>
-               
-            </div>
-
-
-
-            
-            
-          </div>
-
+        <h3 class="resume-title normalText">Luxorpen ( India's No. 1 manufacturer & exporter of writing instruments)</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-nextjs-original"></i> Next js , 
+            <i class="devicon-nodejs-plain colored"></i> Node js , 
+            <i class="devicon-mongodb-plain colored"></i> Mongo db  
+          </h5>
+          <p>
+            Developed a comprehensive Content Management System (CMS) website utilizing Next.js for the frontend and Node.js for the backend. Incorporated the GSAP library to enhance user experience through dynamic animations. Implemented a diverse product catalog, categorizing various products. Additionally, actively contributed to the administration portal, overseeing both frontend (React) and backend (Node.js) management aspects.      
+          </p>
+        </div>
+      </div>
 
 
 
@@ -934,8 +962,8 @@
 
       <div class="col-sm">
         <img width="400" width="400" src="./assets/img/projects_shorts/product.png" />
-        <a href="./assets/img/projects_shorts/product.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="bytecode.live (unlock maximum potential)"><h4> FULL PREVIEW</h4> </a>
-        <a href="https://bytecode.live"> bytecode.live</a>
+        <a href="./assets/img/projects_shorts/product.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="codexcave.com (unlock maximum potential)"><h4> FULL PREVIEW</h4> </a>
+        <a href="https://codexcave.com"> codexcave.com</a>
     </div>
   </div>
    
@@ -1574,8 +1602,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.bundle.min.js"></script>
   <script>
-
-
 (async () => {
    
    await loadConfettiPreset(tsParticles); // this is required only if you are not using the bundle script  
@@ -1623,6 +1649,19 @@
    } , 6000 ) 
     
 })();
+
+
+  
+  var typed = new Typed("#typed", {
+    strings: ["Senior software engineer at"],
+    typeSpeed: 50,
+    backSpeed: 25,
+    loop: false,
+    onComplete: function() {
+      document.getElementById("loader").style.display = "inline-block";
+    }
+  });
+
 
 
 
