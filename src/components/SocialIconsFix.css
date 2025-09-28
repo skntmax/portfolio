@@ -1,0 +1,250 @@
+/* Enhanced Social Icons - Cross Browser Compatibility */
+
+/* Desktop Social Links - Enhanced Visibility */
+.social-links {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 25px !important;
+  padding: 18px 15px !important;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.08) 0%, 
+    rgba(118, 75, 162, 0.05) 100%) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 10 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.social-link {
+  width: 42px !important;
+  height: 42px !important;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.08) 0%, 
+    rgba(102, 126, 234, 0.12) 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 12 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  will-change: transform, background-color !important;
+}
+
+/* SVG Icon Styles - Enhanced Visibility */
+.social-link svg {
+  width: 18px !important;
+  height: 18px !important;
+  fill: currentColor !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 0.3s ease !important;
+  z-index: 13 !important;
+  pointer-events: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Enhanced Hover Effects */
+.social-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-3px) scale(1.08) !important;
+  border-color: rgba(102, 126, 234, 0.5) !important;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(102, 126, 234, 0.3) !important;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.9) 0%, 
+    rgba(118, 75, 162, 0.9) 100%) !important;
+}
+
+.social-link:hover svg {
+  transform: scale(1.15) !important;
+  color: #ffffff !important;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) !important;
+}
+
+/* Platform Specific Enhanced Colors */
+.social-link.youtube:hover {
+  background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%) !important;
+  border-color: #ff0000 !important;
+  box-shadow: 
+    0 8px 25px rgba(255, 0, 0, 0.4),
+    0 0 20px rgba(255, 0, 0, 0.3) !important;
+}
+
+.social-link.twitter:hover {
+  background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%) !important;
+  border-color: #1da1f2 !important;
+  box-shadow: 
+    0 8px 25px rgba(29, 161, 242, 0.4),
+    0 0 20px rgba(29, 161, 242, 0.3) !important;
+}
+
+.social-link.facebook:hover {
+  background: linear-gradient(135deg, #4267b2 0%, #365899 100%) !important;
+  border-color: #4267b2 !important;
+  box-shadow: 
+    0 8px 25px rgba(66, 103, 178, 0.4),
+    0 0 20px rgba(66, 103, 178, 0.3) !important;
+}
+
+.social-link.instagram:hover {
+  background: linear-gradient(135deg, #e4405f 0%, #833ab4 50%, #fd5949 100%) !important;
+  border-color: #e4405f !important;
+  box-shadow: 
+    0 8px 25px rgba(228, 64, 95, 0.4),
+    0 0 20px rgba(228, 64, 95, 0.3) !important;
+}
+
+.social-link.linkedin:hover {
+  background: linear-gradient(135deg, #0077b5 0%, #005582 100%) !important;
+  border-color: #0077b5 !important;
+  box-shadow: 
+    0 8px 25px rgba(0, 119, 181, 0.4),
+    0 0 20px rgba(0, 119, 181, 0.3) !important;
+}
+
+/* Mobile Social Links - Enhanced */
+.mobile-social-links {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin: 30px 20px !important;
+  padding: 20px 15px !important;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.08) 0%, 
+    rgba(118, 75, 162, 0.05) 100%) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  z-index: 10 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.mobile-social-link {
+  width: 48px !important;
+  height: 48px !important;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.08) 0%, 
+    rgba(102, 126, 234, 0.12) 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  font-size: 18px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 12 !important;
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+}
+
+.mobile-social-link svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: currentColor !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: all 0.3s ease !important;
+  z-index: 13 !important;
+  pointer-events: none !important;
+}
+
+.mobile-social-link:hover {
+  color: #ffffff !important;
+  transform: scale(1.1) !important;
+  border-color: rgba(102, 126, 234, 0.5) !important;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.9) 0%, 
+    rgba(118, 75, 162, 0.9) 100%) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.mobile-social-link:hover svg {
+  transform: scale(1.1) !important;
+  color: #ffffff !important;
+}
+
+/* Browser Specific Fixes */
+@supports (-webkit-appearance: none) {
+  .social-link,
+  .mobile-social-link {
+    -webkit-transform: translateZ(0) !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+}
+
+/* Chrome specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .social-link svg,
+  .mobile-social-link svg {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+}
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+  .social-link,
+  .mobile-social-link {
+    -moz-appearance: none !important;
+  }
+}
+
+/* Force hardware acceleration */
+.social-link,
+.mobile-social-link,
+.social-links,
+.mobile-social-links {
+  will-change: transform, opacity !important;
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  perspective: 1000px !important;
+  -webkit-perspective: 1000px !important;
+}
+
+/* Debug visibility (remove in production) */
+.social-link,
+.mobile-social-link {
+  outline: 1px solid rgba(255, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Remove debug styles */
+.social-link:not(:hover),
+.mobile-social-link:not(:hover) {
+  outline: none !important;
+}
