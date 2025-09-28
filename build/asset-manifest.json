@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.55b0e43d.css",
+    "main.js": "/static/js/main.de7700a1.js",
+    "static/media/chatapp-home.png": "/static/media/chatapp-home.91b5439e61112dc599dd.png",
+    "static/media/e-store.png": "/static/media/e-store.2f772a2ebfd48daac631.png",
+    "static/media/Hompage.jpg": "/static/media/Hompage.2048d1d97c4a2e2fe6f6.jpg",
+    "static/media/youtube-lite.png": "/static/media/youtube-lite.0e597ae97b58533984b3.png",
+    "static/media/contact-list.png": "/static/media/contact-list.545410d267fa70d3b77f.png",
+    "static/media/luxor2.png": "/static/media/luxor2.64d0effb33c2066540b8.png",
+    "static/media/rozgar.com.png": "/static/media/rozgar.com.50bc92654db31cbd4772.png",
+    "static/media/Homepage2.jpg": "/static/media/Homepage2.53a99147d4088659eec6.jpg",
+    "static/media/todo.png": "/static/media/todo.e37b2e89096605692152.png",
+    "static/media/bt1.png": "/static/media/bt1.0dbce38d452949f882dc.png",
+    "static/media/ccil.png": "/static/media/ccil.d4a488af51cfe119f4f7.png",
+    "index.html": "/index.html",
+    "main.55b0e43d.css.map": "/static/css/main.55b0e43d.css.map",
+    "main.de7700a1.js.map": "/static/js/main.de7700a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55b0e43d.css",
+    "static/js/main.de7700a1.js"
+  ]
+}
