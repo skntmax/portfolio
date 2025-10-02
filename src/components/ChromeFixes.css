@@ -1,0 +1,252 @@
+/* Chrome Compatibility and UI Enhancement Fixes */
+
+/* Global Chrome Fixes */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* Force Hardware Acceleration for better performance */
+.project-card,
+.social-link,
+.mobile-social-link,
+.nav-item,
+.mobile-nav-item {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Chrome Backdrop Filter Fallbacks */
+@supports not (backdrop-filter: blur(20px)) {
+  .header-sidebar {
+    background: rgba(0, 0, 0, 0.98) !important;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .mobile-header {
+    background: rgba(0, 0, 0, 0.98) !important;
+  }
+  
+  .mobile-menu {
+    background: rgba(0, 0, 0, 0.98) !important;
+  }
+  
+  .social-links {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%) !important;
+  }
+  
+  .mobile-social-links {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%) !important;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+}
+
+/* Chrome Specific Icon Fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .social-link svg,
+  .mobile-social-link svg,
+  .nav-icon,
+  .mobile-nav-icon {
+    -webkit-appearance: none !important;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+/* Enhanced Visibility for Social Icons */
+.social-link,
+.mobile-social-link {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+.social-link svg,
+.mobile-social-link svg {
+  pointer-events: none !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  fill: currentColor !important;
+  stroke: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Project Image Click Enhancement */
+.project-image {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.project-image img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto !important;
+}
+
+/* Better Button Interactions */
+.action-btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Improved Scrollbar Styling for Chrome */
+.header-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.header-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.header-sidebar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.header-sidebar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #f5576c 100%);
+}
+
+/* Chrome Animation Performance */
+@media (prefers-reduced-motion: no-preference) {
+  .social-link,
+  .mobile-social-link,
+  .project-card,
+  .nav-item {
+    will-change: transform, opacity;
+  }
+}
+
+/* High DPI Display Fixes */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .social-link,
+  .mobile-social-link {
+    border-width: 0.5px;
+  }
+  
+  .profile-image img {
+    border-width: 1.5px;
+  }
+}
+
+/* Touch Device Enhancements */
+@media (pointer: coarse) {
+  .social-link,
+  .mobile-social-link {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .action-btn {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  .mobile-nav-item {
+    min-height: 50px;
+  }
+}
+
+/* Focus Enhancements for Accessibility */
+.social-link:focus-visible,
+.mobile-social-link:focus-visible,
+.action-btn:focus-visible {
+  outline: 3px solid #667eea !important;
+  outline-offset: 2px;
+}
+
+/* Chrome Color Profile Fixes */
+@media (color-gamut: p3) {
+  :root {
+    --primary: color(display-p3 0.4 0.49 0.92);
+    --secondary: color(display-p3 0.46 0.29 0.64);
+    --accent: color(display-p3 0.96 0.34 0.42);
+  }
+}
+
+/* Prevent Chrome from adding unwanted styles */
+input,
+button,
+textarea,
+select {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Chrome GPU Acceleration */
+.project-card:hover,
+.social-link:hover,
+.mobile-social-link:hover {
+  -webkit-transform: translate3d(0, -3px, 0) scale(1.05);
+  transform: translate3d(0, -3px, 0) scale(1.05);
+}
+
+/* Prevent Chrome text selection on interactive elements */
+.social-link,
+.mobile-social-link,
+.project-image,
+.action-btn,
+.nav-item,
+.mobile-nav-item {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Enhanced loading states */
+.social-link,
+.mobile-social-link {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Chrome-specific shadow enhancements */
+.project-card {
+  -webkit-filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.social-link:hover,
+.mobile-social-link:hover {
+  -webkit-filter: drop-shadow(0 8px 25px rgba(102, 126, 234, 0.4));
+  filter: drop-shadow(0 8px 25px rgba(102, 126, 234, 0.4));
+}
+
+/* Chrome font rendering improvements */
+body,
+.social-link,
+.mobile-social-link,
+.nav-item,
+.project-card {
+  -webkit-font-feature-settings: "liga" 1, "kern" 1;
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}

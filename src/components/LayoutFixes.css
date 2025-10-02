@@ -1,0 +1,175 @@
+/* Layout Fixes for Proper Sidebar Integration */
+
+/* Ensure proper sidebar spacing */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Main content area adjustments - Better Centering */
+#main {
+  margin-left: 300px !important;
+  width: calc(100% - 300px) !important;
+  min-height: 100vh;
+  padding: 0 !important;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section containers - Perfect Centering */
+.section {
+  width: 100%;
+  max-width: 1400px;
+  padding: 80px 60px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* About section specific fixes */
+.about {
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: 80px 40px !important;
+  box-sizing: border-box;
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about .content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Other sections */
+.hero,
+.certificates,
+.skills,
+.resume,
+.projects,
+.services,
+.contact {
+  width: 100%;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.hero .container,
+.certificates .container,
+.skills .container,
+.resume .container,
+.projects .container,
+.services .container,
+.contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile responsive */
+@media (max-width: 1199px) {
+  #main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding-top: 70px !important;
+  }
+  
+  .section,
+  .about,
+  .hero,
+  .certificates,
+  .skills,
+  .resume,
+  .projects,
+  .services,
+  .contact {
+    padding: 60px 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section,
+  .about,
+  .hero,
+  .certificates,
+  .skills,
+  .resume,
+  .projects,
+  .services,
+  .contact {
+    padding: 50px 20px !important;
+  }
+  
+  .about .container,
+  .hero .container,
+  .certificates .container,
+  .skills .container,
+  .resume .container,
+  .projects .container,
+  .services .container,
+  .contact .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section,
+  .about,
+  .hero,
+  .certificates,
+  .skills,
+  .resume,
+  .projects,
+  .services,
+  .contact {
+    padding: 40px 15px !important;
+  }
+}
+
+/* Sidebar fixes */
+.header-sidebar {
+  width: 300px !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+@media (max-width: 1199px) {
+  .header-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .header-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}

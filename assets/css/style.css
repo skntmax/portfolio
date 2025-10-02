@@ -10,8 +10,30 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #272829;
+  /* font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif; */
+  font-family: 'Source Code Pro', monospace; 
+  font-size: 20px;
+  color: rgba(213, 213, 213, 1); 
+  /* text-decoration-thickness: 1px; */
+  background: rgb(2,0,36);  
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(1,26,38,1) 0%, rgba(4,14,19,1) 100%);  
+
+ }
+
+customBodySection {
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(1,26,38,1) 0%, rgba(4,14,19,1) 100%);  
+}
+
+
+.normalText{
+   color:white !important;
+}
+
+
+.abnormalText{
+  color:black !important;
 }
 
 a {
@@ -132,8 +154,9 @@ h6 {
 }
 
 @media (max-width: 1199px) {
+ 
   #header {
-    left: -300px;
+    left: -300px ;
   }
 
   #main {
@@ -231,7 +254,7 @@ h6 {
   height: 100vh;
   background: url("../img/Hompage.jpg") top center;
   background-size: 100% 100%;
-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -367,6 +390,64 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# certificates
+--------------------------------------------------------------*/
+
+
+
+
+.certificates .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #173b6c;
+}
+
+
+.certificates .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.certificates .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.certificates .content ul strong {
+  margin-right: 10px;
+}
+
+.certificates .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #149ddd;
+  line-height: 0;
+}
+
+.certificates .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# certificates
+--------------------------------------------------------------*/
+
+
+
 
 /*--------------------------------------------------------------
 # Facts
@@ -1094,3 +1175,54 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+.link_style{
+   display: block;
+}
+
+tbody .tr{
+   margin: 10px;
+}
+
+.pading_row{
+  margin: 10px;
+}
+
+
+.main_shorts > div {
+  
+  margin: 5px;
+  /* border:1px solid ; */
+  justify-content: center;
+  align-items: center; 
+  border-radius: 25px;
+   
+
+}
+
+
+ .box {
+  text-align: center;
+  font-family: cursive;
+  font-size: 24px;
+  border: 2px solid black;
+ 
+  padding: 1rem 1rem;
+  min-height: 1em;
+  width: 60%;
+  background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
+}
+
+
+@media (max-width:600px) {
+ .box {
+  width: 100%;
+ }
+ .thumbnail_img {
+  width: 80%;
+ }
+  
+}
+
+
