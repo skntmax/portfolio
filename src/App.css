@@ -457,8 +457,9 @@
   }
 
   #main {
-    margin-left: 0;
-    padding-top: 80px;
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding-top: 70px !important;
   }
 }
 
