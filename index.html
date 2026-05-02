@@ -27,15 +27,11 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;600;700;800&family=Poppins:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -44,10 +40,48 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js" integrity="sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js" integrity="sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+
+  <div id="page-loader" class="page-loader" aria-busy="true" aria-live="polite" aria-label="Loading page">
+    <div class="page-loader__inner">
+      <div class="page-loader__spinner" aria-hidden="true"></div>
+      <p class="page-loader__text">Loading portfolio…</p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var done = false;
+      var el = document.getElementById("page-loader");
+      var root = document.documentElement;
+      var maxMs = 16000;
+      function finish() {
+        if (done) return;
+        done = true;
+        try {
+          clearTimeout(fallback);
+        } catch (e) {}
+        root.classList.add("page-loaded");
+        if (el) el.setAttribute("aria-busy", "false");
+        function lazyBelowFold() {
+          var imgs = document.querySelectorAll("#main img:not([loading])");
+          for (var i = 3; i < imgs.length; i++) imgs[i].loading = "lazy";
+        }
+        if ("requestIdleCallback" in window) requestIdleCallback(lazyBelowFold, { timeout: 2000 });
+        else setTimeout(lazyBelowFold, 200);
+      }
+      var fallback = setTimeout(finish, maxMs);
+      if (document.readyState === "complete") {
+        setTimeout(finish, 0);
+      } else {
+        window.addEventListener("load", finish, { once: true });
+      }
+    })();
+  </script>
+
+  <div id="siteCustomCursor" class="site-custom-cursor" aria-hidden="true"><span class="site-custom-cursor-dot"></span></div>
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -59,7 +93,7 @@
       <div class="profile">
         
           <img src="assets/img/Hompage_old.jpg" alt=" " style="border-radius: 50%; border-width: 2px; " height="20px" width="50px" class="img-fluid rounded-circle">
-          <h1 class="text-light"><a href="index.html">Shashi kant </a> <a href="./assets/shashi kant aug 2025.pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </i>  </h1>
+          <h1 class="text-light"><a href="index.html">Shashi kant </a> <a href="https://drive.google.com/file/d/1AqmrtivS4dBFPFAiPJYRZrr7n6LRy-ld/view?usp=sharing" title=" download resume" ><i class="bi bi-download"></i> </a>  </i>  </h1>
           <div class="social-links mt-3 text-center">
            <a href="https://www.youtube.com/@skntmax" class="twitter"><i class="bx bxl-youtube"></i></a>
            <a href="https://twitter.com/Shashik84927339" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -86,19 +120,29 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1> shashi kant <a href="./assets/shashi kant aug 2025.pdf" title=" download resume" ><i class="bi bi-download"></i> </a>  </h1>
-      <p>
-    <span id="typed"></span>
-    <span id="loader" style="display:none; margin-left:10px;">
-       <img 
-        src="./assets/img/paytm.png" 
-        alt="Paytm" 
-        style="height:20px; vertical-align:middle; margin-left:5px;">
-    </span>
-  </p>
-
+  <section id="hero" class="hero-wave d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-wave-bg" aria-hidden="true">
+      <div id="hero-line-waves-container" class="hero-line-waves-gl"></div>
+      <div class="hero-wave-vignette"></div>
+    </div>
+    <a href="mailto:skntjee@gmail.com" class="hero-wave-side-mail">skntjee@gmail.com</a>
+    <div class="hero-container hero-wave-content text-center" data-aos="fade-in">
+      <div class="hero-wave-intro">
+        <span class="hero-wave-greet">Hi, I'm</span>
+        <div class="hero-wave-name-wrap">
+          <h1 class="hero-wave-name">Shashi Kant</h1>
+          <a href="https://drive.google.com/file/d/1AqmrtivS4dBFPFAiPJYRZrr7n6LRy-ld/view?usp=sharing" class="hero-wave-resume" title="Download resume" aria-label="Download resume"><i class="bi bi-download"></i></a>
+        </div>
+        <span class="hero-wave-bar" aria-hidden="true"></span>
+      </div>
+      <p class="hero-wave-sub">Full stack developer passionate about building sleek, reliable web experiences.</p>
+      <p class="hero-wave-typed">
+        <span id="typed"></span>
+        <span id="loader" style="display:none; margin-left:10px;">
+          <img src="./assets/img/paytm.png" alt="Paytm" style="height:20px; vertical-align:middle; margin-left:5px;">
+        </span>
+      </p>
+      <a href="#portfolio" class="hero-wave-cta">View projects</a>
     </div>
   </section><!-- End Hero -->
 
@@ -1580,6 +1624,8 @@
   <!-- <script src="./assets/js/tsparticles.engine.min.js"></script> -->
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-line-waves-gl.js"></script>
+  <script src="assets/js/hero-wave-canvas.js"></script>
 
 
 
