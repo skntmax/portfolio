@@ -7,18 +7,25 @@
   var open = false;
 
   var SECTIONS = [
-    { id: "hero", title: "Home", keywords: "hero intro shashi kant paytm senior software engineer" },
+    { id: "hero", title: "Home", keywords: "hero intro shashi kant paytm senior software engineer hire" },
     { id: "about", title: "About", keywords: "profile summary experience fintech enterprise mern spring boot" },
+    { id: "impact", title: "Selected outcomes", keywords: "metrics outcomes 100k transactions 70k jobs latency redis kubernetes circuit breaker production" },
+    { id: "timeline", title: "Career timeline", keywords: "paytm policybazaar value innovation labs trajectory growth" },
+    { id: "how-i-work", title: "How I work", keywords: "ownership reliability observability collaboration senior" },
+    { id: "systems", title: "Systems depth", keywords: "kafka redis api gateway jwt oauth kubernetes aws fintech distributed" },
+    { id: "facts", title: "At a glance", keywords: "open to roles domain stack location timezone" },
     { id: "certificates", title: "Certificates", keywords: "internshala hackerrank kubernetes aws oracle react sql node" },
-    { id: "facts", title: "Facts", keywords: "stats clients projects" },
     { id: "skills", title: "Skills", keywords: "java spring nestjs kafka redis react next aws docker kubernetes typescript python" },
     { id: "resume", title: "Resume & Experience", keywords: "paytm policybazaar value innovation labs education btech internship" },
-    { id: "Experience", title: "Major Projects", keywords: "zamtel swiftcab codexcave rozgar ccil epil phoenix luxorpen hrms" },
+    { id: "Experience", title: "Major Projects", keywords: "zamtel swiftcab codexcave rozgar ccil epil phoenix luxorpen architecture" },
+    { id: "swiftcab", title: "SwiftCab.in — Flagship", keywords: "swiftcab cab booking kafka redis websocket golang ola rapido real-time ride hailing flagship" },
     { id: "project_shorts", title: "Project Shorts", keywords: "screenshots zoom geolocation oauth cover letter luxorpen" },
     { id: "product", title: "Product", keywords: "product showcase" },
     { id: "portfolio", title: "Mini Projects", keywords: "portfolio demos blog store" },
+    { id: "proof", title: "Proof & social", keywords: "resume github linkedin recommendations ccil rozgar codexcave" },
+    { id: "hire", title: "Hire CTA", keywords: "available senior roles email calendly contact hiring" },
     { id: "services", title: "Services", keywords: "microservices apis cloud devops system design ai automation" },
-    { id: "contact", title: "Contact", keywords: "email phone noida skntjee hire message" }
+    { id: "contact", title: "Contact", keywords: "email phone noida skntjee hire message ist notice" }
   ];
 
   function buildIndex() {
