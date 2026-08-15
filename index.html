@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 
 <head>
@@ -11,27 +11,48 @@
    
   <meta content="Senior Software Engineer with 5+ years experience in Fintech & Enterprise. Expert in Java Spring Boot, MERN, Microservices, Kafka, AWS, and System Design." name="description">
   <meta content="Senior Software Engineer, Full Stack, MERN, Java Spring Boot, NestJS, Kafka, Microservices, Paytm, Noida" name="keywords">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#040b14">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("portfolio-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.style.colorScheme = t;
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;600;700;800&family=Poppins:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
-  <!-- Template Main CSS File -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="assets/css/theme-polish.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  </noscript>
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -40,10 +61,39 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js" integrity="sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+
+  <button type="button" id="site-search-toggle" class="site-search-toggle" aria-label="Search portfolio" title="Search (Ctrl/⌘ K)">
+    <i class="bi bi-search" aria-hidden="true"></i>
+    Search
+    <kbd data-search-shortcut>Ctrl K</kbd>
+  </button>
+
+  <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to day mode" title="Day mode">
+    <i class="bi bi-sun-fill theme-icon-sun" aria-hidden="true"></i>
+    <i class="bi bi-moon-stars-fill theme-icon-moon" aria-hidden="true"></i>
+  </button>
+
+  <div id="site-search-hint" class="site-search-hint" hidden role="status">
+    <span>Press <strong data-search-shortcut>Ctrl K</strong> or <strong>/</strong> to search this portfolio</span>
+    <button type="button" id="site-search-hint-close" aria-label="Dismiss">×</button>
+  </div>
+
+  <div id="site-search" class="site-search" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search portfolio">
+    <div id="site-search-backdrop" class="site-search__backdrop"></div>
+    <div class="site-search__panel">
+      <div class="site-search__bar">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <input id="site-search-input" type="search" placeholder="Search skills, projects, experience…" autocomplete="off" spellcheck="false">
+        <button type="button" id="site-search-close" class="site-search__close" aria-label="Close search">ESC</button>
+      </div>
+      <ul id="site-search-results" class="site-search__results" role="listbox"></ul>
+      <p id="site-search-empty" class="site-search__empty" hidden>No matches — try “Paytm”, “Kafka”, or “Contact”.</p>
+      <p class="site-search__hint-keys">↑↓ navigate · Enter open · Esc close · <kbd>/</kbd> quick open</p>
+    </div>
+  </div>
 
   <div id="page-loader" class="page-loader" aria-busy="true" aria-live="polite" aria-label="Loading page">
     <div class="page-loader__inner">
@@ -56,7 +106,7 @@
       var done = false;
       var el = document.getElementById("page-loader");
       var root = document.documentElement;
-      var maxMs = 16000;
+      var maxMs = 4000;
       function finish() {
         if (done) return;
         done = true;
@@ -91,18 +141,41 @@
     <div class="d-flex flex-column" id="tsparticles" >
 
       <div class="profile">
-        
-          <img src="assets/img/Hompage_old.jpg" alt=" " style="border-radius: 50%; border-width: 2px; " height="20px" width="50px" class="img-fluid rounded-circle">
-          <h1 class="text-light"><a href="index.html">Shashi kant </a> <a href="https://drive.google.com/file/d/13itijstIxibFY8EeD8GnLE02lHDfVcnJ/view?usp=sharing" title=" download resume" ><i class="bi bi-download"></i> </a>  </i>  </h1>
-          <div class="social-links mt-3 text-center">
-           <a href="https://github.com/skntmax" class="github" title="GitHub"><i class="bx bxl-github"></i></a>
-           <a href="https://www.youtube.com/@skntmax" class="twitter" title="YouTube"><i class="bx bxl-youtube"></i></a>
-           <a href="https://twitter.com/Shashik84927339" class="twitter" title="Twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/shashikantkumar.skntmax" class="facebook" title="Facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/skntmax/" class="instagram" title="Instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/shashi-kant-5a1710185/" class="linkedin" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-        
-         </div>
+        <div class="profile-avatar-wrap">
+          <span class="profile-avatar-ring" aria-hidden="true"></span>
+          <img src="assets/img/Hompage_old.jpg" alt="Shashi Kant" class="profile-avatar img-fluid" width="120" height="120">
+          <span class="profile-status" title="Open to opportunities"><span class="profile-status-dot"></span></span>
+        </div>
+        <p class="profile-eyebrow">Senior Software Engineer</p>
+        <h1 class="profile-name">
+          <a href="index.html">Shashi Kant</a>
+        </h1>
+        <p class="profile-company">
+          <i class="bi bi-building" aria-hidden="true"></i> Paytm · Noida
+        </p>
+        <p class="profile-tagline">Full Stack · MERN · Java Spring Boot</p>
+        <div class="profile-stack" aria-label="Core stack">
+          <span>Java</span>
+          <span>Spring</span>
+          <span>Kafka</span>
+          <span>React</span>
+          <span>AWS</span>
+        </div>
+        <div class="profile-actions">
+          <a class="profile-resume-btn" href="https://drive.google.com/file/d/13itijstIxibFY8EeD8GnLE02lHDfVcnJ/view?usp=sharing" target="_blank" rel="noopener" title="Download resume">
+            <i class="bi bi-download" aria-hidden="true"></i> Resume
+          </a>
+          <a class="profile-contact-btn" href="#contact" title="Contact">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/skntmax" class="github" title="GitHub" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/shashi-kant-5a1710185/" class="linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.youtube.com/@skntmax" class="youtube" title="YouTube" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://twitter.com/Shashik84927339" class="twitter" title="Twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.instagram.com/skntmax/" class="instagram" title="Instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
@@ -113,7 +186,7 @@
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#Experience" class="nav-link scrollto"><i class="bx bx-briefcase"></i> <span>Major projects</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Mini projects</span></a></li>
-          <li><a href="#project_shorts" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects shorts</span></a></li>
+          <li><a href="#project_shorts" class="nav-link scrollto"><i class="bx bx-images"></i> <span>Project shorts</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -813,184 +886,112 @@
 
 
 
-  <div class="container" id="project_shorts">
-    <div class="section-title">
-      <h2 class="normalText"> Some shorts   </h2>
-    </div>
-     
-    <div class="row text-center d-flex flex-wrap main_shorts  ">
-
-      <div class="col-sm box ">
-        <p style="text-decoration: none; color:white" >
-          csc-o-auth integration for resume making in collbaration with rozgar.com 
-          </p>
-
-                 
-        <a  href="./assets/img/projects_shorts/csc/csc o auth.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-          <img width="400" width="400" src="./assets/img/projects_shorts/csc/csc o auth.png" />
-                </a>
-  
-
-       <a href="./assets/img/projects_shorts/csc/csc screenshot .png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="csc-o-auth integration for resume making in collbaration with rozgar.com"><h4> FULL PREVIEW</h4> </a>       
-     </div>
-
-
-
-      <div class="col-sm box">
-         <p style="text-decoration: none; color:white" > Geolocation candiate tracking system  </p> 
-        <a  href="./assets/img/projects_shorts/Geolocation_candidate_tracker.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-        <img width="400" width="400" src="./assets/img/projects_shorts/Geolocation_candidate_tracker.png" />
-              
-              </a>
-
-        <a href="./assets/img/projects_shorts/Geolocation_candidate_tracker.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Geolocation candiate tracking system"><h4> FULL PREVIEW</h4> </a>
-        
+  <section id="project_shorts" class="project-shorts">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="normalText">Project shorts</h2>
+        <p>Selected product moments — screenshots and feature previews from live builds.</p>
       </div>
 
+      <div class="shorts-grid">
 
-
-
-
-      <div class="col-sm box ">
-    <p style="text-decoration: none; color:white" > Geolocation candiate tracking system</p>        
-
-        
-        <a  href="./assets/img/projects_shorts/Geolocation_candidate_tracker2.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-              
-          <img width="400" width="400" src="./assets/img/projects_shorts/Geolocation_candidate_tracker2.png" />
-              </a>
-
-      
-        <a href="./assets/img/projects_shorts/Geolocation_candidate_tracker2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Geolocation candiate tracking system"><h4> FULL PREVIEW</h4> </a>
-      
-      </div>
-
-
-
-
-
-
-
-
-      <div class="col-sm box ">
-        <p style="text-decoration: none; color:white" >  Zoom integration  (candidates and recruiter ) </p>
-
-        <a  href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-              
-          <img width="400" width="400" src="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" />
-              </a>
-
-     
-        <a href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Zoom integration for candidates and recruiter on recruit.rozgar.com"><h4> FULL PREVIEW</h4> </a>
-      
-      </div>
-
-    
-      <div class="col-sm box">
-                  <p style="text-decoration: none; color:white" >  Zoom integration for candidates and recruiter on recruit.rozgar.com </p>  
-        <a  href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-          <img width="400" width="400" src="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" />
-              </a>
-
-        
-       
-        <a href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=" Zoom integration for candidates and recruiter on recruit.rozgar.com"><h4> FULL PREVIEW</h4> </a>
-        <a href="https://recruit.rozgar.com" >  </a>
-      </div>
-
-
-      
-      <div class="col-sm box">
-        <p >    <a href="https://rozgar.com" style="text-decoration: none; color:white" > rozgar.com </a>    </p>
-        
-           
-        <a  href="./assets/img/projects_shorts/rozgar.com.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-          <img width="400" width="400" src="./assets/img/projects_shorts/rozgar.com.png" />
-              </a>
-
-     
-               <div class="inline">
-                <a href="./assets/img/projects_shorts/rozgar.com.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="rozgar.com"><h4> FULL PREVIEW</h4> </a>
-            
-               </div>
-
-      </div>
-
-      
-
-      <div class="col-sm box ">
-        <p  > <a style="text-decoration: none; color:white " href="https://eoffice.cciltd.in/" target="_blank"> https://eoffice.cciltd.in/ </a>  </p>
-           
-        <a  href="./assets/img/projects_shorts/ccil.png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-        <img width="400" width="400" src="./assets/img/projects_shorts/ccil.png" />
-            </a>
-
-            
-        <a href="./assets/img/projects_shorts/ccil.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="https://eoffice.cciltd.in"><h4> FULL PREVIEW</h4> </a>
-        <a href="https://eoffice.cciltd.in/" > CCIL  </a>
-      </div>
-
-
-
-            
-      <div class="col-sm box ">
-
-
-        <p  > <a style="text-decoration: none; color:white " href="https://rozgar.com/create-cover-letter" target="_blank"> Cover letter generation and profile summariser module while job apply</a>  </p>
-           
-        <a  href="./assets/img/projects_shorts/cover_letter/cover letter genration .png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-        <img width="400" width="400" src="./assets/img/projects_shorts/cover_letter/cover letter genration .png" />           
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/csc/csc o auth.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="CSC OAuth — resume integration with Rozgar">
+            <img src="./assets/img/projects_shorts/csc/csc o auth.png" alt="CSC OAuth integration" loading="lazy" width="640" height="400">
           </a>
+          <div class="short-card__body">
+            <h3>CSC OAuth resume flow</h3>
+            <p>OAuth integration for resume creation in collaboration with Rozgar.com</p>
+            <a href="./assets/img/projects_shorts/csc/csc screenshot .png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="CSC OAuth full preview">View preview</a>
+          </div>
+        </article>
 
-         
-         <a href="./assets/img/projects_shorts/cover_letter/cover letter genration .png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="candidate can generate cover letter while applying for any particalur job on the spot "><h4> FULL PREVIEW</h4> </a>
-         
-         
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/Geolocation_candidate_tracker.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Geolocation candidate tracking">
+            <img src="./assets/img/projects_shorts/Geolocation_candidate_tracker.png" alt="Geolocation candidate tracking" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Geolocation tracker</h3>
+            <p>Map-based candidate locality tracking for recruiters and admins</p>
+            <a href="./assets/img/projects_shorts/Geolocation_candidate_tracker2.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Geolocation tracker alternate view">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Zoom integration on Rozgar">
+            <img src="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" alt="Zoom interview integration" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Zoom interviews</h3>
+            <p>In-platform interviews for candidates and recruiters on Rozgar</p>
+            <a href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com1.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Zoom integration preview">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/rozgar.com.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Rozgar.com">
+            <img src="./assets/img/projects_shorts/rozgar.com.png" alt="Rozgar.com job portal" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Rozgar.com</h3>
+            <p>Job portal rebuilt with Next.js, SEO, and AI-assisted apply flows</p>
+            <div class="short-card__meta">
+              <a href="https://rozgar.com" target="_blank" rel="noopener" class="short-card__ext">Visit site</a>
+              <a href="./assets/img/projects_shorts/rozgar.com.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Rozgar.com preview">View preview</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/ccil.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="CCIL eOffice">
+            <img src="./assets/img/projects_shorts/ccil.png" alt="CCIL eOffice" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>CCIL eOffice</h3>
+            <p>Government file &amp; leave workflow for Cement Corporation of India</p>
+            <div class="short-card__meta">
+              <a href="https://eoffice.cciltd.in/" target="_blank" rel="noopener" class="short-card__ext">Visit site</a>
+              <a href="./assets/img/projects_shorts/ccil.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="CCIL preview">View preview</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/cover_letter/cover letter genration .png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="AI cover letter generator">
+            <img src="./assets/img/projects_shorts/cover_letter/cover letter genration .png" alt="Cover letter generator" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>AI cover letter</h3>
+            <p>On-the-spot cover letter &amp; profile summary while applying for jobs</p>
+            <a href="./assets/img/projects_shorts/cover_letter/cover letter genration .png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Cover letter module">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="GPT profile summariser">
+            <img src="./assets/img/projects_shorts/cover_letter/summariser .gif" alt="GPT summariser" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>GPT summariser</h3>
+            <p>OpenAI-powered profile summary generation for job applications</p>
+            <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Summariser preview">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/luxor  .png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Luxorpen">
+            <img src="./assets/img/projects_shorts/luxor  .png" alt="Luxorpen website" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Luxorpen</h3>
+            <p>Next.js CMS &amp; product catalog for India's leading pen brand</p>
+            <a href="./assets/img/projects_shorts/luxor2.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Luxorpen preview">View preview</a>
+          </div>
+        </article>
+
       </div>
-
-
-
-
-      <div class="col-sm box">
-
-        
-        <p  > <a style="text-decoration: none; color:white " href="https://rozgar.com" target="_blank">   chat gpt api intergation of text-davinchi-002 </a>  </p>
-           
-         
-        <p>  </p>
-        <a  href="./assets/img/projects_shorts/cover_letter/summariser .gif"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-        <img width="400" width="400" src="./assets/img/projects_shorts/cover_letter/summariser .gif" />
-         
-        </a>
-
-         <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" data-gallery="portfolioGallery" class="portfolio-lightbox" title="summary creator tool using gpt 4 api and open api layer  "><h4> FULL PREVIEW</h4> </a>
-        
-      </div>
-
-
-    
-
-      
-      <div class="col-sm box">
-
-
-        <p  style="text-decoration: none; color:white "> Luxemburg site </p>
-         <a  href="./assets/img/projects_shorts/luxor  .png"  data-gallery="portfolioGallery" class="portfolio-lightbox"  > 
-          <img width="400" width="400" src="./assets/img/projects_shorts/luxor  .png" /> 
-         </a>
-
-         <a href="./assets/img/projects_shorts/luxor2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Luxorpen" ><h4> FULL PREVIEW</h4> </a>
-       
-      </div>
-
     </div>
-  </div>
-   
-
-
-
-
-
+  </section>
 
 <!-- product section  -->
 
@@ -1570,17 +1571,10 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits"> 
-        
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by 
-        <a href="https://bootstrapmade.com/"> BootstrapMade </a>
+      <div class="sidebar-signature">
+        <span class="sidebar-signature__mark" aria-hidden="true">SK</span>
+        <p class="sidebar-signature__name">Shashi Kant</p>
+        <p class="sidebar-signature__line">Built with intent · Noida</p>
       </div>
     </div>
   </footer><!-- End  Footer -->
@@ -1588,110 +1582,34 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   
-   
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="script.js">  </script>
-  <!-- <script src="./assets/js/tsparticles.engine.min.js"></script> -->
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/hero-line-waves-gl.js"></script>
-  <script src="assets/js/hero-wave-canvas.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script defer src="assets/js/site-search.js"></script>
+  <script defer src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script defer src="assets/js/script.js"></script>
+  <script defer src="assets/vendor/aos/aos.js"></script>
+  <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script defer src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script defer src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script defer src="assets/vendor/typed.js/typed.min.js"></script>
+  <script defer src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="assets/js/main.js"></script>
 
-
-
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-move-base@2/tsparticles.move.base.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-plugin-emitters@2/tsparticles.plugin.emitters.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-circle@2/tsparticles.shape.circle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-square@2/tsparticles.shape.square.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-color@2/tsparticles.updater.color.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-life@2/tsparticles.updater.life.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-opacity@2/tsparticles.updater.opacity.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-out-modes@2/tsparticles.updater.out-modes.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-roll@2/tsparticles.updater.roll.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-rotate@2/tsparticles.updater.angle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-size@2/tsparticles.updater.size.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-tilt@2/tsparticles.updater.tilt.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-wobble@2/tsparticles.updater.wobble.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.bundle.min.js"></script>
   <script>
-(async () => {
-   
-   await loadConfettiPreset(tsParticles); // this is required only if you are not using the bundle script  
-   setInterval(async ()=>{
-    await tsParticles.load("tsparticles", {
-  color: {
-      value: ["#0000ff", "#00ff00"],
-    },
-    
-  emitters: [
-    {
-      
-      life: {
-        duration: 5,
-        count: 1,
-      },
-      position: {
-        x: 0,
-        y: 30,
-      },
-      particles: {
-             },
-    },
-    {
-      life: {
-        duration: 5,
-        count: 1,
-      },
-      position: {
-        x: 100,
-        y: 30,
-      },
-      particles: {
-        move: {
-          direction: "top-left",
-        },
-      },
-    },
-    
-  ],
-    
-  preset: "confetti",
-});
-
-   } , 6000 ) 
-    
-})();
-
-
-  
-  var typed = new Typed("#typed", {
-    strings: ["Senior Software Engineer at"],
-    typeSpeed: 50,
-    backSpeed: 25,
-    loop: false,
-    onComplete: function() {
-      document.getElementById("loader").style.display = "inline-block";
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof Typed === "undefined") return;
+    new Typed("#typed", {
+      strings: ["Senior Software Engineer at"],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: false,
+      onComplete: function () {
+        var loader = document.getElementById("loader");
+        if (loader) loader.style.display = "inline-block";
+      }
+    });
   });
-
-
-
-
   </script>
 
 </body>

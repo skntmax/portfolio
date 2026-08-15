@@ -7,19 +7,106 @@
 */
 
 /*--------------------------------------------------------------
+# Theme tokens (dark default / light via data-theme)
+--------------------------------------------------------------*/
+:root,
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #061018;
+  --bg-elevated: #0b1620;
+  --bg-muted: #0f1c28;
+  --bg-header: #07131c;
+  --sidebar-bg: #07131c;
+  --sidebar-bg-accent: linear-gradient(165deg, #0a1a24 0%, #07131c 42%, #0d2824 100%);
+  --sidebar-text: #f1f5f9;
+  --sidebar-muted: #94a3b8;
+  --sidebar-nav: #a8b3c2;
+  --sidebar-nav-hover: #ffffff;
+  --sidebar-icon: #64748b;
+  --sidebar-border: rgba(148, 163, 184, 0.16);
+  --sidebar-chip-bg: rgba(45, 212, 191, 0.12);
+  --sidebar-chip-text: #5eead4;
+  --text: #d5dde6;
+  --text-strong: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #14b8a6;
+  --accent-strong: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.14);
+  --link: #38bdf8;
+  --link-hover: #7dd3fc;
+  --border: rgba(148, 163, 184, 0.18);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --hero-bg: #020617;
+  --hero-name: #2dd4bf;
+  --surface-card: rgba(15, 28, 40, 0.72);
+  --progress-track: rgba(148, 163, 184, 0.18);
+  --abnormal: #e2e8f0;
+  --table-row: rgba(255, 255, 255, 0.03);
+  --focus-ring: 0 0 0 3px rgba(45, 212, 191, 0.35);
+  --bg-gradient:
+    radial-gradient(1200px 600px at 10% -10%, rgba(20, 184, 166, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(56, 189, 248, 0.08), transparent 50%),
+    linear-gradient(180deg, #061018 0%, #040b14 100%);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #eef3f7;
+  --bg-elevated: #ffffff;
+  --bg-muted: #e4ecf3;
+  --bg-header: #f7fafc;
+  --sidebar-bg: #f7fafc;
+  --sidebar-bg-accent: linear-gradient(165deg, #ffffff 0%, #f0f7f6 45%, #e8f4f2 100%);
+  --sidebar-text: #0f172a;
+  --sidebar-muted: #64748b;
+  --sidebar-nav: #475569;
+  --sidebar-nav-hover: #0f172a;
+  --sidebar-icon: #94a3b8;
+  --sidebar-border: rgba(15, 23, 42, 0.1);
+  --sidebar-chip-bg: rgba(15, 118, 110, 0.1);
+  --sidebar-chip-text: #0f766e;
+  --text: #334155;
+  --text-strong: #0f172a;
+  --text-muted: #64748b;
+  --accent: #0f766e;
+  --accent-strong: #0d9488;
+  --accent-soft: rgba(13, 148, 136, 0.12);
+  --link: #0369a1;
+  --link-hover: #0284c7;
+  --border: rgba(15, 23, 42, 0.1);
+  --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  --hero-bg: #0b1220;
+  --hero-name: #5eead4;
+  --surface-card: rgba(255, 255, 255, 0.9);
+  --progress-track: #dbe4ee;
+  --abnormal: #0f172a;
+  --table-row: rgba(15, 23, 42, 0.03);
+  --focus-ring: 0 0 0 3px rgba(13, 148, 136, 0.28);
+  --bg-gradient:
+    radial-gradient(1000px 520px at 0% 0%, rgba(13, 148, 136, 0.1), transparent 55%),
+    radial-gradient(800px 420px at 100% 10%, rgba(14, 165, 233, 0.08), transparent 50%),
+    linear-gradient(180deg, #f4f7fa 0%, #e8eef4 100%);
+}
+
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-  /* font-family: 'Montserrat', sans-serif;
-  font-family: 'Poppins', sans-serif; */
-  font-family: 'Source Code Pro', monospace; 
-  font-size: 20px;
-  color: rgba(213, 213, 213, 1); 
-  /* text-decoration-thickness: 1px; */
-  background: rgb(2,0,36);  
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(1,26,38,1) 0%, rgba(4,14,19,1) 100%);  
+  font-family: "Montserrat", "Poppins", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
 
- }
+code, .skill .val, .hero-wave-side-mail {
+  font-family: "Source Code Pro", ui-monospace, monospace;
+}
 
 /*--------------------------------------------------------------
 # Page load overlay
@@ -35,7 +122,7 @@ html:not(.page-loaded) body {
   z-index: 20000;
   display: grid;
   place-items: center;
-  background: #020617;
+  background: var(--hero-bg, #020617);
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -88,28 +175,22 @@ html.page-loaded .page-loader {
   }
 }
 
-customBodySection {
-  background: rgb(2,0,36);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(1,26,38,1) 0%, rgba(4,14,19,1) 100%);  
-} 
-
-
 .normalText{
-   color:white !important;
+   color: var(--text-strong) !important;
 }
 
-
 .abnormalText{
-  color:black !important;
+  color: var(--abnormal) !important;
 }
 
 a {
-  color: #149ddd;
+  color: var(--link);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #37b3ed;
+  color: var(--link-hover);
   text-decoration: none;
 }
 
@@ -119,7 +200,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  color: var(--text-strong);
 }
 
 /*--------------------------------------------------------------
@@ -164,19 +246,20 @@ h6 {
   left: 0;
   bottom: 0;
   width: 300px;
-  transition: all ease-in-out 0.5s;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
   z-index: 9997;
-  transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  background: var(--bg-header);
   overflow-y: auto;
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 #header .profile img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid #2c2f3f;
+  border: 3px solid var(--sidebar-border);
 }
 
 #header .profile h1 {
@@ -186,20 +269,20 @@ h6 {
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", "Poppins", sans-serif;
 }
 
 #header .profile h1 a,
 #header .profile h1 a:hover {
-  color: #fff;
+  color: var(--sidebar-text);
   text-decoration: none;
 }
 
 #header .profile .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #212431;
-  color: #fff;
+  background: transparent;
+  color: var(--sidebar-muted);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -211,7 +294,7 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #149ddd;
+  background: var(--accent);
   color: #fff;
   text-decoration: none;
 }
@@ -255,7 +338,7 @@ h6 {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: var(--sidebar-nav);
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -266,7 +349,7 @@ h6 {
 .nav-menu a:focus i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: var(--sidebar-icon);
 }
 
 .nav-menu a:hover,
@@ -274,14 +357,14 @@ h6 {
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
   text-decoration: none;
-  color: #fff;
+  color: var(--sidebar-nav-hover);
 }
 
 .nav-menu a:hover i,
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #149ddd;
+  color: var(--accent-strong);
 }
 
 /* Mobile Navigation */
@@ -650,12 +733,13 @@ section {
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: var(--text-strong);
+  letter-spacing: -0.02em;
 }
 
 .section-title h2::after {
@@ -664,13 +748,16 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #149ddd;
+  background: linear-gradient(90deg, var(--accent), var(--link));
   bottom: 0;
   left: 0;
+  border-radius: 2px;
 }
 
 .section-title p {
   margin-bottom: 0;
+  color: var(--text);
+  max-width: 72ch;
 }
 
 /*--------------------------------------------------------------
@@ -835,42 +922,48 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-strong);
 }
 
 .skills .progress .skill .val {
   float: right;
   font-style: normal;
+  color: var(--accent-strong);
 }
 
 .skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
+  background: var(--progress-track);
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 .skills .progress-bar {
   width: 1px;
-  height: 10px;
+  height: 8px;
   transition: 0.9s;
-  background-color: #149ddd;
+  background: linear-gradient(90deg, var(--accent), var(--link));
+  border-radius: 999px;
 }
 
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
 .resume .resume-title {
-  font-size: 26px;
+  font-size: 1.35rem;
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: var(--text-strong);
 }
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid var(--accent);
   position: relative;
 }
 
@@ -879,18 +972,20 @@ section {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  color: var(--text-strong);
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
+  background: var(--accent-soft);
+  color: var(--text-strong);
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  border-radius: 6px;
 }
 
 .resume .resume-item ul {
@@ -908,13 +1003,14 @@ section {
 .resume .resume-item::before {
   content: "";
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50px;
-  left: -9px;
+  left: -8px;
   top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 /*--------------------------------------------------------------
@@ -1473,7 +1569,8 @@ section {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #040b14;
+  background: var(--bg-header);
+  border-top: 1px solid var(--border);
 }
 
 #footer .copyright {
