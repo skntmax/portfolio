@@ -83,6 +83,86 @@ code,
     #020617;
 }
 
+/* Blender-studio depth layers (aurora + soft bloom + floor) */
+.hero-stage__aurora {
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 42% 38% at 78% 38%, rgba(45, 212, 191, 0.28), transparent 58%),
+    radial-gradient(ellipse 36% 42% at 62% 62%, rgba(56, 189, 248, 0.18), transparent 60%),
+    radial-gradient(ellipse 30% 28% at 88% 18%, rgba(125, 211, 252, 0.12), transparent 55%);
+  filter: saturate(1.15);
+  animation: heroAuroraDrift 14s ease-in-out infinite alternate;
+  opacity: 0.9;
+}
+
+.hero-stage__bloom {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle 28% at 72% 44%, rgba(94, 234, 212, 0.16), transparent 70%),
+    radial-gradient(circle 18% at 68% 40%, rgba(255, 255, 255, 0.06), transparent 65%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.hero-stage__floor {
+  position: absolute;
+  left: 8%;
+  right: 4%;
+  bottom: -8%;
+  height: 42%;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(2, 6, 23, 0.15) 35%, rgba(2, 6, 23, 0.72) 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 47px,
+      rgba(45, 212, 191, 0.05) 48px,
+      rgba(45, 212, 191, 0.05) 49px
+    );
+  transform: perspective(520px) rotateX(58deg);
+  transform-origin: center top;
+  mask-image: radial-gradient(ellipse 70% 80% at 70% 0%, #000 10%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 70% 0%, #000 10%, transparent 75%);
+  opacity: 0.55;
+}
+
+@keyframes heroAuroraDrift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-2.5%, 1.5%, 0) scale(1.04); }
+}
+
+.hero-stage--blender .hero-stage__card {
+  background: linear-gradient(165deg, rgba(8, 18, 32, 0.72), rgba(6, 16, 28, 0.55));
+  border-color: rgba(94, 234, 212, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(20, 184, 166, 0.08);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.hero-stage--blender .hero-title {
+  text-shadow:
+    0 0 28px rgba(45, 212, 191, 0.28),
+    0 0 60px rgba(56, 189, 248, 0.12);
+}
+
+.hero-stage--blender .hero-btn--primary {
+  box-shadow: 0 0 24px rgba(45, 212, 191, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage__aurora {
+    animation: none;
+  }
+}
+
 .hero-three-root {
   position: absolute;
   inset: 0;
@@ -485,6 +565,15 @@ html[data-theme="light"] .hero-stage__grid {
   .hero-stage__card {
     max-width: 320px;
     width: 100%;
+  }
+
+  .hero-stage__aurora {
+    opacity: 0.7;
+  }
+
+  .hero-stage__floor {
+    opacity: 0.35;
+    height: 32%;
   }
 
   .hero-stage__vignette {

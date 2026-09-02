@@ -215,11 +215,14 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero-stage">
+  <section id="hero" class="hero-stage hero-stage--blender">
     <div class="hero-stage__bg" aria-hidden="true">
+      <div class="hero-stage__aurora"></div>
       <div id="hero-three-root" class="hero-three-root"></div>
+      <div class="hero-stage__bloom"></div>
       <div class="hero-stage__vignette"></div>
       <div class="hero-stage__grid"></div>
+      <div class="hero-stage__floor"></div>
     </div>
 
     <div class="hero-stage__layout">
@@ -1804,10 +1807,18 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
   <script src="assets/js/theme.js"></script>
   <script defer src="assets/js/sidebar.js"></script>
   <script defer src="assets/js/site-search.js"></script>
-  <script defer src="assets/js/hero-three.js"></script>
+  <script type="module" src="assets/js/hero-three.js"></script>
   <script defer src="assets/js/motion.js"></script>
   <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script defer src="assets/vendor/typed.js/typed.min.js"></script>
