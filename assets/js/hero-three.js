@@ -5,6 +5,7 @@
  */
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 (function () {
   "use strict";
@@ -171,17 +172,20 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
       var mats = Array.isArray(child.material) ? child.material : [child.material];
       mats.forEach(function (m) {
         if (!m) return;
-        m.envMapIntensity = 1.1;
-        if (m.emissive) m.emissiveIntensity = Math.min((m.emissiveIntensity || 0.2) * 1.15, 1.2);
+        m.envMapIntensity = 1.25;
+        if (m.metalness !== undefined) m.metalness = Math.min(Math.max(m.metalness || 0.7, 0.55), 0.95);
+        if (m.roughness !== undefined) m.roughness = Math.min(m.roughness || 0.22, 0.35);
+        if (m.emissive) {
+          m.emissiveIntensity = Math.min(Math.max(m.emissiveIntensity || 0.35, 0.35) * 1.2, 1.35);
+        }
         m.needsUpdate = true;
       });
     });
-    /* Normalize size */
     var box = new THREE.Box3().setFromObject(root);
     var size = new THREE.Vector3();
     box.getSize(size);
     var maxDim = Math.max(size.x, size.y, size.z) || 1;
-    var scale = 2.35 / maxDim;
+    var scale = 2.55 / maxDim;
     root.scale.setScalar(scale);
     box.setFromObject(root);
     var center = new THREE.Vector3();
@@ -204,7 +208,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.12;
+    renderer.toneMappingExposure = 1.22;
     renderer.domElement.className = "hero-three-canvas";
     renderer.domElement.setAttribute("aria-hidden", "true");
     host.appendChild(renderer.domElement);
@@ -214,22 +218,30 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
     sceneRoot.position.x = mobile ? 0.1 : 1.35;
     scene.add(sceneRoot);
 
-    scene.add(new THREE.AmbientLight(0x8eb4c8, 0.32));
-    var key = new THREE.DirectionalLight(0xe8fffb, 1.15);
+    scene.add(new THREE.AmbientLight(0x9ec4d8, 0.38));
+    var key = new THREE.DirectionalLight(0xe8fffb, 1.35);
     key.position.set(3.5, 4.5, 2.5);
     scene.add(key);
-    var fill = new THREE.PointLight(0x38bdf8, 2.0, 18);
+    var fill = new THREE.PointLight(0x38bdf8, 2.4, 18);
     fill.position.set(-3.2, 1.2, 3.5);
     scene.add(fill);
-    var rim = new THREE.PointLight(0x14b8a6, 1.45, 14);
+    var rim = new THREE.PointLight(0x14b8a6, 1.8, 14);
     rim.position.set(2.2, -1.4, -2.2);
     scene.add(rim);
+    var spark = new THREE.PointLight(0x5eead4, 1.1, 10);
+    spark.position.set(1.2, 0.4, 2.5);
+    scene.add(spark);
 
     addStars();
 
+    var draco = new DRACOLoader();
+    draco.setDecoderPath(
+      "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
+    );
     var loader = new GLTFLoader();
+    loader.setDRACOLoader(draco);
     loader.load(
-      "assets/models/hero-core.glb",
+      "assets/models/hero-core.glb?v=blender-live",
       function (gltf) {
         heroModel = gltf.scene;
         polishGltf(heroModel);
