@@ -72,29 +72,21 @@ html[data-theme="light"] .theme-toggle .theme-icon-sun {
   color: var(--accent-strong) !important;
 }
 
-#hero.hero-wave {
-  background: var(--hero-bg);
+#hero.hero-wave,
+#hero.hero-stage {
+  background: var(--hero-bg, #020617);
 }
 
-.hero-wave-bg {
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 40%, rgba(20, 184, 166, 0.16), transparent 65%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(56, 189, 248, 0.1), transparent 60%);
-  animation: heroAtmosphere 14s ease-in-out infinite alternate;
+.hero-wave-bg,
+.hero-stage__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 
-@keyframes heroAtmosphere {
-  from { opacity: 0.75; }
-  to { opacity: 1; }
-}
-
-.hero-line-waves-gl {
-  opacity: 0.35;
-  background-image:
-    linear-gradient(90deg, transparent 0%, rgba(45, 212, 191, 0.08) 50%, transparent 100%);
-}
-
-html[data-theme="light"] #hero.hero-wave {
+html[data-theme="light"] #hero.hero-wave,
+html[data-theme="light"] #hero.hero-stage {
   background: linear-gradient(165deg, #0b1220 0%, #123043 55%, #0f766e 140%);
 }
 
@@ -1597,4 +1589,214 @@ html[data-theme="light"] .hero-wave-cta--ghost {
 
 .featured-project__arch {
   margin-top: 0;
+}
+
+/* ——— Sidebar slide + content offset (hero must not sit under sidebar) ——— */
+:root {
+  --sidebar-w: 300px;
+  --sidebar-dur: 0.38s;
+  --sidebar-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#header {
+  left: 0 !important;
+  width: var(--sidebar-w);
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--sidebar-dur) var(--sidebar-ease),
+    background-color 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+#footer {
+  width: var(--sidebar-w);
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--sidebar-dur) var(--sidebar-ease),
+    background-color 0.35s ease;
+  will-change: transform;
+}
+
+#hero.hero-stage,
+#hero,
+#main {
+  margin-left: 0;
+  transition: margin-left var(--sidebar-dur) var(--sidebar-ease);
+}
+
+/* Desktop: open by default — content clears the sidebar */
+@media (min-width: 1200px) {
+  #hero.hero-stage,
+  #hero,
+  #main {
+    margin-left: var(--sidebar-w);
+  }
+
+  body.sidebar-collapsed #hero.hero-stage,
+  body.sidebar-collapsed #hero,
+  body.sidebar-collapsed #main,
+  html.sidebar-collapsed-boot #hero.hero-stage,
+  html.sidebar-collapsed-boot #hero,
+  html.sidebar-collapsed-boot #main {
+    margin-left: 0;
+  }
+
+  body.sidebar-collapsed #header,
+  body.sidebar-collapsed #footer,
+  html.sidebar-collapsed-boot #header,
+  html.sidebar-collapsed-boot #footer {
+    transform: translate3d(calc(-1 * var(--sidebar-w)), 0, 0);
+    pointer-events: none;
+  }
+
+  body.sidebar-collapsed #header a,
+  body.sidebar-collapsed #header button {
+    visibility: hidden;
+  }
+
+  body.sidebar-collapsed .sidebar-toggle,
+  html.sidebar-collapsed-boot .sidebar-toggle {
+    left: 1rem;
+  }
+
+  body:not(.sidebar-collapsed) .sidebar-toggle {
+    left: calc(var(--sidebar-w) + 0.85rem);
+  }
+}
+
+/* Mobile / tablet: drawer overlay; content always full-bleed */
+@media (max-width: 1199px) {
+  #header {
+    transform: translate3d(-100%, 0, 0);
+    box-shadow: none;
+  }
+
+  body.sidebar-open #header {
+    transform: translate3d(0, 0, 0);
+    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+  }
+
+  #footer {
+    position: static !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  #hero.hero-stage,
+  #hero,
+  #main {
+    margin-left: 0 !important;
+  }
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10060;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-card, rgba(15, 23, 42, 0.88));
+  color: var(--text-strong, #f8fafc);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow, 0 8px 24px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, background-color 0.25s ease, left var(--sidebar-dur) var(--sidebar-ease);
+}
+
+.sidebar-toggle i {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.sidebar-toggle:hover {
+  transform: translateY(-1px);
+  color: var(--accent-strong, #2dd4bf);
+}
+
+.sidebar-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(45, 212, 191, 0.45));
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9996;
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body.sidebar-open .sidebar-backdrop:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (min-width: 1200px) {
+  .sidebar-backdrop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 42px;
+    height: 42px;
+  }
+
+  .theme-toggle {
+    right: 0.75rem;
+  }
+}
+
+/* Lightweight reveal (replaces GSAP CDN) */
+.hero-anim {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.hero-anim.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.will-reveal {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.will-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim,
+  .will-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #header,
+  #footer,
+  #hero,
+  #main,
+  .sidebar-toggle {
+    transition: none !important;
+  }
 }

@@ -89,28 +89,12 @@
   }
 
   /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Sidebar toggle handled by assets/js/sidebar.js
+   * Scrollto closes drawer on small screens via sidebar.js link handlers.
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
-
-      let body = select('body')
-      if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
       scrollto(this.hash)
     }
   }, true)
@@ -130,7 +114,7 @@
    * Hero type effect
    */
   const typed = select('.typed')
-  if (typed) {
+  if (typed && typeof Typed !== 'undefined') {
     let typed_strings = typed.getAttribute('data-typed-items')
     typed_strings = typed_strings.split(',')
     new Typed('.typed', {
@@ -146,7 +130,7 @@
    * Skills animation
    */
   let skilsContent = select('.skills-content');
-  if (skilsContent) {
+  if (skilsContent && typeof Waypoint !== 'undefined') {
     new Waypoint({
       element: skilsContent,
       offset: '80%',
@@ -164,7 +148,7 @@
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
+    if (portfolioContainer && typeof Isotope !== 'undefined') {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
       });
@@ -182,81 +166,56 @@
           filter: this.getAttribute('data-filter')
         });
         portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
+          if (typeof AOS !== 'undefined') AOS.refresh();
         });
       }, true);
     }
-
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Optional vendors — guarded so deferred loading does not throw
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({ selector: '.portfolio-lightbox' });
+  }
 
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+  if (typeof Swiper !== 'undefined') {
+    if (select('.portfolio-details-slider')) {
+      new Swiper('.portfolio-details-slider', {
+        speed: 400,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', type: 'bullets', clickable: true }
+      });
     }
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
+    if (select('.testimonials-slider')) {
+      new Swiper('.testimonials-slider', {
+        speed: 600,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        slidesPerView: 'auto',
+        pagination: { el: '.swiper-pagination', type: 'bullets', clickable: true },
+        breakpoints: {
+          320: { slidesPerView: 1, spaceBetween: 20 },
+          1200: { slidesPerView: 3, spaceBetween: 20 }
+        }
+      });
     }
-  });
+  }
 
-  /**
-   * Animation on scroll
-   */
   window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: true,
+        mirror: false
+      });
+    }
   });
 
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
 })()

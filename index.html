@@ -26,6 +26,13 @@
       } catch (e) {
         document.documentElement.setAttribute("data-theme", "dark");
       }
+      try {
+        var desk = window.matchMedia("(min-width: 1200px)").matches;
+        var saved = localStorage.getItem("portfolio-sidebar");
+        if (desk && saved === "collapsed") {
+          document.documentElement.classList.add("sidebar-collapsed-boot");
+        }
+      } catch (e2) {}
     })();
   </script>
 
@@ -34,20 +41,22 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/theme-polish.css" rel="stylesheet">
+  <link href="assets/css/three-beauty.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
   <noscript>
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -106,7 +115,7 @@
       var done = false;
       var el = document.getElementById("page-loader");
       var root = document.documentElement;
-      var maxMs = 4000;
+      var maxMs = 1600;
       function finish() {
         if (done) return;
         done = true;
@@ -117,24 +126,30 @@
         if (el) el.setAttribute("aria-busy", "false");
         function lazyBelowFold() {
           var imgs = document.querySelectorAll("#main img:not([loading])");
-          for (var i = 3; i < imgs.length; i++) imgs[i].loading = "lazy";
+          for (var i = 2; i < imgs.length; i++) imgs[i].loading = "lazy";
         }
-        if ("requestIdleCallback" in window) requestIdleCallback(lazyBelowFold, { timeout: 2000 });
+        if ("requestIdleCallback" in window) requestIdleCallback(lazyBelowFold, { timeout: 1500 });
         else setTimeout(lazyBelowFold, 200);
       }
       var fallback = setTimeout(finish, maxMs);
-      if (document.readyState === "complete") {
-        setTimeout(finish, 0);
+      if (document.readyState === "interactive" || document.readyState === "complete") {
+        setTimeout(finish, 120);
       } else {
-        window.addEventListener("load", finish, { once: true });
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(finish, 120);
+        }, { once: true });
       }
+      window.addEventListener("load", finish, { once: true });
     })();
   </script>
 
   <div id="siteCustomCursor" class="site-custom-cursor" aria-hidden="true"><span class="site-custom-cursor-dot"></span></div>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <!-- ======= Sidebar toggle ======= -->
+  <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-controls="header" aria-expanded="false" aria-label="Open navigation" title="Show sidebar">
+    <i class="bi bi-list" aria-hidden="true"></i>
+  </button>
+  <div id="sidebar-backdrop" class="sidebar-backdrop" hidden aria-hidden="true"></div>
 
   <!-- ======= Header ======= -->
   <header id="header">
@@ -200,40 +215,75 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero-wave d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-wave-bg" aria-hidden="true">
-      <div id="hero-line-waves-container" class="hero-line-waves-gl"></div>
-      <div class="hero-wave-vignette"></div>
+  <section id="hero" class="hero-stage">
+    <div class="hero-stage__bg" aria-hidden="true">
+      <div id="hero-three-root" class="hero-three-root"></div>
+      <div class="hero-stage__vignette"></div>
+      <div class="hero-stage__grid"></div>
     </div>
-    <a href="mailto:skntjee@gmail.com" class="hero-wave-side-mail">skntjee@gmail.com</a>
-    <div class="hero-container hero-wave-content text-center" data-aos="fade-in">
-      <div class="hero-wave-intro">
-        <span class="hero-wave-greet">Hi, I'm</span>
-        <div class="hero-wave-name-wrap">
-          <h1 class="hero-wave-name">Shashi Kant</h1>
-          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-wave-resume" title="Download resume" aria-label="Download resume" download><i class="bi bi-download"></i></a>
+
+    <div class="hero-stage__layout">
+      <div class="hero-stage__copy">
+        <p class="hero-kicker hero-anim">Senior Software Engineer · Paytm</p>
+        <h1 class="hero-title hero-anim">
+          Shashi Kant
+          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-resume-icon" title="Download resume" aria-label="Download resume" download><i class="bi bi-download"></i></a>
+        </h1>
+        <p class="hero-role hero-anim">I design &amp; ship high-availability fintech systems — Spring Boot, Kafka, Redis, and full-stack delivery when the product needs it.</p>
+        <ul class="hero-proof-pills hero-anim" aria-label="Highlights">
+          <li>5 yrs Fintech &amp; Enterprise</li>
+          <li>HA microservices</li>
+          <li>Event-driven · System design</li>
+        </ul>
+        <p class="hero-typed-line hero-anim">
+          <span id="typed"></span>
+          <span id="loader" style="display:none; margin-left:8px;">
+            <img src="./assets/img/paytm.png" alt="Paytm" style="height:18px; vertical-align:middle;">
+          </span>
+        </p>
+        <div class="hero-actions hero-anim">
+          <a href="mailto:skntjee@gmail.com?subject=Hiring%20inquiry%20-%20Senior%20Software%20Engineer" class="hero-btn hero-btn--primary">Discuss a role</a>
+          <a href="#swiftcab" class="hero-btn hero-btn--ghost">See SwiftCab.in</a>
+          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-btn hero-btn--ghost" download>Resume</a>
         </div>
-        <span class="hero-wave-bar" aria-hidden="true"></span>
+        <div class="hero-links hero-anim">
+          <a href="https://github.com/skntmax" target="_blank" rel="noopener"><i class="bx bxl-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/shashi-kant-5a1710185/" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i> LinkedIn</a>
+          <a href="https://swiftcab.in" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> SwiftCab</a>
+          <a href="mailto:skntjee@gmail.com"><i class="bi bi-envelope"></i> skntjee@gmail.com</a>
+        </div>
       </div>
-      <p class="hero-wave-sub">Senior backend / full-stack engineer who ships fintech microservices (Spring · Kafka · Redis) and owns reliability end-to-end.</p>
-      <p class="hero-wave-pitch">5 years in Fintech &amp; Enterprise · High availability · Event-driven systems · System design (HLD/LLD)</p>
-      <p class="hero-wave-typed">
-        <span id="typed"></span>
-        <span id="loader" style="display:none; margin-left:10px;">
-          <img src="./assets/img/paytm.png" alt="Paytm" style="height:20px; vertical-align:middle; margin-left:5px;">
-        </span>
-      </p>
-      <div class="hero-wave-cta-group">
-        <a href="mailto:skntjee@gmail.com?subject=Hiring%20inquiry%20-%20Senior%20Software%20Engineer" class="hero-wave-cta">Hire me — email</a>
-        <a href="#impact" class="hero-wave-cta hero-wave-cta--ghost">See impact</a>
-        <a href="assets/Shashikant_Aug_2026.pdf" class="hero-wave-cta hero-wave-cta--ghost" download target="_blank" rel="noopener">Resume PDF</a>
-      </div>
-      <div class="hero-proof-links">
-        <a href="https://github.com/skntmax" target="_blank" rel="noopener"><i class="bx bxl-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/shashi-kant-5a1710185/" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i> LinkedIn</a>
-        <a href="https://swiftcab.in" target="_blank" rel="noopener"><i class="bi bi-taxi-front"></i> SwiftCab.in</a>
-        <a href="http://codexcave.com" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Codexcave</a>
-        <a href="https://rozgar.com" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Rozgar</a>
+
+      <aside class="hero-stage__card hero-anim" aria-label="Quick credibility">
+        <div class="hero-card-photo">
+          <img src="assets/img/profile-photo.png" alt="Shashi Kant" width="280" height="320">
+        </div>
+        <div class="hero-card-body">
+          <p class="hero-card-label">Currently</p>
+          <p class="hero-card-value">SSE @ Paytm · Noida</p>
+          <p class="hero-card-label">Flagship</p>
+          <p class="hero-card-value"><a href="#swiftcab">SwiftCab.in</a> · real-time rides</p>
+          <p class="hero-card-label">Open to</p>
+          <p class="hero-card-value">Senior / Lead backend or full-stack</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-trust reveal-section" aria-label="Companies and outcomes">
+      <div class="hero-trust__inner">
+        <span class="hero-trust__label reveal-item">Built &amp; shipped with</span>
+        <div class="hero-trust__logos reveal-item">
+          <strong>Paytm</strong>
+          <strong>PolicyBazaar</strong>
+          <strong>Value Innovation Labs</strong>
+          <strong>CCIL</strong>
+          <strong>Rozgar</strong>
+        </div>
+        <div class="hero-trust__stats">
+          <div class="reveal-item"><b>100K+</b><span>daily txns handled</span></div>
+          <div class="reveal-item"><b>70K+</b><span>jobs migrated</span></div>
+          <div class="reveal-item"><b>HA</b><span>fintech on K8s</span></div>
+        </div>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -287,7 +337,7 @@
             </div>
 
             <p class="about-closing">
-              At Paytm I work on Spring Boot + Kafka services with high availability, API Gateway, rate limiting, Redis, and circuit breakers. Earlier: Nest.js microservices at PolicyBazaar; CCIL, EPIL, and Rozgar.com (700K+ job migration, AI resume tools) at Value Innovation Labs. Flagship build: <a href="#swiftcab">SwiftCab.in</a> (real-time cab booking); also Codexcave.com.
+              At Paytm I work on Spring Boot + Kafka services with high availability, API Gateway, rate limiting, Redis, and circuit breakers. Earlier: Nest.js microservices at PolicyBazaar; CCIL, EPIL, and Rozgar.com (70K+ job migration, AI resume tools) at Value Innovation Labs. Flagship build: <a href="#swiftcab">SwiftCab.in</a> (real-time cab booking); also Codexcave.com.
             </p>
           </div>
         </div>
@@ -309,7 +359,7 @@
             <p class="impact-card__note">Microservices at Value Innovation Labs with high reliability</p>
           </article>
           <article class="impact-card">
-            <p class="impact-card__value">700K+</p>
+            <p class="impact-card__value">70K+</p>
             <p class="impact-card__label">Jobs migrated</p>
             <p class="impact-card__note">MongoDB → MySQL structured mapping for Rozgar.com</p>
           </article>
@@ -944,7 +994,7 @@
           <p>Migrated 70,000+ job records from MongoDB to MySQL with structured mapping. Rebuilt the platform on Next.js for better SEO. Developed AI-powered resume builder, summary generator, and cover letter generator; integrated Grammarly for content quality.</p>
           <div class="arch-note">
             <strong>Architecture snapshot</strong>
-            <p>Next.js SEO frontend · Java/Node services · MySQL after 700K+ job migration from Mongo · AI resume/cover-letter generators on apply path.</p>
+            <p>Next.js SEO frontend · Java/Node services · MySQL after 70K+ job migration from Mongo · AI resume/cover-letter generators on apply path.</p>
           </div>
         </div>
       </div>
@@ -1480,7 +1530,7 @@
             <div class="icon"><i class="bi bi-database"></i></div>
             <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Database Engineering</a></h4>
             <p class="description">
-              PostgreSQL, MySQL, MongoDB, and Redis — schema design, migrations (e.g. 700K+ records), indexing, and query optimization under high concurrency.
+              PostgreSQL, MySQL, MongoDB, and Redis — schema design, migrations (e.g. 70K+ records), indexing, and query optimization under high concurrency.
             </p>
           </div>
         </div>
@@ -1755,18 +1805,15 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/js/theme.js"></script>
+  <script defer src="assets/js/sidebar.js"></script>
   <script defer src="assets/js/site-search.js"></script>
-  <script defer src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script defer src="assets/js/script.js"></script>
-  <script defer src="assets/vendor/aos/aos.js"></script>
+  <script defer src="assets/js/hero-three.js"></script>
+  <script defer src="assets/js/motion.js"></script>
   <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script defer src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script defer src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script defer src="assets/vendor/typed.js/typed.min.js"></script>
   <script defer src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script defer src="script.js"></script>
   <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/defer-vendors.js"></script>
 
   <script>
   document.addEventListener("DOMContentLoaded", function () {
