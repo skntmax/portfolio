@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+  <title>Shashi Kant | Senior Software Engineer</title>
+   
+  <meta content="Senior Software Engineer with 5+ years experience in Fintech & Enterprise. Expert in Java Spring Boot, MERN, Microservices, Kafka, AWS, and System Design." name="description">
+  <meta content="Senior Software Engineer, Full Stack, MERN, Java Spring Boot, NestJS, Kafka, Microservices, Paytm, Noida" name="keywords">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#040b14">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("portfolio-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.style.colorScheme = t;
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      try {
+        var desk = window.matchMedia("(min-width: 1200px)").matches;
+        var saved = localStorage.getItem("portfolio-sidebar");
+        if (desk && saved === "collapsed") {
+          document.documentElement.classList.add("sidebar-collapsed-boot");
+        }
+      } catch (e2) {}
+    })();
+  </script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/theme-polish.css" rel="stylesheet">
+  <link href="assets/css/three-beauty.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  </noscript>
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <button type="button" id="site-search-toggle" class="site-search-toggle" aria-label="Search portfolio" title="Search (Ctrl/⌘ K)">
+    <i class="bi bi-search" aria-hidden="true"></i>
+    Search
+    <kbd data-search-shortcut>Ctrl K</kbd>
+  </button>
+
+  <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to day mode" title="Day mode">
+    <i class="bi bi-sun-fill theme-icon-sun" aria-hidden="true"></i>
+    <i class="bi bi-moon-stars-fill theme-icon-moon" aria-hidden="true"></i>
+  </button>
+
+  <div id="site-search-hint" class="site-search-hint" hidden role="status">
+    <span>Press <strong data-search-shortcut>Ctrl K</strong> or <strong>/</strong> to search this portfolio</span>
+    <button type="button" id="site-search-hint-close" aria-label="Dismiss">×</button>
+  </div>
+
+  <div id="site-search" class="site-search" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search portfolio">
+    <div id="site-search-backdrop" class="site-search__backdrop"></div>
+    <div class="site-search__panel">
+      <div class="site-search__bar">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <input id="site-search-input" type="search" placeholder="Search skills, projects, experience…" autocomplete="off" spellcheck="false">
+        <button type="button" id="site-search-close" class="site-search__close" aria-label="Close search">ESC</button>
+      </div>
+      <ul id="site-search-results" class="site-search__results" role="listbox"></ul>
+      <p id="site-search-empty" class="site-search__empty" hidden>No matches — try “Paytm”, “Kafka”, or “Contact”.</p>
+      <p class="site-search__hint-keys">↑↓ navigate · Enter open · Esc close · <kbd>/</kbd> quick open</p>
+    </div>
+  </div>
+
+  <div id="page-loader" class="page-loader" aria-busy="true" aria-live="polite" aria-label="Loading page">
+    <div class="page-loader__inner">
+      <div class="page-loader__spinner" aria-hidden="true"></div>
+      <p class="page-loader__text">Loading portfolio…</p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var done = false;
+      var el = document.getElementById("page-loader");
+      var root = document.documentElement;
+      var maxMs = 1600;
+      function finish() {
+        if (done) return;
+        done = true;
+        try {
+          clearTimeout(fallback);
+        } catch (e) {}
+        root.classList.add("page-loaded");
+        if (el) el.setAttribute("aria-busy", "false");
+        function lazyBelowFold() {
+          var imgs = document.querySelectorAll("#main img:not([loading])");
+          for (var i = 2; i < imgs.length; i++) imgs[i].loading = "lazy";
+        }
+        if ("requestIdleCallback" in window) requestIdleCallback(lazyBelowFold, { timeout: 1500 });
+        else setTimeout(lazyBelowFold, 200);
+      }
+      var fallback = setTimeout(finish, maxMs);
+      if (document.readyState === "interactive" || document.readyState === "complete") {
+        setTimeout(finish, 120);
+      } else {
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(finish, 120);
+        }, { once: true });
+      }
+      window.addEventListener("load", finish, { once: true });
+    })();
+  </script>
+
+  <div id="siteCustomCursor" class="site-custom-cursor" aria-hidden="true"><span class="site-custom-cursor-dot"></span></div>
+
+  <!-- ======= Sidebar toggle ======= -->
+  <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-controls="header" aria-expanded="false" aria-label="Open navigation" title="Show sidebar">
+    <i class="bi bi-list" aria-hidden="true"></i>
+  </button>
+  <div id="sidebar-backdrop" class="sidebar-backdrop" hidden aria-hidden="true"></div>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column" id="tsparticles" >
+
+      <div class="profile">
+        <div class="profile-avatar-wrap">
+          <span class="profile-avatar-ring" aria-hidden="true"></span>
+          <img src="assets/img/profile-photo.png" alt="Shashi Kant" class="profile-avatar img-fluid" width="120" height="120">
+          <span class="profile-status" title="Open to opportunities"><span class="profile-status-dot"></span></span>
+        </div>
+        <p class="profile-eyebrow">Senior Software Engineer</p>
+        <h1 class="profile-name">
+          <a href="index.html">Shashi Kant</a>
+        </h1>
+        <p class="profile-company">
+          <i class="bi bi-building" aria-hidden="true"></i> Paytm · Noida
+        </p>
+        <p class="profile-tagline">Full Stack · MERN · Java Spring Boot</p>
+        <div class="profile-stack" aria-label="Core stack">
+          <span>Java</span>
+          <span>Spring</span>
+          <span>Kafka</span>
+          <span>React</span>
+          <span>AWS</span>
+        </div>
+        <div class="profile-actions">
+          <a class="profile-resume-btn" href="assets/Shashikant_Aug_2026.pdf" download target="_blank" rel="noopener" title="Download resume">
+            <i class="bi bi-download" aria-hidden="true"></i> Resume
+          </a>
+          <a class="profile-contact-btn" href="#contact" title="Contact">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/skntmax" class="github" title="GitHub" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/shashi-kant-5a1710185/" class="linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.youtube.com/@skntmax" class="youtube" title="YouTube" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://twitter.com/Shashik84927339" class="twitter" title="Twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.instagram.com/skntmax/" class="instagram" title="Instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#impact" class="nav-link scrollto"><i class="bx bx-line-chart"></i> <span>Impact</span></a></li>
+          <li><a href="#how-i-work" class="nav-link scrollto"><i class="bx bx-cog"></i> <span>How I work</span></a></li>
+          <li><a href="#systems" class="nav-link scrollto"><i class="bx bx-network-chart"></i> <span>Systems</span></a></li>
+          <li><a href="#certificates" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Certificates</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#Experience" class="nav-link scrollto"><i class="bx bx-briefcase"></i> <span>Major projects</span></a></li>
+          <li><a href="#swiftcab" class="nav-link scrollto"><i class="bx bx-car"></i> <span>SwiftCab</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Mini projects</span></a></li>
+          <li><a href="#project_shorts" class="nav-link scrollto"><i class="bx bx-images"></i> <span>Project shorts</span></a></li>
+          <li><a href="#proof" class="nav-link scrollto"><i class="bx bx-check-shield"></i> <span>Proof</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero-stage hero-stage--blender">
+    <div class="hero-stage__bg" aria-hidden="true">
+      <div class="hero-stage__aurora"></div>
+      <div id="hero-three-root" class="hero-three-root"></div>
+      <div class="hero-stage__bloom"></div>
+      <div class="hero-stage__vignette"></div>
+      <div class="hero-stage__grid"></div>
+      <div class="hero-stage__floor"></div>
+    </div>
+
+    <div class="hero-stage__layout">
+      <div class="hero-stage__copy">
+        <p class="hero-kicker hero-anim">Senior Software Engineer · Paytm</p>
+        <h1 class="hero-title hero-anim">
+          Shashi Kant
+          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-resume-icon" title="Download resume" aria-label="Download resume" download><i class="bi bi-download"></i></a>
+        </h1>
+        <p class="hero-role hero-anim">I design &amp; ship high-availability fintech systems — Spring Boot, Kafka, Redis, and full-stack delivery when the product needs it.</p>
+        <ul class="hero-proof-pills hero-anim" aria-label="Highlights">
+          <li>5 yrs Fintech &amp; Enterprise</li>
+          <li>HA microservices</li>
+          <li>Event-driven · System design</li>
+        </ul>
+        <p class="hero-typed-line hero-anim">
+          <span id="typed"></span>
+          <span id="loader" style="display:none; margin-left:8px;">
+            <img src="./assets/img/paytm.png" alt="Paytm" style="height:18px; vertical-align:middle;">
+          </span>
+        </p>
+        <div class="hero-actions hero-anim">
+          <a href="mailto:skntjee@gmail.com?subject=Hiring%20inquiry%20-%20Senior%20Software%20Engineer" class="hero-btn hero-btn--primary">Discuss a role</a>
+          <a href="#swiftcab" class="hero-btn hero-btn--ghost">See SwiftCab.in</a>
+          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-btn hero-btn--ghost" download>Resume</a>
+        </div>
+        <div class="hero-links hero-anim">
+          <a href="https://github.com/skntmax" target="_blank" rel="noopener"><i class="bx bxl-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/shashi-kant-5a1710185/" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i> LinkedIn</a>
+          <a href="https://swiftcab.in" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> SwiftCab</a>
+          <a href="mailto:skntjee@gmail.com"><i class="bi bi-envelope"></i> skntjee@gmail.com</a>
+        </div>
+      </div>
+
+      <aside class="hero-stage__card hero-anim" aria-label="Quick credibility">
+        <div class="hero-card-photo">
+          <img src="assets/img/profile-photo.png" alt="Shashi Kant" width="280" height="320">
+        </div>
+        <div class="hero-card-body">
+          <p class="hero-card-label">Currently</p>
+          <p class="hero-card-value">SSE @ Paytm · Noida</p>
+          <p class="hero-card-label">Flagship</p>
+          <p class="hero-card-value"><a href="#swiftcab">SwiftCab.in</a> · real-time rides</p>
+          <p class="hero-card-label">Open to</p>
+          <p class="hero-card-value">Senior / Lead backend or full-stack</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-trust reveal-section" aria-label="Companies and outcomes">
+      <div class="hero-trust__inner">
+        <span class="hero-trust__label reveal-item">Built &amp; shipped with</span>
+        <div class="hero-trust__logos reveal-item">
+          <strong>Paytm</strong>
+          <strong>PolicyBazaar</strong>
+          <strong>Value Innovation Labs</strong>
+          <strong>CCIL</strong>
+          <strong>Rozgar</strong>
+        </div>
+        <div class="hero-trust__stats">
+          <div class="reveal-item"><b>100K+</b><span>daily txns handled</span></div>
+          <div class="reveal-item"><b>70K+</b><span>jobs migrated</span></div>
+          <div class="reveal-item"><b>HA</b><span>fintech on K8s</span></div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+    <main id="main">
+
+   
+       <!-- ======= About Section ======= -->
+     <section id="about" class="about" >
+      <div class="container">
+
+        <div class="section-title about-title">
+          <h2 class="normalText">About</h2>
+          <p class="about-lede">Senior Software Engineer focused on scalable backends and full-stack delivery in Fintech and Enterprise.</p>
+        </div>
+
+        <div class="about-intro">
+          <p>I have 5 years of experience building cloud-native applications — with strong work in microservices, REST APIs, event-driven systems, distributed systems, and Domain-Driven Design (DDD).</p>
+          <p>Day to day I work with Java Spring Boot, Node.js, NestJS, Kafka, Redis, and AWS, plus system design (HLD/LLD), API gateways, database tuning, Docker/Kubernetes, CI/CD, and performance engineering.</p>
+          <p>Currently at Paytm (Noida); previously PolicyBazaar – PB Partners and Value Innovation Labs. I care about reliability, observability, and clear architecture — with a solid base in DSA and scalable backend design.</p>
+        </div>
+
+        <div class="row align-items-stretch about-body">
+          <div class="col-lg-5 d-flex" data-aos="fade-right">
+            <img src="assets/img/profile-photo.png" class="img-fluid w-100 h-100 img-thumbnail about-photo" alt="Shashi Kant">
+          </div>
+
+          <div class="col-lg-7 pt-4 pt-lg-0 content d-flex flex-column" data-aos="fade-left">
+            <h3 class="normalText">Senior Software Engineer · Full Stack · MERN · Java Spring Boot</h3>
+            <p class="about-role-line">
+              Microservices and event-driven systems across Fintech and Enterprise — from API Gateway and Redis caching to React/Next.js frontends and Kubernetes.
+            </p>
+
+            <div class="row about-meta">
+              <div class="col-md-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Noida, Uttar Pradesh</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 7860735070</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>skntjee@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <a href="http://codexcave.com" target="_blank" rel="noopener">codexcave.com</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Timezone:</strong> <span>IST (UTC+5:30)</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Notice:</strong> <span>Standard · open to Senior roles</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.Tech (CSE)</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Role:</strong> <span>Senior Software Engineer</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="about-closing">
+              At Paytm I work on Spring Boot + Kafka services with high availability, API Gateway, rate limiting, Redis, and circuit breakers. Earlier: Nest.js microservices at PolicyBazaar; CCIL, EPIL, and Rozgar.com (70K+ job migration, AI resume tools) at Value Innovation Labs. Flagship build: <a href="#swiftcab">SwiftCab.in</a> (real-time cab booking); also Codexcave.com.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Impact metrics ======= -->
+    <section id="impact" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">Selected outcomes</h2>
+          <p>A few numbers from systems I’ve helped build and run in production.</p>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-card">
+            <p class="impact-card__value">100K+</p>
+            <p class="impact-card__label">Daily transactions</p>
+            <p class="impact-card__note">Microservices at Value Innovation Labs with high reliability</p>
+          </article>
+          <article class="impact-card">
+            <p class="impact-card__value">70K+</p>
+            <p class="impact-card__label">Jobs migrated</p>
+            <p class="impact-card__note">MongoDB → MySQL structured mapping for Rozgar.com</p>
+          </article>
+          <article class="impact-card">
+            <p class="impact-card__value">HA</p>
+            <p class="impact-card__label">Fintech on Kubernetes</p>
+            <p class="impact-card__note">Zamtel gov payments — Java microservices + secure Node BFF</p>
+          </article>
+          <article class="impact-card">
+            <p class="impact-card__value">↓ Latency</p>
+            <p class="impact-card__label">Redis + API tuning</p>
+            <p class="impact-card__note">Distributed caching, rate limiting, DB/query optimization at Paytm</p>
+          </article>
+          <article class="impact-card">
+            <p class="impact-card__value">Resilient</p>
+            <p class="impact-card__label">Circuit breakers</p>
+            <p class="impact-card__note">Fault-tolerant request paths under failure conditions</p>
+          </article>
+          <article class="impact-card">
+            <p class="impact-card__value">5 yrs</p>
+            <p class="impact-card__label">Fintech &amp; Enterprise</p>
+            <p class="impact-card__note">Paytm → PolicyBazaar → gov platforms (CCIL / EPIL)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">Career trajectory</h2>
+          <p>Growth from full-stack delivery to senior systems ownership.</p>
+        </div>
+        <ol class="career-timeline">
+          <li>
+            <span class="career-timeline__when">2025 – Present</span>
+            <strong>Senior Software Engineer · Paytm</strong>
+            <span>Spring Boot, Kafka, Redis, API Gateway — HA fintech microservices</span>
+          </li>
+          <li>
+            <span class="career-timeline__when">2024 – 2025</span>
+            <strong>Technical Associate · PolicyBazaar (PB Partners)</strong>
+            <span>Nest.js microservices, RBAC APIs, Kafka event-driven scale</span>
+          </li>
+          <li>
+            <span class="career-timeline__when">2021 – 2024</span>
+            <strong>Full Stack Developer · Value Innovation Labs</strong>
+            <span>Gov enterprise platforms, Rozgar.com, 100K+ txn microservices</span>
+          </li>
+          <li>
+            <span class="career-timeline__when">2017 – 2021</span>
+            <strong>B.Tech CSE · CSJMU Kanpur</strong>
+            <span>Foundation in DSA, systems, and full-stack engineering</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="how-i-work" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">How I work</h2>
+          <p>Signals of senior ownership — how I show up on a team.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3><i class="bi bi-shield-check"></i> Own the outcome</h3>
+            <p>Take features from design → API → deploy → production health. Prefer clear SLAs over vague “done”.</p>
+          </article>
+          <article class="work-card">
+            <h3><i class="bi bi-diagram-3"></i> Design for failure</h3>
+            <p>Circuit breakers, rate limits, caching, and graceful degradation — especially in payments and partner flows.</p>
+          </article>
+          <article class="work-card">
+            <h3><i class="bi bi-eye"></i> Observability first</h3>
+            <p>Logging, monitoring, and performance checks so issues are visible before customers feel them.</p>
+          </article>
+          <article class="work-card">
+            <h3><i class="bi bi-people"></i> Collaborative delivery</h3>
+            <p>Work with product and peers on HLD/LLD, review thoughtfully, and leave systems easier to maintain than I found them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="systems" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">Distributed systems &amp; fintech depth</h2>
+          <p>Keyword-ready depth recruiters and staff engineers screen for.</p>
+        </div>
+        <div class="systems-grid">
+          <div class="systems-card">
+            <h3>Reliability patterns</h3>
+            <ul>
+              <li>API Gateway · load balancing · rate limiting</li>
+              <li>Circuit breakers · fault tolerance · HA design</li>
+              <li>Idempotent APIs · secure request lifecycles</li>
+            </ul>
+          </div>
+          <div class="systems-card">
+            <h3>Data &amp; messaging</h3>
+            <ul>
+              <li>Kafka event-driven / pub-sub architectures</li>
+              <li>Redis caching &amp; fast state for real-time flows</li>
+              <li>PostgreSQL / MySQL / MongoDB · indexing · query tuning</li>
+            </ul>
+          </div>
+          <div class="systems-card">
+            <h3>Security &amp; delivery</h3>
+            <ul>
+              <li>JWT · OAuth2 · RBAC · API security</li>
+              <li>Crypto BFF (symmetric + asymmetric) on Zamtel</li>
+              <li>Docker · Kubernetes · Jenkins / GitHub Actions · AWS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="certificates" class="certificates">
+      <div class="container">
+         
+        <div class="section-title">
+          <h2  style="color: white;" >certificates</h2>
+        </div>
+          <table >
+            <tbody>
+              
+              <tr class="pading_row">
+                <th scope="row">1. </th>
+                <td><strong>Full Stack Developer – Internshala</strong> <span style="opacity:.75">[CN: 972670B8-3D5F-7E61-BD07-20E9DBCCCD22]</span></td>
+                <td> <a target="_blank" href="https://trainings.internshala.com/verify_certificate">Verify certificate</a></td>
+              </tr> 
+
+              <tr>
+                <th scope="row">2.</th>
+                <td><strong>React JS for Beginners – Simplilearn</strong></td>
+                <td> <a href="https://simpli-web.app.link/e/Rg6NqdV5jDb" target="_blank">View certificate</a> </td>
+              </tr>
+              <tr>
+                <th scope="row">3.</th>
+                <td> <strong>SQL Certification – HackerRank</strong></td>
+                <td><a href="https://bit.ly/3F9UBl2" target="_blank">View certificate</a> </td>
+              </tr>
+
+              <tr>
+                <th scope="row">4.</th>
+                <td><strong>Getting Started with NodeJS – SkillUp</strong></td>
+                <td><a href="https://bit.ly/3f11jPQ" target="_blank">View certificate</a></td>
+              </tr>
+
+              <tr>
+                <th scope="row">5.</th>
+                <td><strong>Introduction to Kubernetes</strong></td>
+                <td> <a href="https://simpli-web.app.link/e/lzXAud25jDb" target="_blank">View certificate</a> </td>
+              </tr>
+
+              <tr>
+                <th scope="row">6.</th>
+                <td><strong>Oracle Database PL/SQL Developer Certified Professional</strong> <span style="opacity:.75">[CN: 63f0d0bd484f]</span></td>
+                <td>—</td>
+              </tr>
+
+              <tr>
+                <th scope="row">7.</th>
+                <td><strong>React.js Frontend Developer – HackerRank</strong></td>
+                <td>—</td>
+              </tr>
+
+              <tr>
+                <th scope="row">8.</th>
+                <td><strong>Full Stack JavaScript Development (MongoDB, Node)</strong></td>
+                <td> <a href="https://shorturl.at/qzJ23" target="_blank">View certificate</a> </td>
+              </tr>
+
+              <tr>
+                <th scope="row">9.</th>
+                <td><strong>React Native Essential Training</strong></td>
+                <td> <a href="https://shorturl.at/mrBO0" target="_blank">View certificate</a> </td>
+              </tr>
+               
+              <tr>
+                <th scope="row">10.</th>
+                <td><strong>Introduction to Cloud Computing</strong></td>
+                <td> <a href="http://surl.li/npbib" target="_blank">View certificate</a> </td>
+              </tr>
+
+              <tr>
+                <th scope="row">11.</th>
+                <td><strong>AWS Cloud Essentials</strong></td>
+                <td> <a href="https://rb.gy/myilzy" target="_blank">View certificate</a> </td>
+              </tr>
+
+              <tr>
+                <th scope="row">12.</th>
+                <td><strong>JavaScript Intermediate Certification</strong></td>
+                <td> <a href="https://shorturl.at/wDVWZ" target="_blank">View certificate</a> </td>
+              </tr>
+
+              <tr>
+                <th scope="row">13.</th>
+                <td><strong>Google Digital Marketing Garage</strong> <span style="opacity:.75">(Credential ID: KEW 7FF URH)</span></td>
+                <td><a href="https://learndigital.withgoogle.com/digitalunlocked/validate-certificate-code" target="_blank">Validate</a></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+ 
+
+      </div>
+    </section><!-- End Certificates Section -->
+
+
+     
+
+
+    <!-- ======= At a glance (replaces template facts) ======= -->
+    <section id="facts" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">At a glance</h2>
+          <p>Quick filters for recruiters scanning profiles.</p>
+        </div>
+        <div class="glance-row">
+          <div><strong>Open to</strong><span>Senior / Lead full-stack or backend roles</span></div>
+          <div><strong>Domain</strong><span>Fintech · Enterprise · Gov platforms</span></div>
+          <div><strong>Stack focus</strong><span>Java Spring · NestJS · React/Next · Kafka</span></div>
+          <div><strong>Location</strong><span>Noida · IST · Remote-friendly discussions</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Skills Section ======= -->
+    
+     <section id="skills" class="skills   ">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">SKILLS</h2>
+          <p>
+            Technical skills aligned with 5+ years building Fintech and Enterprise systems — spanning backend microservices, frontend apps, cloud/DevOps, messaging, security, and AI automation.
+          </p>
+        </div>
+
+        <div class="row skills-content">
+
+         <div class="col-lg-6" data-aos="fade-up">
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-java-plain colored"></i> Java / Spring Boot <i class="val">90%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-nodejs-plain colored"></i> Node.js / NestJS / Express <i class="val">90%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-javascript-plain colored"></i> JavaScript (ES6+) / TypeScript <i class="val">95%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-react-original colored"></i> React.js / Next.js / Redux Toolkit <i class="val">95%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-postgresql-plain colored"></i> PostgreSQL / MySQL / MongoDB <i class="val">90%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="devicon-redis-plain colored"></i> Redis / Caching / Rate Limiting <i class="val">85%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="fa-solid fa-diagram-project"></i> Apache Kafka / Event-Driven Architecture <i class="val">85%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="fa-solid fa-sitemap"></i> Microservices / Distributed Systems / DDD <i class="val">88%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span class="skill normalText"><i class="fa-solid fa-brain"></i> System Design (HLD/LLD) / DSA <i class="val">85%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-amazonwebservices-plain colored"></i> AWS (EC2, S3, SQS, RDS) <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-docker-plain colored"></i> Docker / Kubernetes <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-github-original"></i> CI/CD (Jenkins, GitHub Actions) <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="fa-solid fa-shield-halved"></i> Security (JWT, OAuth2, RBAC, API Security) <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="fa-solid fa-chart-line"></i> Observability &amp; Performance Engineering <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="fa-solid fa-robot"></i> AI Agents / LLM / OpenAI / n8n <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-python-plain colored"></i> Python / SQL <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="fa-solid fa-diagram-project"></i> React Query / GraphQL / Material UI <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill normalText"><i class="devicon-go-original-wordmark colored"></i> Golang (exploring) <i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </section><!-- End Skills Section -->
+
+
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume normalText" >
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="normalText">Qualification & Experience </h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+
+          </p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title normalText">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4 class="normalText">Shashi Kant</h4>
+              <p><em>
+                Senior Software Engineer with 5 years of experience building high-performance, scalable, cloud-native applications in Fintech and Enterprise domains. Expertise in Microservices, RESTful APIs, Event-Driven Systems, Distributed Systems, and DDD. Hands-on with Java Spring Boot, Node.js, NestJS, Kafka, Redis, AWS, Docker, and Kubernetes. Strong in System Design (HLD/LLD), API Gateway, database optimization, CI/CD, and performance engineering.
+              </em>
+              <ul>
+                <li>Noida, Uttar Pradesh</li>
+                <li>+91 7860735070</li>
+                <li>skntjee@gmail.com</li>
+                <li><a href="https://github.com/skntmax" target="_blank" rel="noopener">github.com/skntmax</a></li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title normalText">Education</h3>
+            <div class="resume-item normalText">
+              <h4 class="normalText" >B.Tech in Computer Science</h4>
+              <h5 class="abnormalText" > 2017 - 2021</h5>
+              <p><em> Chhatrapati Shahu Ji Maharaj University, Kanpur </em></p>
+              <p>B.Tech in Computer Science (2017 – 2021) from Chhatrapati Shahu Ji Maharaj University (formerly Kanpur University), Kanpur, Uttar Pradesh.</p>
+            </div>
+
+            <div class="resume-item">
+              <h4 class="normalText" >12th </h4>
+              <h5 class="abnormalText">2015 - 2016</h5>
+              <p><em>Swami Harsewanand Public School, Garhwaghat , Varanasi   </em></p>
+              <p>Swami Harsewanand Public School also known as Swami Harsewanand Public School. The school was established in 2001. Swami Harsewanand Public School is a Co-Ed school affiliated to Central Board of Secondary Education (CBSE) . It is managed by Swami Harsewanand Shikshan Society.</p>
+            </div>
+
+
+            <!-- <div class="resume-item">
+              <h4>10th </h4>
+              <h5>2013 - 2014</h5>
+              <p><em>Swami Harsewanand Public School, Garhwaghat , Varanasi   </em></p>
+              <p>Swami Harsewanand Public School also known as Swami Harsewanand Public School. The school was established in 2001. Swami Harsewanand Public School is a Co-Ed school affiliated to Central Board of Secondary Education (CBSE) . It is managed by Swami Harsewanand Shikshan Society.</p>
+            </div> -->
+
+
+
+          </div>
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title normalText">Professional Experience</h3>
+           
+         <div class="resume-item">
+  <h4 class="normalText"><i class="fa-solid fa-code"></i> Senior Software Engineer — Paytm, Noida</h4>
+  <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Jan 2025 – Present</h5>
+  <p><em><i class="fa-solid fa-location-dot"></i> Noida</em></p>
+  <ul>
+    <li><i class="fa-solid fa-server"></i> Designed scalable microservices for high availability and fault tolerance using Spring Boot and Kafka</li>
+    <li><i class="fa-solid fa-shield-halved"></i> Implemented API Gateway, rate limiting, and load balancing for secure, scalable request handling</li>
+    <li><i class="fa-solid fa-database"></i> Built distributed Redis caching to reduce latency and improve performance</li>
+    <li><i class="fa-solid fa-bolt"></i> Applied circuit breaker patterns to improve resilience under failure conditions</li>
+    <li><i class="fa-solid fa-gauge-high"></i> Optimized APIs and databases to improve response time and throughput</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4 class="normalText"><i class="fa-solid fa-laptop-code"></i> Technical Associate — PolicyBazaar (PB Partners), Gurgaon</h4>
+  <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Apr 2024 – Jan 2025</h5>
+  <p><em><i class="fa-solid fa-location-dot"></i> Gurgaon</em></p>
+  <ul>
+    <li><i class="fa-solid fa-cubes"></i> Developed scalable backend systems using Nest.js microservices</li>
+    <li><i class="fa-solid fa-key"></i> Designed REST APIs with RBAC security and API Gateway integration</li>
+    <li><i class="fa-solid fa-diagram-project"></i> Built event-driven systems using Kafka for horizontal scalability</li>
+    <li><i class="fa-solid fa-tachometer-alt"></i> Improved database performance under high concurrency workloads</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4 class="normalText"><i class="fa-solid fa-layer-group"></i> Full Stack Developer — Value Innovation Labs</h4>
+  <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Nov 2021 – Apr 2024</h5>
+  <p><em><i class="fa-solid fa-location-dot"></i> Noida</em></p>
+  <ul>
+    <li><i class="fa-solid fa-exchange-alt"></i> Built microservices handling 100K+ daily transactions with high reliability</li>
+    <li><i class="fa-solid fa-search"></i> Designed scalable systems with caching and optimized DB queries</li>
+    <li><i class="fa-solid fa-bug"></i> Improved system stability and significantly reduced production issues</li>
+    <li><i class="fa-solid fa-building"></i> Delivered modules for CCIL, EPIL, Rozgar.com, and related enterprise platforms</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4 class="normalText"><i class="fa-solid fa-graduation-cap"></i> Full Stack Development — Internshala</h4>
+  <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Certification &amp; training</h5>
+  <p><em><i class="fa-solid fa-certificate"></i> Full Stack Developer program [CN: 972670B8-3D5F-7E61-BD07-20E9DBCCCD22]</em></p>
+  <ul>
+    <li><i class="fa-solid fa-code"></i> Completed full-stack training covering frontend, backend, and databases</li>
+  </ul>
+</div>
+
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ---------------professional projects ------------------------------- -->
+    <section id="Experience" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="normalText">Major projects &amp; architecture</h2>
+          <p>Production systems with stack, outcomes, and design snapshots.</p>
+        </div>
+
+        <article id="swiftcab" class="featured-project" data-aos="fade-up">
+          <div class="featured-project__badge">Flagship project</div>
+          <div class="featured-project__top">
+            <div>
+              <h3 class="featured-project__title">SwiftCab.in</h3>
+              <p class="featured-project__subtitle">Real-time cab booking platform · Jan 2025 – Present</p>
+            </div>
+            <a class="featured-project__link" href="https://swiftcab.in" target="_blank" rel="noopener">
+              Visit SwiftCab.in <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </div>
+          <p class="featured-project__lead">
+            My largest end-to-end build — a ride-hailing system (similar to Ola/Rapido) covering real-time matching, event-driven scale, caching, and durable trip state. Designed and developed as a major personal/product project to push distributed-systems depth beyond day-job features.
+          </p>
+          <ul class="featured-project__points">
+            <li>Event-driven architecture with <strong>Kafka</strong> for horizontal scalability</li>
+            <li>Real-time driver–user matching over <strong>WebSockets</strong></li>
+            <li><strong>Redis</strong> for caching and fast ride/state management</li>
+            <li><strong>PostgreSQL</strong> for durable booking and trip data</li>
+            <li>Exploring <strong>Golang</strong> for performance-critical services</li>
+          </ul>
+          <div class="featured-project__stack">
+            <span>TypeScript</span>
+            <span>Kafka</span>
+            <span>Redis</span>
+            <span>PostgreSQL</span>
+            <span>WebSockets</span>
+            <span>Golang</span>
+          </div>
+          <div class="arch-note featured-project__arch">
+            <strong>Architecture snapshot</strong>
+            <p>Users / Drivers ↔ WebSockets → matching service · Kafka for async scale · Redis for hot state · PostgreSQL for durable data · Go for latency-sensitive paths (exploring).</p>
+          </div>
+        </article>
+
+        <div class="row">
+           
+        <div class="col-lg-6" data-aos="fade-up">
+
+      <h3 class="resume-title normalText">Zamtel — Government Fintech Platform (Zambia)</h3>
+<div class="resume-item pb-0">
+  <h5 class="abnormalText"> 
+    TECH STACK : 
+  </h5>
+  <ul style="list-style: none; padding-left: 0; margin: 5px 0;">
+    <li>
+      <i class="devicon-typescript-plain colored"></i> React (TypeScript)
+    </li>
+    <li>
+      <i class="devicon-java-plain colored"></i> Java microservices
+    </li>
+    <li>
+      <i class="devicon-nodejs-plain colored"></i> Node.js BFF
+      <small>(encryption/decryption &amp; request-response cycle using symmetric + asymmetric cryptography)</small>
+    </li>
+    <li>
+      <i class="devicon-kubernetes-plain colored"></i> Kubernetes
+    </li>
+    <li>
+      <strong>Jan 2025 – Present</strong>
+    </li>
+  </ul>
+  <p>
+    Government-regulated fintech platform enabling digital payments (similar to Paytm/PhonePe). Designed scalable Java microservices on Kubernetes, built a secure Node.js BFF with cryptography for the request-response lifecycle, and contributed to distributed architecture for high availability and fault tolerance.
+  </p>
+  <div class="arch-note">
+    <strong>Architecture snapshot</strong>
+    <p>Client (React/TS) → Node BFF (encrypt/decrypt) → Java microservices on Kubernetes → HA + fault-tolerant paths. Focus: secure request lifecycle, throughput, regulated payments.</p>
+  </div>
+</div>
+
+        <h3 class="resume-title normalText">eoffice.cciltd.in — Cement Corporation of India</h3>
+        <div class="resume-item pb-0">
+          <h5 class="abnormalText"> 
+            TECH STACK : 
+            <i class="devicon-react-original colored"></i> React.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-postgresql-plain colored"></i> PostgreSQL ,  
+            Nov 2021 – Apr 2024
+          </h5> 
+          <p>
+            Enterprise workflow system for employee file and leave management. Multi-level approval for inter-department file movement. Built a Committee Module enforcing mandatory multi-member approvals before file progression. Fixed critical production issues and improved system stability.
+          </p>
+        </div>
+
+        <h3 class="resume-title normalText">epieoffice.in — Engineering Projects India Limited</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK : 
+            <i class="devicon-react-original colored"></i> React.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-postgresql-plain colored"></i> PostgreSQL ,  
+            Nov 2021 – Apr 2024
+          </h5>
+          <p>Enhanced CCIL-style platform with advanced enterprise modules. Independently developed E-tour, Medical Reimbursement, and Knowledge Management modules. Contributed to E-filing, Leave, and DAK systems — production-ready solutions used by government personnel.</p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-title normalText">Rozgar.com — Job Portal</h3>
+          <h5 class="abnormalText"> 
+            TECH STACK : 
+            <i class="devicon-nextjs-original"></i> Next.js , 
+            <i class="devicon-java-plain colored"></i> Java microservices ,
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-mysql-plain colored"></i> MySQL ,  
+            Nov 2021 – Apr 2024
+          </h5>
+          <p>Migrated 70,000+ job records from MongoDB to MySQL with structured mapping. Rebuilt the platform on Next.js for better SEO. Developed AI-powered resume builder, summary generator, and cover letter generator; integrated Grammarly for content quality.</p>
+          <div class="arch-note">
+            <strong>Architecture snapshot</strong>
+            <p>Next.js SEO frontend · Java/Node services · MySQL after 70K+ job migration from Mongo · AI resume/cover-letter generators on apply path.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="resume-title normalText">Codexcave.com — Developer Learning Platform</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-react-original colored"></i> React.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-mongodb-plain colored"></i> MongoDB ,  
+            System Design — <strong>Apr 2024 – Present</strong>
+          </h5>
+          <p>Developer-focused platform for coding practice, interview preparation, and technical content. Designed scalable backend APIs and structured problem modules; clean UI/UX for engagement; performance optimization, SEO, and structured content delivery.</p>
+        </div>
+
+        <h3 class="resume-title normalText">HRMS (Human Resource Management System)</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-react-original colored"></i> React.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-postgresql-plain colored"></i> PostgreSQL ,  
+            Nov 2021 – Apr 2024
+          </h5>
+          <p>Company employee management system — contributed to the payroll module and related HR workflows.</p>
+        </div>
+
+        <div class="resume-item">
+          <h4 class="normalText">recruiter.rozgar.com — Zoom &amp; Geolocation</h4>
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-react-original colored"></i> React.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-postgresql-plain colored"></i> PostgreSQL ,  
+            Nov 2021 – Apr 2024
+          </h5>
+          <p>Integrated Zoom API for in-platform interviews on recruiter and candidate portals. Built Google Maps–based geolocation tracking so admins can view candidates by locality with resume and profile details.</p>
+        </div>
+
+         <h3 class="resume-title normalText">Phoenix — PolicyBazaar Partners (Sales)</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-nextjs-original"></i> Next.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js ,  
+            <i class="devicon-typescript-plain colored"></i> TypeScript ,  
+            Nest.js / Kafka / RBAC
+          </h5>
+          <p>
+            Sales-driven platform for PolicyBazaar partners to track renewals, new leads, region coverage, and end-to-end partner operations — backed by Nest.js microservices, REST APIs with RBAC, and Kafka-based event flows.
+          </p>
+        </div>
+
+        <h3 class="resume-title normalText">Luxorpen — CMS &amp; Product Catalog</h3>
+        <div class="resume-item">
+          <h5 class="abnormalText"> 
+            TECH STACK: 
+            <i class="devicon-nextjs-original"></i> Next.js , 
+            <i class="devicon-nodejs-plain colored"></i> Node.js , 
+            <i class="devicon-mongodb-plain colored"></i> MongoDB  
+          </h5>
+          <p>
+            CMS website with Next.js frontend and Node.js backend, GSAP animations, product catalog, and admin portal (React + Node.js) for India’s leading writing instruments manufacturer &amp; exporter.
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </section>
+    
+
+
+  <!-- ---------------professional projects ------------------------------- -->
+
+
+
+  <section id="project_shorts" class="project-shorts">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="normalText">Project shorts</h2>
+        <p>Selected product moments — screenshots and feature previews from live builds.</p>
+      </div>
+
+      <div class="shorts-grid">
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/csc/csc o auth.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="CSC OAuth — resume integration with Rozgar">
+            <img src="./assets/img/projects_shorts/csc/csc o auth.png" alt="CSC OAuth integration" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>CSC OAuth resume flow</h3>
+            <p>OAuth integration for resume creation in collaboration with Rozgar.com</p>
+            <a href="./assets/img/projects_shorts/csc/csc screenshot .png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="CSC OAuth full preview">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/Geolocation_candidate_tracker.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Geolocation candidate tracking">
+            <img src="./assets/img/projects_shorts/Geolocation_candidate_tracker.png" alt="Geolocation candidate tracking" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Geolocation tracker</h3>
+            <p>Map-based candidate locality tracking for recruiters and admins</p>
+            <a href="./assets/img/projects_shorts/Geolocation_candidate_tracker2.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Geolocation tracker alternate view">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Zoom integration on Rozgar">
+            <img src="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com.png" alt="Zoom interview integration" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Zoom interviews</h3>
+            <p>In-platform interviews for candidates and recruiters on Rozgar</p>
+            <a href="./assets/img/projects_shorts/zoom meeting on meet.rozgar.com1.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Zoom integration preview">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/rozgar.com.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Rozgar.com">
+            <img src="./assets/img/projects_shorts/rozgar.com.png" alt="Rozgar.com job portal" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Rozgar.com</h3>
+            <p>Job portal rebuilt with Next.js, SEO, and AI-assisted apply flows</p>
+            <div class="short-card__meta">
+              <a href="https://rozgar.com" target="_blank" rel="noopener" class="short-card__ext">Visit site</a>
+              <a href="./assets/img/projects_shorts/rozgar.com.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Rozgar.com preview">View preview</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/ccil.png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="CCIL eOffice">
+            <img src="./assets/img/projects_shorts/ccil.png" alt="CCIL eOffice" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>CCIL eOffice</h3>
+            <p>Government file &amp; leave workflow for Cement Corporation of India</p>
+            <div class="short-card__meta">
+              <a href="https://eoffice.cciltd.in/" target="_blank" rel="noopener" class="short-card__ext">Visit site</a>
+              <a href="./assets/img/projects_shorts/ccil.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="CCIL preview">View preview</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/cover_letter/cover letter genration .png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="AI cover letter generator">
+            <img src="./assets/img/projects_shorts/cover_letter/cover letter genration .png" alt="Cover letter generator" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>AI cover letter</h3>
+            <p>On-the-spot cover letter &amp; profile summary while applying for jobs</p>
+            <a href="./assets/img/projects_shorts/cover_letter/cover letter genration .png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Cover letter module">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="GPT profile summariser">
+            <img src="./assets/img/projects_shorts/cover_letter/summariser .gif" alt="GPT summariser" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>GPT summariser</h3>
+            <p>OpenAI-powered profile summary generation for job applications</p>
+            <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Summariser preview">View preview</a>
+          </div>
+        </article>
+
+        <article class="short-card">
+          <a href="./assets/img/projects_shorts/luxor  .png" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="Luxorpen">
+            <img src="./assets/img/projects_shorts/luxor  .png" alt="Luxorpen website" loading="lazy" width="640" height="400">
+          </a>
+          <div class="short-card__body">
+            <h3>Luxorpen</h3>
+            <p>Next.js CMS &amp; product catalog for India's leading pen brand</p>
+            <a href="./assets/img/projects_shorts/luxor2.png" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Luxorpen preview">View preview</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+<!-- product section  -->
+
+  <div class="container" id="product">
+    <div class="section-title">
+      <h2 class="normalText"> Product   </h2>
+    </div>
+    
+    <div class="row text-center">
+
+      <div class="col-sm">
+        <img width="400" width="400" src="./assets/img/projects_shorts/product.png" />
+        <a href="./assets/img/projects_shorts/product.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="codexcave.com (unlock maximum potential)"><h4> FULL PREVIEW</h4> </a>
+        <a href="https://codexcave.com"> codexcave.com</a>
+    </div>
+  </div>
+   
+<!-- product section  -->
+
+
+
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio ">
+      <div class="container">
+
+        <div class="section-title ">
+          <h2 class="normalText" >Mini Live personal Projects (WEB)</h2>
+          <p class="normalText">
+           Some mini live Project samples  
+          </p>  
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">Blog Management </li>
+              <li data-filter=".filter-card" > E-store </li>
+              <li data-filter=".filter-web">Contact List  </li>
+              <li data-filter=".filter-youtube">Youtube clone   </li>
+              <li data-filter=".filter-chatapp"> Chat App </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100"> 
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+           
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
+            <div class="portfolio-wrap" style="display: flex; justify-content: center;" >
+              <img src="assets/img/projects_shorts/contact-list.png"   style="width: 450px; height: 300px;  "  class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/projects_shorts/contact-list.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=" Contact List "><i class="bx bx-plus"></i></a>
+                <a href="https://react-demo44.netlify.app" title="More Details" target="_idk" ><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
+              <img src="assets/img/projects_shorts/blog.png"  style="width: 450px; height: 300px;  " class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/projects_shorts/blog1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blog managment using MERN stack "><i class="bx bx-plus"></i></a>
+                <a href="https://react-demo44.netlify.app/"  target="_idk" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+           
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
+              <img src="assets/img/projects_shorts/e-store.png" style="width: 450px; height: 300px;   " class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/projects_shorts/e-store1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="E-store using Mern stack  "><i class="bx bx-plus"></i></a>
+                <a href="https://e-store-1.netlify.app/" title="More Details"  target="_idk" ><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-youtube">
+            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
+              <img src="assets/img/projects_shorts/youtube-lite.png" style="width: 450px; height: 300px;   " class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/projects_shorts/youtube-lite-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Youtube clone with youtube data v3 api , used Rect js for frontend  "><i class="bx bx-plus"></i></a>
+                <a href="https://youtube-lyte.netlify.app/" title="More Details"  target="_idk" ><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-chatapp">
+            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
+              <img src="assets/img/projects_shorts/chatapp-home.png" style="width: 450px; height: 300px;   " class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/projects_shorts/chatapp-client.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="chat app using (Socket.io , node js , react js , with push notificition  )" ><i class="bx bx-plus"></i></a>
+                <a href="https://chatapp-lyte.netlify.app/" title="More Details"  target="_idk" ><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="portfolio2" class="portfolio ">
+      <div class="container">
+
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100"> 
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+         
+
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- End Portfolio Section -->
+    <!-- ======= Services Section ======= -->
+
+     <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="normalText">What I Can Help With</h2>
+          <p class="normalText">
+            Backend microservices, full-stack product delivery, cloud/DevOps, and system design — grounded in Fintech and Enterprise experience at Paytm, PolicyBazaar, and Value Innovation Labs.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bi bi-hdd-stack"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Microservices &amp; Backend APIs</a></h4>
+            <p class="description">
+              Spring Boot, NestJS, and Node.js microservices with REST/GraphQL, API Gateway, rate limiting, circuit breakers, and high-availability design.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bi bi-lightning-charge"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Event-Driven Systems</a></h4>
+            <p class="description">
+              Kafka-based event-driven architecture, pub/sub patterns, Redis caching, and real-time features with WebSockets for scalable, low-latency systems.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bi bi-window"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Full-Stack Web Apps</a></h4>
+            <p class="description">
+              React.js, Next.js, Redux Toolkit, React Query, and Material UI — paired with secure backends and SEO-friendly product experiences.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bi bi-cloud"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Cloud &amp; DevOps</a></h4>
+            <p class="description">
+              AWS (EC2, S3, SQS, RDS), Docker, Kubernetes, Jenkins, and GitHub Actions for containerized deployments and CI/CD automation.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bi bi-shield-lock"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Security &amp; Performance</a></h4>
+            <p class="description">
+              JWT, OAuth2, RBAC, API security, database indexing/query optimization, caching strategies, and observability (logging &amp; monitoring).
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon"><i class="bi bi-diagram-3"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">System Design (HLD/LLD)</a></h4>
+            <p class="description">
+              Scalable architecture, distributed systems, Domain-Driven Design, clean architecture, and performance engineering for production workloads.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon"><i class="bi bi-robot"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">AI &amp; Automation</a></h4>
+            <p class="description">
+              AI agents, agentic workflows, n8n, prompt engineering, and OpenAI/LLM integrations for product features like resume builders and content tools.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon"><i class="bi bi-database"></i></div>
+            <h4 class="title"><a href="" style="text-decoration: none; color:white !important;">Database Engineering</a></h4>
+            <p class="description">
+              PostgreSQL, MySQL, MongoDB, and Redis — schema design, migrations (e.g. 70K+ records), indexing, and query optimization under high concurrency.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <!-- <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div>
+             -->
+            <!-- End testimonial item -->
+        <!-- 
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section> -->
+  
+    <!-- End Testimonials Section -->
+
+
+    
+    <!-- ======= Proof & social ======= -->
+    <section id="proof" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">Proof &amp; social signals</h2>
+          <p>Verify work and recommendations — no fabricated testimonials.</p>
+        </div>
+        <div class="proof-grid">
+          <a class="proof-card" href="assets/Shashikant_Aug_2026.pdf" download target="_blank" rel="noopener">
+            <i class="bi bi-file-earmark-pdf"></i>
+            <strong>Resume PDF</strong>
+            <span>Aug 2026 one-pager — same story as this site</span>
+          </a>
+          <a class="proof-card" href="https://github.com/skntmax" target="_blank" rel="noopener">
+            <i class="bx bxl-github"></i>
+            <strong>GitHub</strong>
+            <span>Code, experiments, and public work</span>
+          </a>
+          <a class="proof-card" href="https://www.linkedin.com/in/shashi-kant-5a1710185/" target="_blank" rel="noopener">
+            <i class="bx bxl-linkedin"></i>
+            <strong>LinkedIn recommendations</strong>
+            <span>Manager &amp; peer recommendations live on LinkedIn</span>
+          </a>
+          <a class="proof-card" href="https://eoffice.cciltd.in/" target="_blank" rel="noopener">
+            <i class="bi bi-building"></i>
+            <strong>CCIL eOffice</strong>
+            <span>Live government workflow platform</span>
+          </a>
+          <a class="proof-card" href="https://rozgar.com" target="_blank" rel="noopener">
+            <i class="bi bi-briefcase"></i>
+            <strong>Rozgar.com</strong>
+            <span>Job portal with AI apply tooling</span>
+          </a>
+          <a class="proof-card" href="http://codexcave.com" target="_blank" rel="noopener">
+            <i class="bi bi-code-slash"></i>
+            <strong>Codexcave.com</strong>
+            <span>Developer learning &amp; practice platform</span>
+          </a>
+        </div>
+        <p class="proof-footnote">Want a named reference? Email me — happy to connect you with a former lead on LinkedIn.</p>
+      </div>
+    </section>
+
+    <!-- ======= Hire CTA band ======= -->
+    <section id="hire" class="hire-cta-band">
+      <div class="container">
+        <h2>Available for Senior Software Engineer roles</h2>
+        <p>Fintech · distributed systems · full-stack product teams · Noida / remote discussions · IST</p>
+        <div class="hire-cta-band__actions">
+          <a class="hero-wave-cta" href="mailto:skntjee@gmail.com?subject=Hiring%20inquiry%20-%20Senior%20Software%20Engineer">Email skntjee@gmail.com</a>
+          <a class="hero-wave-cta hero-wave-cta--ghost" href="https://www.linkedin.com/in/shashi-kant-5a1710185/" target="_blank" rel="noopener">Message on LinkedIn</a>
+          <a class="hero-wave-cta hero-wave-cta--ghost" href="assets/Shashikant_Aug_2026.pdf" download>Download resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="normalText">Contact</h2>
+          <p>Hiring or collaboration — reply within 24–48 hours on business days. Timezone: IST (UTC+5:30).</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Noida, Uttar Pradesh</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>skntjee@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 7860735070</p>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+           
+            <!-- <form 
+              action="https://blog-backend-x1s2.onrender.com/user/send-enquiry" method="post"  
+              role="form"
+              class="php-email-form"
+              onsubmit="sendEnquiry(); return false "
+              > -->
+
+               <div class="php-email-form">
+                
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name" class="abnormalText">Your Name</label>
+                  <input type="text" 
+                    name="name" 
+                   class="form-control" id="name"
+                   onchange="getValue(this)" 
+                   required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name" class="abnormalText">Your Email</label>
+                  <input type="email"
+                  name="email"  
+                  class="form-control"
+                  onchange="getValue(this) ;" 
+                  name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name" class="abnormalText"> Subject </label>
+                <input type="text"
+
+                onchange="getValue(this) ; " 
+                class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name" class="abnormalText">Message</label>
+                <textarea class="form-control"
+                onchange="getValue(this) ; " 
+                id="message"
+                name="message" rows="10"
+                required></textarea>
+              </div>
+               
+              <div class="my-3">
+                <div class="loading" class="abnormalText">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button  onclick="sendEnquiry()" >Send Message</button></div>
+            
+
+               </div>
+
+            
+            <!-- </form> -->
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="sidebar-signature">
+        <span class="sidebar-signature__mark" aria-hidden="true">SK</span>
+        <p class="sidebar-signature__name">Shashi Kant</p>
+        <p class="sidebar-signature__line">Built with intent · Noida</p>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script src="assets/js/theme.js"></script>
+  <script defer src="assets/js/sidebar.js"></script>
+  <script defer src="assets/js/site-search.js"></script>
+  <script type="module" src="assets/js/hero-three.js"></script>
+  <script defer src="assets/js/motion.js"></script>
+  <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script defer src="assets/vendor/typed.js/typed.min.js"></script>
+  <script defer src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/defer-vendors.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof Typed === "undefined") return;
+    new Typed("#typed", {
+      strings: ["Senior Software Engineer at"],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: false,
+      onComplete: function () {
+        var loader = document.getElementById("loader");
+        if (loader) loader.style.display = "inline-block";
+      }
+    });
+  });
+  </script>
+
+</body>
+
+</html>
