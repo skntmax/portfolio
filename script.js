@@ -10,9 +10,7 @@ async function sendEnquiry( ) {
    }
 
    alert("some error occured ")
-   
-    
-    
+  
 }
 
 

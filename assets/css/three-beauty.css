@@ -161,6 +161,39 @@ code,
   .hero-stage__aurora {
     animation: none;
   }
+
+  html.hero-typeit-wait #hero-type-caption,
+  html.hero-typeit-wait #hero-type-name,
+  html.hero-typeit-wait #hero-type-bio {
+    visibility: visible;
+  }
+
+  #hero .ti-cursor {
+    animation: none;
+    display: none;
+  }
+}
+
+html.hero-typeit-wait #hero-type-caption,
+html.hero-typeit-wait #hero-type-name,
+html.hero-typeit-wait #hero-type-bio {
+  visibility: hidden;
+}
+
+html.hero-typeit-wait #hero-type-caption.ti-live,
+html.hero-typeit-wait #hero-type-name.ti-live,
+html.hero-typeit-wait #hero-type-bio.ti-live {
+  visibility: visible;
+}
+
+#hero-type-name {
+  display: inline;
+}
+
+#hero .ti-cursor {
+  color: var(--hero-accent);
+  font-weight: 300;
+  margin-left: 0.06em;
 }
 
 .hero-three-root {

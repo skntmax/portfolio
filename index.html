@@ -9,8 +9,8 @@
    
   <title>Shashi Kant | Senior Software Engineer</title>
    
-  <meta content="Senior Software Engineer with 5+ years experience in Fintech & Enterprise. Expert in Java Spring Boot, MERN, Microservices, Kafka, AWS, and System Design." name="description">
-  <meta content="Senior Software Engineer, Full Stack, MERN, Java Spring Boot, NestJS, Kafka, Microservices, Paytm, Noida" name="keywords">
+  <meta content="Senior Software Engineer with 5+ years in Fintech & Enterprise. Java Spring Boot, MERN, Kafka, AWS, system design, and AI agents / RAG." name="description">
+  <meta content="Senior Software Engineer, Full Stack, AI Agents, RAG, Java Spring Boot, NestJS, Kafka, Microservices, Paytm, Noida" name="keywords">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#040b14">
 
@@ -33,6 +33,12 @@
           document.documentElement.classList.add("sidebar-collapsed-boot");
         }
       } catch (e2) {}
+      try {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("hero-typeit-wait");
+        }
+      } catch (e3) {}
+      document.documentElement.classList.add("page-loaded");
     })();
   </script>
 
@@ -44,7 +50,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,10 +58,10 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/theme-polish.css" rel="stylesheet">
   <link href="assets/css/three-beauty.css" rel="stylesheet">
+  <link href="assets/css/resume-chat.css?v=nexus-3" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
   <noscript>
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -104,43 +109,9 @@
     </div>
   </div>
 
-  <div id="page-loader" class="page-loader" aria-busy="true" aria-live="polite" aria-label="Loading page">
-    <div class="page-loader__inner">
-      <div class="page-loader__spinner" aria-hidden="true"></div>
-      <p class="page-loader__text">Loading portfolio…</p>
-    </div>
-  </div>
+  <div id="page-loader" class="page-loader" aria-hidden="true" hidden></div>
   <script>
-    (function () {
-      var done = false;
-      var el = document.getElementById("page-loader");
-      var root = document.documentElement;
-      var maxMs = 1600;
-      function finish() {
-        if (done) return;
-        done = true;
-        try {
-          clearTimeout(fallback);
-        } catch (e) {}
-        root.classList.add("page-loaded");
-        if (el) el.setAttribute("aria-busy", "false");
-        function lazyBelowFold() {
-          var imgs = document.querySelectorAll("#main img:not([loading])");
-          for (var i = 2; i < imgs.length; i++) imgs[i].loading = "lazy";
-        }
-        if ("requestIdleCallback" in window) requestIdleCallback(lazyBelowFold, { timeout: 1500 });
-        else setTimeout(lazyBelowFold, 200);
-      }
-      var fallback = setTimeout(finish, maxMs);
-      if (document.readyState === "interactive" || document.readyState === "complete") {
-        setTimeout(finish, 120);
-      } else {
-        document.addEventListener("DOMContentLoaded", function () {
-          setTimeout(finish, 120);
-        }, { once: true });
-      }
-      window.addEventListener("load", finish, { once: true });
-    })();
+    document.documentElement.classList.add("page-loaded");
   </script>
 
   <div id="siteCustomCursor" class="site-custom-cursor" aria-hidden="true"><span class="site-custom-cursor-dot"></span></div>
@@ -168,16 +139,16 @@
         <p class="profile-company">
           <i class="bi bi-building" aria-hidden="true"></i> Paytm · Noida
         </p>
-        <p class="profile-tagline">Full Stack · MERN · Java Spring Boot</p>
+        <p class="profile-tagline">Full Stack · Java Spring Boot · AI Agents</p>
         <div class="profile-stack" aria-label="Core stack">
           <span>Java</span>
           <span>Spring</span>
           <span>Kafka</span>
           <span>React</span>
-          <span>AWS</span>
+          <span>RAG</span>
         </div>
         <div class="profile-actions">
-          <a class="profile-resume-btn" href="assets/Shashikant_Aug_2026.pdf" download target="_blank" rel="noopener" title="Download resume">
+          <a class="profile-resume-btn" href="assets/shashi_kant_September_2026.pdf" download="Shashi_Kant_September_2026.pdf" target="_blank" rel="noopener" title="Download resume">
             <i class="bi bi-download" aria-hidden="true"></i> Resume
           </a>
           <a class="profile-contact-btn" href="#contact" title="Contact">
@@ -198,6 +169,7 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#impact" class="nav-link scrollto"><i class="bx bx-line-chart"></i> <span>Impact</span></a></li>
+          <li><a href="#cases" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Case studies</span></a></li>
           <li><a href="#how-i-work" class="nav-link scrollto"><i class="bx bx-cog"></i> <span>How I work</span></a></li>
           <li><a href="#systems" class="nav-link scrollto"><i class="bx bx-network-chart"></i> <span>Systems</span></a></li>
           <li><a href="#certificates" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Certificates</span></a></li>
@@ -209,6 +181,7 @@
           <li><a href="#proof" class="nav-link scrollto"><i class="bx bx-check-shield"></i> <span>Proof</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="#ask-ai" class="nav-link scrollto" data-open-resume-chat><i class="bx bx-bot"></i> <span>Nexus</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -227,16 +200,16 @@
 
     <div class="hero-stage__layout">
       <div class="hero-stage__copy">
-        <p class="hero-kicker hero-anim">Senior Software Engineer · Paytm</p>
+        <p class="hero-kicker hero-anim" id="hero-type-caption">Senior Software Engineer · Paytm</p>
         <h1 class="hero-title hero-anim">
-          Shashi Kant
-          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-resume-icon" title="Download resume" aria-label="Download resume" download><i class="bi bi-download"></i></a>
+          <span id="hero-type-name">Shashi Kant</span>
+          <a href="assets/shashi_kant_September_2026.pdf" class="hero-resume-icon" title="Download resume" aria-label="Download resume" download="Shashi_Kant_September_2026.pdf"><i class="bi bi-download"></i></a>
         </h1>
-        <p class="hero-role hero-anim">I design &amp; ship high-availability fintech systems — Spring Boot, Kafka, Redis, and full-stack delivery when the product needs it.</p>
         <ul class="hero-proof-pills hero-anim" aria-label="Highlights">
+          <p class="hero-role hero-anim" id="hero-type-bio">I design &amp; ship high-availability fintech systems — Spring Boot, Nest js , Kafka, Redis, LLM/RAG automation, and full-stack delivery when the product needs it.</p>
           <li>5 yrs Fintech &amp; Enterprise</li>
           <li>HA microservices</li>
-          <li>Event-driven · System design</li>
+          <li>Event-driven · AI agents</li>
         </ul>
         <p class="hero-typed-line hero-anim">
           <span id="typed"></span>
@@ -247,7 +220,7 @@
         <div class="hero-actions hero-anim">
           <a href="mailto:skntjee@gmail.com?subject=Hiring%20inquiry%20-%20Senior%20Software%20Engineer" class="hero-btn hero-btn--primary">Discuss a role</a>
           <a href="#swiftcab" class="hero-btn hero-btn--ghost">See SwiftCab.in</a>
-          <a href="assets/Shashikant_Aug_2026.pdf" class="hero-btn hero-btn--ghost" download>Resume</a>
+          <a href="assets/shashi_kant_September_2026.pdf" class="hero-btn hero-btn--ghost" download="Shashi_Kant_September_2026.pdf">Resume</a>
         </div>
         <div class="hero-links hero-anim">
           <a href="https://github.com/skntmax" target="_blank" rel="noopener"><i class="bx bxl-github"></i> GitHub</a>
@@ -267,7 +240,7 @@
           <p class="hero-card-label">Flagship</p>
           <p class="hero-card-value"><a href="#swiftcab">SwiftCab.in</a> · real-time rides</p>
           <p class="hero-card-label">Open to</p>
-          <p class="hero-card-value">Senior / Lead backend or full-stack</p>
+          <p class="hero-card-value">Senior / Lead · Noida / hybrid / remote</p>
         </div>
       </aside>
     </div>
@@ -300,12 +273,12 @@
 
         <div class="section-title about-title">
           <h2 class="normalText">About</h2>
-          <p class="about-lede">Senior Software Engineer focused on scalable backends and full-stack delivery in Fintech and Enterprise.</p>
+          <p class="about-lede">Senior Software Engineer focused on scalable backends, full-stack delivery, and AI-assisted product features in Fintech and Enterprise.</p>
         </div>
 
         <div class="about-intro">
           <p>I have 5 years of experience building cloud-native applications — with strong work in microservices, REST APIs, event-driven systems, distributed systems, and Domain-Driven Design (DDD).</p>
-          <p>Day to day I work with Java Spring Boot, Node.js, NestJS, Kafka, Redis, and AWS, plus system design (HLD/LLD), API gateways, database tuning, Docker/Kubernetes, CI/CD, and performance engineering.</p>
+          <p>Day to day I work with Java Spring Boot, Node.js, NestJS, Kafka, Redis, and AWS, plus system design (HLD/LLD), API gateways, database tuning, Docker/Kubernetes, CI/CD, and performance engineering. I also ship LLM/RAG features — OpenAI APIs, agentic workflows, prompt design, and n8n automation.</p>
           <p>Currently at Paytm (Noida); previously PolicyBazaar – PB Partners and Value Innovation Labs. I care about reliability, observability, and clear architecture — with a solid base in DSA and scalable backend design.</p>
         </div>
 
@@ -332,7 +305,7 @@
               <div class="col-md-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Timezone:</strong> <span>IST (UTC+5:30)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Notice:</strong> <span>Standard · open to Senior roles</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Notice:</strong> <span>Open to Senior / Lead · discuss timeline</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.Tech (CSE)</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Role:</strong> <span>Senior Software Engineer</span></li>
                 </ul>
@@ -340,7 +313,7 @@
             </div>
 
             <p class="about-closing">
-              At Paytm I work on Spring Boot + Kafka services with high availability, API Gateway, rate limiting, Redis, and circuit breakers. Earlier: Nest.js microservices at PolicyBazaar; CCIL, EPIL, and Rozgar.com (70K+ job migration, AI resume tools) at Value Innovation Labs. Flagship build: <a href="#swiftcab">SwiftCab.in</a> (real-time cab booking); also Codexcave.com.
+              At Paytm I work on Spring Boot + Kafka services with high availability, API Gateway, rate limiting, Redis, and circuit breakers. Concurrent product work includes <a href="#Experience">Zamtel</a> (gov payments) and <a href="#swiftcab">SwiftCab.in</a> — not a second employer. Earlier: Nest.js microservices at PolicyBazaar; CCIL, EPIL, and Rozgar.com (70K+ job migration, AI resume tools) at Value Innovation Labs. Also Codexcave.com.
             </p>
           </div>
         </div>
@@ -390,7 +363,49 @@
       </div>
     </section>
 
-    <section id="timeline" class="hire-section">
+    <section id="cases" class="hire-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">Case studies</h2>
+          <p>Problem → approach → result on shipped systems. Numbers are from production work I can name publicly.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card">
+            <p class="case-card__kicker">Rozgar.com</p>
+            <h3>70K+ jobs, then AI apply</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Job records lived in MongoDB; the portal needed structured search, SEO, and faster apply-path content.</dd>
+              <dt>Approach</dt>
+              <dd>Mapped 70,000+ jobs MongoDB → MySQL, rebuilt the frontend in Next.js, and added LLM resume / summary / cover-letter generators on the apply path.</dd>
+            </dl>
+            <p class="case-card__result">Result: structured MySQL catalog, stronger SEO, and AI-assisted applications in production.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-card__kicker">Value Innovation Labs</p>
+            <h3>100K+ daily transactions</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Enterprise and gov workflows needed reliable throughput without turning every request into a production fire.</dd>
+              <dt>Approach</dt>
+              <dd>Microservices with caching, query tuning, and stability work across CCIL, EPIL, and related platforms.</dd>
+            </dl>
+            <p class="case-card__result">Result: 100K+ daily transactions handled with high reliability; fewer production issues over time.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-card__kicker">SwiftCab.in · flagship</p>
+            <h3>Real-time ride matching</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Cab booking needs live driver–rider matching, hot trip state, and durable bookings — not a CRUD demo.</dd>
+              <dt>Approach</dt>
+              <dd>WebSockets for matching, Kafka for async scale, Redis for hot state, PostgreSQL for durable trips. Golang on latency-sensitive paths (exploring).</dd>
+            </dl>
+            <p class="case-card__result">Result: live product at SwiftCab.in — end-to-end distributed-systems build beyond day-job tickets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
       <div class="container">
         <div class="section-title">
           <h2 class="normalText">Career trajectory</h2>
@@ -444,6 +459,10 @@
             <h3><i class="bi bi-people"></i> Collaborative delivery</h3>
             <p>Work with product and peers on HLD/LLD, review thoughtfully, and leave systems easier to maintain than I found them.</p>
           </article>
+          <article class="work-card">
+            <h3><i class="bi bi-journal-text"></i> Document the path</h3>
+            <p>Write the design, the failure mode, and the handoff — so the next engineer (or my future self) can run the system without archaeology.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -479,6 +498,14 @@
               <li>Docker · Kubernetes · Jenkins / GitHub Actions · AWS</li>
             </ul>
           </div>
+          <div class="systems-card">
+            <h3>AI in the product path</h3>
+            <ul>
+              <li>RAG · OpenAI APIs · prompt design · function/tool calling</li>
+              <li>Agentic workflows · n8n automation</li>
+              <li>Shipped: Rozgar resume / summary / cover-letter generators</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -487,95 +514,83 @@
 
     <section id="certificates" class="certificates">
       <div class="container">
-         
         <div class="section-title">
-          <h2  style="color: white;" >certificates</h2>
+          <h2 class="normalText">Certificates</h2>
+          <p>Senior-relevant credentials up front. Earlier coursework is in the disclosure below.</p>
         </div>
-          <table >
+        <div class="cert-featured">
+          <article class="cert-card">
+            <strong>Oracle Database PL/SQL Developer Certified Professional</strong>
+            <span>Credential CN: 63f0d0bd484f</span>
+          </article>
+          <article class="cert-card">
+            <strong>Introduction to Kubernetes</strong>
+            <a href="https://simpli-web.app.link/e/lzXAud25jDb" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="cert-card">
+            <strong>AWS Cloud Essentials</strong>
+            <a href="https://rb.gy/myilzy" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="cert-card">
+            <strong>SQL Certification – HackerRank</strong>
+            <a href="https://bit.ly/3F9UBl2" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="cert-card">
+            <strong>Full Text Queries with Elasticsearch</strong>
+            <span>Search &amp; analytics</span>
+          </article>
+          <article class="cert-card">
+            <strong>React.js Frontend Developer – HackerRank</strong>
+            <span>Skills verification</span>
+          </article>
+        </div>
+        <details class="cert-more">
+          <summary>More certificates</summary>
+          <table>
             <tbody>
-              
               <tr class="pading_row">
-                <th scope="row">1. </th>
+                <th scope="row">1.</th>
                 <td><strong>Full Stack Developer – Internshala</strong> <span style="opacity:.75">[CN: 972670B8-3D5F-7E61-BD07-20E9DBCCCD22]</span></td>
-                <td> <a target="_blank" href="https://trainings.internshala.com/verify_certificate">Verify certificate</a></td>
-              </tr> 
-
+                <td><a target="_blank" rel="noopener" href="https://trainings.internshala.com/verify_certificate">Verify certificate</a></td>
+              </tr>
               <tr>
                 <th scope="row">2.</th>
                 <td><strong>React JS for Beginners – Simplilearn</strong></td>
-                <td> <a href="https://simpli-web.app.link/e/Rg6NqdV5jDb" target="_blank">View certificate</a> </td>
+                <td><a href="https://simpli-web.app.link/e/Rg6NqdV5jDb" target="_blank" rel="noopener">View certificate</a></td>
               </tr>
               <tr>
                 <th scope="row">3.</th>
-                <td> <strong>SQL Certification – HackerRank</strong></td>
-                <td><a href="https://bit.ly/3F9UBl2" target="_blank">View certificate</a> </td>
+                <td><strong>Getting Started with NodeJS – SkillUp</strong></td>
+                <td><a href="https://bit.ly/3f11jPQ" target="_blank" rel="noopener">View certificate</a></td>
               </tr>
-
               <tr>
                 <th scope="row">4.</th>
-                <td><strong>Getting Started with NodeJS – SkillUp</strong></td>
-                <td><a href="https://bit.ly/3f11jPQ" target="_blank">View certificate</a></td>
+                <td><strong>Full Stack JavaScript Development (MongoDB, Node)</strong></td>
+                <td><a href="https://shorturl.at/qzJ23" target="_blank" rel="noopener">View certificate</a></td>
               </tr>
-
               <tr>
                 <th scope="row">5.</th>
-                <td><strong>Introduction to Kubernetes</strong></td>
-                <td> <a href="https://simpli-web.app.link/e/lzXAud25jDb" target="_blank">View certificate</a> </td>
+                <td><strong>React Native Essential Training</strong></td>
+                <td><a href="https://shorturl.at/mrBO0" target="_blank" rel="noopener">View certificate</a></td>
               </tr>
-
               <tr>
                 <th scope="row">6.</th>
-                <td><strong>Oracle Database PL/SQL Developer Certified Professional</strong> <span style="opacity:.75">[CN: 63f0d0bd484f]</span></td>
-                <td>—</td>
+                <td><strong>Introduction to Cloud Computing</strong></td>
+                <td><a href="http://surl.li/npbib" target="_blank" rel="noopener">View certificate</a></td>
               </tr>
-
               <tr>
                 <th scope="row">7.</th>
-                <td><strong>React.js Frontend Developer – HackerRank</strong></td>
-                <td>—</td>
+                <td><strong>JavaScript Intermediate Certification</strong></td>
+                <td><a href="https://shorturl.at/wDVWZ" target="_blank" rel="noopener">View certificate</a></td>
               </tr>
-
               <tr>
                 <th scope="row">8.</th>
-                <td><strong>Full Stack JavaScript Development (MongoDB, Node)</strong></td>
-                <td> <a href="https://shorturl.at/qzJ23" target="_blank">View certificate</a> </td>
-              </tr>
-
-              <tr>
-                <th scope="row">9.</th>
-                <td><strong>React Native Essential Training</strong></td>
-                <td> <a href="https://shorturl.at/mrBO0" target="_blank">View certificate</a> </td>
-              </tr>
-               
-              <tr>
-                <th scope="row">10.</th>
-                <td><strong>Introduction to Cloud Computing</strong></td>
-                <td> <a href="http://surl.li/npbib" target="_blank">View certificate</a> </td>
-              </tr>
-
-              <tr>
-                <th scope="row">11.</th>
-                <td><strong>AWS Cloud Essentials</strong></td>
-                <td> <a href="https://rb.gy/myilzy" target="_blank">View certificate</a> </td>
-              </tr>
-
-              <tr>
-                <th scope="row">12.</th>
-                <td><strong>JavaScript Intermediate Certification</strong></td>
-                <td> <a href="https://shorturl.at/wDVWZ" target="_blank">View certificate</a> </td>
-              </tr>
-
-              <tr>
-                <th scope="row">13.</th>
                 <td><strong>Google Digital Marketing Garage</strong> <span style="opacity:.75">(Credential ID: KEW 7FF URH)</span></td>
-                <td><a href="https://learndigital.withgoogle.com/digitalunlocked/validate-certificate-code" target="_blank">Validate</a></td>
+                <td><a href="https://learndigital.withgoogle.com/digitalunlocked/validate-certificate-code" target="_blank" rel="noopener">Validate</a></td>
               </tr>
-
             </tbody>
           </table>
-
- 
-
+        </details>
       </div>
     </section><!-- End Certificates Section -->
 
@@ -591,157 +606,103 @@
           <p>Quick filters for recruiters scanning profiles.</p>
         </div>
         <div class="glance-row">
-          <div><strong>Open to</strong><span>Senior / Lead full-stack or backend roles</span></div>
+          <div><strong>Open to</strong><span>Senior / Lead · Noida / hybrid / remote</span></div>
           <div><strong>Domain</strong><span>Fintech · Enterprise · Gov platforms</span></div>
-          <div><strong>Stack focus</strong><span>Java Spring · NestJS · React/Next · Kafka</span></div>
-          <div><strong>Location</strong><span>Noida · IST · Remote-friendly discussions</span></div>
+          <div><strong>Stack focus</strong><span>Java Spring · NestJS · Kafka · RAG / LLM</span></div>
+          <div><strong>Location</strong><span>Noida · IST · remote-friendly discussions</span></div>
         </div>
       </div>
     </section>
 
     <!-- ======= Skills Section ======= -->
     
-     <section id="skills" class="skills   ">
+     <section id="skills" class="skills">
       <div class="container">
         <div class="section-title">
-          <h2 class="normalText">SKILLS</h2>
+          <h2 class="normalText">Skills</h2>
           <p>
-            Technical skills aligned with 5+ years building Fintech and Enterprise systems — spanning backend microservices, frontend apps, cloud/DevOps, messaging, security, and AI automation.
+            Stack from 5+ years in Fintech and Enterprise — grouped by how I use it, not fake percentages.
           </p>
         </div>
 
-        <div class="row skills-content">
-
-         <div class="col-lg-6" data-aos="fade-up">
-  <div class="progress">
-    <span class="skill normalText"><i class="devicon-java-plain colored"></i> Java / Spring Boot <i class="val">90%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="devicon-nodejs-plain colored"></i> Node.js / NestJS / Express <i class="val">90%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="devicon-javascript-plain colored"></i> JavaScript (ES6+) / TypeScript <i class="val">95%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="devicon-react-original colored"></i> React.js / Next.js / Redux Toolkit <i class="val">95%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="devicon-postgresql-plain colored"></i> PostgreSQL / MySQL / MongoDB <i class="val">90%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="devicon-redis-plain colored"></i> Redis / Caching / Rate Limiting <i class="val">85%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="fa-solid fa-diagram-project"></i> Apache Kafka / Event-Driven Architecture <i class="val">85%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="fa-solid fa-sitemap"></i> Microservices / Distributed Systems / DDD <i class="val">88%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-
-  <div class="progress">
-    <span class="skill normalText"><i class="fa-solid fa-brain"></i> System Design (HLD/LLD) / DSA <i class="val">85%</i></span>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  </div>
-        </div>
-
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="progress">
-            <span class="skill normalText"><i class="devicon-amazonwebservices-plain colored"></i> AWS (EC2, S3, SQS, RDS) <i class="val">85%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="skill-groups skills-content">
+          <article class="skill-group">
+            <h3>Languages</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">JavaScript (ES6+)</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">Golang (exploring)</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="devicon-docker-plain colored"></i> Docker / Kubernetes <i class="val">85%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </article>
+          <article class="skill-group">
+            <h3>Backend</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">NestJS</span>
+              <span class="skill-chip">Express</span>
+              <span class="skill-chip">REST</span>
+              <span class="skill-chip">GraphQL</span>
+              <span class="skill-chip">Kafka</span>
+              <span class="skill-chip">Redis</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="devicon-github-original"></i> CI/CD (Jenkins, GitHub Actions) <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </article>
+          <article class="skill-group">
+            <h3>Frontend</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">React.js</span>
+              <span class="skill-chip">Next.js</span>
+              <span class="skill-chip">Redux Toolkit</span>
+              <span class="skill-chip">React Query</span>
+              <span class="skill-chip">Material UI</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="fa-solid fa-shield-halved"></i> Security (JWT, OAuth2, RBAC, API Security) <i class="val">85%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </article>
+          <article class="skill-group">
+            <h3>Data</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">PostgreSQL</span>
+              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">MongoDB</span>
+              <span class="skill-chip">Indexing</span>
+              <span class="skill-chip">Query tuning</span>
+              <span class="skill-chip">Elasticsearch</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="fa-solid fa-chart-line"></i> Observability &amp; Performance Engineering <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </article>
+          <article class="skill-group">
+            <h3>Cloud &amp; delivery</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">AWS (EC2, S3, SQS, RDS)</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Kubernetes</span>
+              <span class="skill-chip">Jenkins</span>
+              <span class="skill-chip">GitHub Actions</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="fa-solid fa-robot"></i> AI Agents / LLM / OpenAI / n8n <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </article>
+          <article class="skill-group">
+            <h3>Architecture &amp; security</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Microservices</span>
+              <span class="skill-chip">DDD</span>
+              <span class="skill-chip">HLD / LLD</span>
+              <span class="skill-chip">JWT / OAuth2 / RBAC</span>
+              <span class="skill-chip">Circuit breakers</span>
+              <span class="skill-chip">Observability</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="devicon-python-plain colored"></i> Python / SQL <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </article>
+          <article class="skill-group">
+            <h3>AI &amp; automation</h3>
+            <div class="skill-chip-list">
+              <span class="skill-chip">AI agents</span>
+              <span class="skill-chip">RAG</span>
+              <span class="skill-chip">OpenAI APIs</span>
+              <span class="skill-chip">Prompt design</span>
+              <span class="skill-chip">Tool calling</span>
+              <span class="skill-chip">n8n</span>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="fa-solid fa-diagram-project"></i> React Query / GraphQL / Material UI <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill normalText"><i class="devicon-go-original-wordmark colored"></i> Golang (exploring) <i class="val">60%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-
+          </article>
         </div>
       </div>
     </section><!-- End Skills Section -->
@@ -766,7 +727,7 @@
             <div class="resume-item pb-0">
               <h4 class="normalText">Shashi Kant</h4>
               <p><em>
-                Senior Software Engineer with 5 years of experience building high-performance, scalable, cloud-native applications in Fintech and Enterprise domains. Expertise in Microservices, RESTful APIs, Event-Driven Systems, Distributed Systems, and DDD. Hands-on with Java Spring Boot, Node.js, NestJS, Kafka, Redis, AWS, Docker, and Kubernetes. Strong in System Design (HLD/LLD), API Gateway, database optimization, CI/CD, and performance engineering.
+                Senior Software Engineer with 5 years building high-performance, cloud-native applications in Fintech and Enterprise. Strong in microservices, REST APIs, event-driven and distributed systems, and DDD. Hands-on with Java Spring Boot, Node.js, NestJS, Kafka, Redis, AWS, Docker, and Kubernetes. Also shipping LLM/RAG features — OpenAI APIs, agentic workflows, prompt design, and n8n. Solid in HLD/LLD, API Gateway, database optimization, CI/CD, and performance engineering.
               </em>
               <ul>
                 <li>Noida, Uttar Pradesh</li>
@@ -781,23 +742,8 @@
               <h4 class="normalText" >B.Tech in Computer Science</h4>
               <h5 class="abnormalText" > 2017 - 2021</h5>
               <p><em> Chhatrapati Shahu Ji Maharaj University, Kanpur </em></p>
-              <p>B.Tech in Computer Science (2017 – 2021) from Chhatrapati Shahu Ji Maharaj University (formerly Kanpur University), Kanpur, Uttar Pradesh.</p>
+              <p>B.Tech in Computer Science (2017 – 2021), CSJMU Kanpur (formerly Kanpur University).</p>
             </div>
-
-            <div class="resume-item">
-              <h4 class="normalText" >12th </h4>
-              <h5 class="abnormalText">2015 - 2016</h5>
-              <p><em>Swami Harsewanand Public School, Garhwaghat , Varanasi   </em></p>
-              <p>Swami Harsewanand Public School also known as Swami Harsewanand Public School. The school was established in 2001. Swami Harsewanand Public School is a Co-Ed school affiliated to Central Board of Secondary Education (CBSE) . It is managed by Swami Harsewanand Shikshan Society.</p>
-            </div>
-
-
-            <!-- <div class="resume-item">
-              <h4>10th </h4>
-              <h5>2013 - 2014</h5>
-              <p><em>Swami Harsewanand Public School, Garhwaghat , Varanasi   </em></p>
-              <p>Swami Harsewanand Public School also known as Swami Harsewanand Public School. The school was established in 2001. Swami Harsewanand Public School is a Co-Ed school affiliated to Central Board of Secondary Education (CBSE) . It is managed by Swami Harsewanand Shikshan Society.</p>
-            </div> -->
 
 
 
@@ -810,6 +756,7 @@
   <h4 class="normalText"><i class="fa-solid fa-code"></i> Senior Software Engineer — Paytm, Noida</h4>
   <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Jan 2025 – Present</h5>
   <p><em><i class="fa-solid fa-location-dot"></i> Noida</em></p>
+  <p class="job-scope"><strong>Scope:</strong> HA request path on Spring Boot + Kafka services — gateway, caching, and resilience. Day job; Zamtel and SwiftCab are concurrent products, not a second employer.</p>
   <ul>
     <li><i class="fa-solid fa-server"></i> Designed scalable microservices for high availability and fault tolerance using Spring Boot and Kafka</li>
     <li><i class="fa-solid fa-shield-halved"></i> Implemented API Gateway, rate limiting, and load balancing for secure, scalable request handling</li>
@@ -823,6 +770,7 @@
   <h4 class="normalText"><i class="fa-solid fa-laptop-code"></i> Technical Associate — PolicyBazaar (PB Partners), Gurgaon</h4>
   <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Apr 2024 – Jan 2025</h5>
   <p><em><i class="fa-solid fa-location-dot"></i> Gurgaon</em></p>
+  <p class="job-scope"><strong>Scope:</strong> Backend microservices for partner sales/ops (Phoenix) — Nest.js, RBAC APIs, Kafka.</p>
   <ul>
     <li><i class="fa-solid fa-cubes"></i> Developed scalable backend systems using Nest.js microservices</li>
     <li><i class="fa-solid fa-key"></i> Designed REST APIs with RBAC security and API Gateway integration</li>
@@ -835,6 +783,7 @@
   <h4 class="normalText"><i class="fa-solid fa-layer-group"></i> Full Stack Developer — Value Innovation Labs</h4>
   <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Nov 2021 – Apr 2024</h5>
   <p><em><i class="fa-solid fa-location-dot"></i> Noida</em></p>
+  <p class="job-scope"><strong>Scope:</strong> Full-stack delivery across gov platforms (CCIL, EPIL) and Rozgar.com — including the 70K+ job migration.</p>
   <ul>
     <li><i class="fa-solid fa-exchange-alt"></i> Built microservices handling 100K+ daily transactions with high reliability</li>
     <li><i class="fa-solid fa-search"></i> Designed scalable systems with caching and optimized DB queries</li>
@@ -843,17 +792,9 @@
   </ul>
 </div>
 
-<div class="resume-item">
-  <h4 class="normalText"><i class="fa-solid fa-graduation-cap"></i> Full Stack Development — Internshala</h4>
-  <h5 class="abnormalText"><i class="fa-regular fa-calendar-days"></i> Certification &amp; training</h5>
-  <p><em><i class="fa-solid fa-certificate"></i> Full Stack Developer program [CN: 972670B8-3D5F-7E61-BD07-20E9DBCCCD22]</em></p>
-  <ul>
-    <li><i class="fa-solid fa-code"></i> Completed full-stack training covering frontend, backend, and databases</li>
-  </ul>
-</div>
-
         </div>
 
+      </div>
       </div>
     </section><!-- End Resume Section -->
 
@@ -899,7 +840,7 @@
             </a>
           </div>
           <p class="featured-project__lead">
-            My largest end-to-end build — a ride-hailing system (similar to Ola/Rapido) covering real-time matching, event-driven scale, caching, and durable trip state. Designed and developed as a major personal/product project to push distributed-systems depth beyond day-job features.
+            My largest end-to-end build — a ride-hailing system (similar to Ola/Rapido) covering real-time matching, event-driven scale, caching, and durable trip state. Designed and developed as a flagship personal/product project alongside Paytm (not a second employer) to push distributed-systems depth beyond day-job features.
           </p>
           <ul class="featured-project__points">
             <li>Event-driven architecture with <strong>Kafka</strong> for horizontal scalability</li>
@@ -918,7 +859,15 @@
           </div>
           <div class="arch-note featured-project__arch">
             <strong>Architecture snapshot</strong>
-            <p>Users / Drivers ↔ WebSockets → matching service · Kafka for async scale · Redis for hot state · PostgreSQL for durable data · Go for latency-sensitive paths (exploring).</p>
+            <ol class="arch-flow" aria-label="SwiftCab request path">
+              <li><span>Users / Drivers</span></li>
+              <li><span>WebSockets</span></li>
+              <li><span>Matching</span></li>
+              <li><span>Kafka</span></li>
+              <li><span>Redis</span></li>
+              <li><span>PostgreSQL</span></li>
+            </ol>
+            <p>Hot path: sockets → matching. Async scale on Kafka. Redis for ride state. PostgreSQL for durable trips. Go on latency-sensitive services (exploring).</p>
           </div>
         </article>
 
@@ -928,6 +877,7 @@
 
       <h3 class="resume-title normalText">Zamtel — Government Fintech Platform (Zambia)</h3>
 <div class="resume-item pb-0">
+  <p class="project-concurrent">Concurrent product · not a second employer</p>
   <h5 class="abnormalText"> 
     TECH STACK : 
   </h5>
@@ -954,7 +904,13 @@
   </p>
   <div class="arch-note">
     <strong>Architecture snapshot</strong>
-    <p>Client (React/TS) → Node BFF (encrypt/decrypt) → Java microservices on Kubernetes → HA + fault-tolerant paths. Focus: secure request lifecycle, throughput, regulated payments.</p>
+    <ol class="arch-flow" aria-label="Zamtel request path">
+      <li><span>React / TS client</span></li>
+      <li><span>Node BFF (crypto)</span></li>
+      <li><span>Java services</span></li>
+      <li><span>Kubernetes</span></li>
+    </ol>
+    <p>Secure request lifecycle, throughput, and regulated payments on HA paths.</p>
   </div>
 </div>
 
@@ -994,7 +950,7 @@
             <i class="devicon-mysql-plain colored"></i> MySQL ,  
             Nov 2021 – Apr 2024
           </h5>
-          <p>Migrated 70,000+ job records from MongoDB to MySQL with structured mapping. Rebuilt the platform on Next.js for better SEO. Developed AI-powered resume builder, summary generator, and cover letter generator; integrated Grammarly for content quality.</p>
+          <p>Migrated 70,000+ job records from MongoDB to MySQL with structured mapping. Rebuilt the platform on Next.js for better SEO. Shipped AI-powered resume builder, profile-summary generator, and cover-letter generator (LLM / OpenAI APIs) on the apply path; integrated Grammarly for content quality.</p>
           <div class="arch-note">
             <strong>Architecture snapshot</strong>
             <p>Next.js SEO frontend · Java/Node services · MySQL after 70K+ job migration from Mongo · AI resume/cover-letter generators on apply path.</p>
@@ -1166,13 +1122,9 @@
         </article>
 
         <article class="short-card">
-          <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" class="portfolio-lightbox short-card__media" data-gallery="shortsGallery" title="GPT profile summariser">
-            <img src="./assets/img/projects_shorts/cover_letter/summariser .gif" alt="GPT summariser" loading="lazy" width="640" height="400">
-          </a>
           <div class="short-card__body">
             <h3>GPT summariser</h3>
             <p>OpenAI-powered profile summary generation for job applications</p>
-            <a href="./assets/img/projects_shorts/cover_letter/summariser .gif" class="portfolio-lightbox short-card__link" data-gallery="shortsGallery" title="Summariser preview">View preview</a>
           </div>
         </article>
 
@@ -1237,125 +1189,48 @@
           </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100"> 
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-           
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
-            <div class="portfolio-wrap" style="display: flex; justify-content: center;" >
-              <img src="assets/img/projects_shorts/contact-list.png"   style="width: 450px; height: 300px;  "  class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/projects_shorts/contact-list.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=" Contact List "><i class="bx bx-plus"></i></a>
-                <a href="https://react-demo44.netlify.app" title="More Details" target="_idk" ><i class="bx bx-link"></i></a>
-              </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap portfolio-wrap--text">
+              <h4 class="normalText">Contact List</h4>
+              <p>React demo contact management UI</p>
+              <a href="https://react-demo44.netlify.app" target="_blank" rel="noopener">Open demo →</a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
-              <img src="assets/img/projects_shorts/blog.png"  style="width: 450px; height: 300px;  " class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/projects_shorts/blog1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blog managment using MERN stack "><i class="bx bx-plus"></i></a>
-                <a href="https://react-demo44.netlify.app/"  target="_idk" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+            <div class="portfolio-wrap portfolio-wrap--text">
+              <h4 class="normalText">Blog Management</h4>
+              <p>MERN stack blog management</p>
+              <a href="https://react-demo44.netlify.app/" target="_blank" rel="noopener">Open demo →</a>
             </div>
           </div>
 
-           
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
-              <img src="assets/img/projects_shorts/e-store.png" style="width: 450px; height: 300px;   " class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/projects_shorts/e-store1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="E-store using Mern stack  "><i class="bx bx-plus"></i></a>
-                <a href="https://e-store-1.netlify.app/" title="More Details"  target="_idk" ><i class="bx bx-link"></i></a>
-              </div>
+            <div class="portfolio-wrap portfolio-wrap--text">
+              <h4 class="normalText">E-store</h4>
+              <p>E-commerce store with MERN</p>
+              <a href="https://e-store-1.netlify.app/" target="_blank" rel="noopener">Open demo →</a>
             </div>
           </div>
-          
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-youtube">
-            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
-              <img src="assets/img/projects_shorts/youtube-lite.png" style="width: 450px; height: 300px;   " class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/projects_shorts/youtube-lite-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Youtube clone with youtube data v3 api , used Rect js for frontend  "><i class="bx bx-plus"></i></a>
-                <a href="https://youtube-lyte.netlify.app/" title="More Details"  target="_idk" ><i class="bx bx-link"></i></a>
-              </div>
+            <div class="portfolio-wrap portfolio-wrap--text">
+              <h4 class="normalText">YouTube Lite</h4>
+              <p>YouTube Data API v3 + React frontend</p>
+              <a href="https://youtube-lyte.netlify.app/" target="_blank" rel="noopener">Open demo →</a>
             </div>
           </div>
-
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-chatapp">
-            <div class="portfolio-wrap" style="display: flex; justify-content: center;">
-              <img src="assets/img/projects_shorts/chatapp-home.png" style="width: 450px; height: 300px;   " class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/projects_shorts/chatapp-client.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="chat app using (Socket.io , node js , react js , with push notificition  )" ><i class="bx bx-plus"></i></a>
-                <a href="https://chatapp-lyte.netlify.app/" title="More Details"  target="_idk" ><i class="bx bx-link"></i></a>
-              </div>
+            <div class="portfolio-wrap portfolio-wrap--text">
+              <h4 class="normalText">Chat App</h4>
+              <p>Socket.io · Node · React · push notifications</p>
+              <a href="https://chatapp-lyte.netlify.app/" target="_blank" rel="noopener">Open demo →</a>
             </div>
           </div>
 
-
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
         </div>
       </div>
     </section>
@@ -1383,89 +1258,6 @@
 
 
 
-    <section id="portfolio2" class="portfolio ">
-      <div class="container">
-
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100"> 
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-         
-
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-     
     <!-- End Portfolio Section -->
     <!-- ======= Services Section ======= -->
 
@@ -1643,10 +1435,10 @@
           <p>Verify work and recommendations — no fabricated testimonials.</p>
         </div>
         <div class="proof-grid">
-          <a class="proof-card" href="assets/Shashikant_Aug_2026.pdf" download target="_blank" rel="noopener">
+          <a class="proof-card" href="assets/shashi_kant_September_2026.pdf" download="Shashi_Kant_September_2026.pdf" target="_blank" rel="noopener">
             <i class="bi bi-file-earmark-pdf"></i>
             <strong>Resume PDF</strong>
-            <span>Aug 2026 one-pager — same story as this site</span>
+            <span>September 2026 one-pager — same story as this site</span>
           </a>
           <a class="proof-card" href="https://github.com/skntmax" target="_blank" rel="noopener">
             <i class="bx bxl-github"></i>
@@ -1657,6 +1449,11 @@
             <i class="bx bxl-linkedin"></i>
             <strong>LinkedIn recommendations</strong>
             <span>Manager &amp; peer recommendations live on LinkedIn</span>
+          </a>
+          <a class="proof-card" href="https://www.youtube.com/@skntmax" target="_blank" rel="noopener">
+            <i class="bx bxl-youtube"></i>
+            <strong>YouTube</strong>
+            <span>Talks and engineering videos — @skntmax</span>
           </a>
           <a class="proof-card" href="https://eoffice.cciltd.in/" target="_blank" rel="noopener">
             <i class="bi bi-building"></i>
@@ -1682,11 +1479,50 @@
     <section id="hire" class="hire-cta-band">
       <div class="container">
         <h2>Available for Senior Software Engineer roles</h2>
-        <p>Fintech · distributed systems · full-stack product teams · Noida / remote discussions · IST</p>
+        <p>Fintech · distributed systems · full-stack · AI-assisted product work · Noida / hybrid / remote · IST</p>
         <div class="hire-cta-band__actions">
           <a class="hero-wave-cta" href="mailto:skntjee@gmail.com?subject=Hiring%20inquiry%20-%20Senior%20Software%20Engineer">Email skntjee@gmail.com</a>
           <a class="hero-wave-cta hero-wave-cta--ghost" href="https://www.linkedin.com/in/shashi-kant-5a1710185/" target="_blank" rel="noopener">Message on LinkedIn</a>
-          <a class="hero-wave-cta hero-wave-cta--ghost" href="assets/Shashikant_Aug_2026.pdf" download>Download resume</a>
+          <a class="hero-wave-cta hero-wave-cta--ghost" href="assets/shashi_kant_September_2026.pdf" download="Shashi_Kant_September_2026.pdf">Download resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Nexus (Resume RAG) ======= -->
+    <section id="ask-ai" class="contact sk-ask-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="normalText">Nexus</h2>
+          <p>A friendly resume assistant. Ask about experience, projects, skills, or how to reach me — answers come from my indexed docs.</p>
+        </div>
+        <div class="sk-ask-inline" data-aos="fade-up">
+          <div class="nx-inline-brand">
+            <span class="nx-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" width="38" height="38">
+                <defs>
+                  <linearGradient id="nxg-inline" x1="6" y1="4" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#5eead4"/>
+                    <stop offset="1" stop-color="#38bdf8"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="16" cy="16" r="15" fill="url(#nxg-inline)"/>
+                <circle cx="7.4" cy="10.2" r="1.35" fill="#042f2e" opacity=".32"/>
+                <circle cx="25.4" cy="11.4" r="1.15" fill="#042f2e" opacity=".28"/>
+                <path d="M8.6 10.8 11.4 13.4M21 13.6l3.4-1.6" stroke="#042f2e" stroke-width="1.15" stroke-linecap="round" opacity=".28"/>
+                <circle cx="12.15" cy="14.15" r="1.6" fill="#042f2e"/>
+                <circle cx="19.85" cy="14.15" r="1.6" fill="#042f2e"/>
+                <path d="M11.4 19.15c1.55 2.05 7.65 2.05 9.2 0" stroke="#042f2e" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Chat with Nexus</strong>
+              <span>Quick replies, retry, and a human handoff if the docs are offline.</span>
+            </div>
+          </div>
+          <p>Ask what I’ve built at Paytm, SwiftCab, Zamtel, Rozgar, stack depth, or how to reach me.</p>
+          <button type="button" class="btn btn-primary" data-open-resume-chat>
+            Open Nexus
+          </button>
         </div>
       </div>
     </section>
@@ -1722,7 +1558,7 @@
                 <p>+91 7860735070</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe title="Map of Noida, Uttar Pradesh" src="https://www.google.com/maps?q=Noida,+Uttar+Pradesh,+India&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
 
           </div>
@@ -1818,27 +1654,33 @@
   <script src="assets/js/theme.js"></script>
   <script defer src="assets/js/sidebar.js"></script>
   <script defer src="assets/js/site-search.js"></script>
-  <script type="module" src="assets/js/hero-three.js"></script>
-  <script defer src="assets/js/motion.js"></script>
   <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script defer src="assets/vendor/typed.js/typed.min.js"></script>
   <script defer src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/defer-vendors.js"></script>
+  <script defer src="assets/js/resume-chat.js?v=nexus-3"></script>
+  <script defer src="assets/js/hero-typeit.js"></script>
+  <script>
+    // Defer WebGL hero until after first paint so text is instant.
+    (function () {
+      function loadHero() {
+        var s = document.createElement("script");
+        s.type = "module";
+        s.src = "assets/js/hero-three.js";
+        document.body.appendChild(s);
+      }
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadHero, { timeout: 1200 });
+      } else {
+        setTimeout(loadHero, 400);
+      }
+    })();
+  </script>
 
   <script>
   document.addEventListener("DOMContentLoaded", function () {
-    if (typeof Typed === "undefined") return;
-    new Typed("#typed", {
-      strings: ["Senior Software Engineer at"],
-      typeSpeed: 50,
-      backSpeed: 25,
-      loop: false,
-      onComplete: function () {
-        var loader = document.getElementById("loader");
-        if (loader) loader.style.display = "inline-block";
-      }
-    });
+    var typedEl = document.getElementById("typed");
+    if (typedEl) typedEl.textContent = "Senior Software Engineer at";
   });
   </script>
 

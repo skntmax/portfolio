@@ -7,7 +7,6 @@
 
   var scripts = [
     "assets/vendor/purecounter/purecounter_vanilla.js",
-    "assets/vendor/aos/aos.js",
     "assets/vendor/glightbox/js/glightbox.min.js",
     "assets/vendor/isotope-layout/isotope.pkgd.min.js",
     "assets/vendor/swiper/swiper-bundle.min.js"
@@ -37,16 +36,7 @@
           new PureCounter();
         } catch (e) {}
       }
-      if (typeof AOS !== "undefined") {
-        try {
-          AOS.init({
-            duration: 700,
-            easing: "ease-out-cubic",
-            once: true,
-            mirror: false
-          });
-        } catch (e2) {}
-      }
+      // AOS intentionally skipped — it hid text until scroll/init.
       if (typeof GLightbox !== "undefined") {
         try {
           GLightbox({ selector: ".portfolio-lightbox" });

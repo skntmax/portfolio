@@ -204,14 +204,7 @@
   }
 
   window.addEventListener('load', () => {
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 700,
-        easing: 'ease-out-cubic',
-        once: true,
-        mirror: false
-      });
-    }
+    // AOS disabled for instant content visibility.
   });
 
   if (typeof PureCounter !== 'undefined') {

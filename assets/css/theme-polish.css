@@ -1176,7 +1176,7 @@ body.search-open {
 }
 
 .systems-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .systems-card h3 {
@@ -1322,7 +1322,10 @@ html[data-theme="light"] .hero-wave-cta--ghost {
   .impact-grid,
   .systems-grid,
   .proof-grid,
-  .glance-row {
+  .glance-row,
+  .case-grid,
+  .skill-groups,
+  .cert-featured {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1332,8 +1335,270 @@ html[data-theme="light"] .hero-wave-cta--ghost {
   .work-grid,
   .systems-grid,
   .proof-grid,
-  .glance-row {
+  .glance-row,
+  .case-grid,
+  .skill-groups,
+  .cert-featured {
     grid-template-columns: 1fr;
+  }
+}
+
+/*--------------------------------------------------------------
+# Resume upgrades — chips, cases, architecture, certs
+--------------------------------------------------------------*/
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skill-group:last-child {
+  grid-column: 1 / -1;
+}
+
+.skill-group {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.15rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.skill-group h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.skill-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  color: var(--text-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+  .skill-chip {
+    white-space: normal;
+  }
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.case-card__kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.case-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--text-strong);
+}
+
+.case-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.case-card dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin-top: 0.35rem;
+}
+
+.case-card dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.case-card__result {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text-strong) !important;
+}
+
+.job-scope {
+  margin: 0.15rem 0 0.55rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.job-scope strong {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.project-concurrent {
+  display: inline-block;
+  margin: 0.35rem 0 0.5rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.arch-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.arch-flow li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.arch-flow span {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.arch-flow li:not(:last-child)::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--accent-strong);
+  border-bottom: 2px solid var(--accent-strong);
+  transform: rotate(-45deg);
+  opacity: 0.75;
+}
+
+.cert-featured {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.cert-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.cert-card strong {
+  display: block;
+  color: var(--text-strong);
+  margin-bottom: 0.35rem;
+}
+
+.cert-card a,
+.cert-card span {
+  font-size: 0.88rem;
+  color: var(--link);
+}
+
+.cert-more {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.35rem 1rem 0.85rem;
+}
+
+.cert-more summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 0;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.cert-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.cert-more summary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 8px;
+}
+
+.cert-more summary::before {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.55rem;
+  border-right: 2px solid var(--accent-strong);
+  border-bottom: 2px solid var(--accent-strong);
+  transform: rotate(-45deg);
+  vertical-align: 0.1rem;
+}
+
+.cert-more[open] summary::before {
+  transform: rotate(45deg);
+  vertical-align: 0.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arch-flow li:not(:last-child)::after,
+  .cert-more summary::before {
+    transition: none;
   }
 }
 
@@ -1762,26 +2027,25 @@ body.sidebar-open .sidebar-backdrop:not([hidden]) {
 
 /* Lightweight reveal (replaces GSAP CDN) */
 .hero-anim {
-  opacity: 0;
-  transform: translate3d(0, 16px, 0);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-  transition-delay: var(--reveal-delay, 0ms);
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .hero-anim.is-revealed {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
 .will-reveal {
-  opacity: 0;
-  transform: translate3d(0, 14px, 0);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .will-reveal.is-revealed {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
